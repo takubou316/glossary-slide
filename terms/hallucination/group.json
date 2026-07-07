@@ -1,0 +1,9 @@
+{
+  "slug": "hallucination",
+  "title": "ハルシネーション",
+  "variants": [
+    { "id": "intro", "label": "ハルシネーションとは" },
+    { "id": "examples", "label": "実際の事例" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

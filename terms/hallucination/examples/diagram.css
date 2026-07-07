@@ -1,0 +1,47 @@
+.examples-row {
+  display: flex;
+  gap: 28px;
+}
+
+.example-card {
+  width: 460px;
+  background: var(--fade);
+  border-radius: 20px;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.example-tag {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.example-desc {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.example-outcome {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  border-top: 2px dashed var(--muted);
+  padding-top: 12px;
+}
+
+.example-source {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.example-source:hover {
+  text-decoration: underline;
+}

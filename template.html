@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TERM}} - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  transform-origin: top left;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* ここから下は用語ごとの図解専用CSS */
+{{DIAGRAM_CSS}}
+</style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← 一覧に戻る</a>
+  <div class="stage-frame">
+    <div class="slide">
+      <div class="eyebrow">今日のひとこと解説</div>
+      <h1 class="term">{{TERM}}</h1>
+      <p class="message">{{MESSAGE}}</p>
+
+      <div class="visual" aria-hidden="true">
+        {{DIAGRAM_HTML}}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function fitSlide() {
+      var margin = 40;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin) / 720,
+        1
+      );
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.slide').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitSlide);
+    fitSlide();
+  </script>
+</body>
+</html>

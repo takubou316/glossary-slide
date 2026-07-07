@@ -1,0 +1,48 @@
+.sentence-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.tok-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tok {
+  padding: 10px 16px;
+  border-radius: 12px;
+  line-height: 1.2;
+}
+
+.tok.c1 { background: var(--ink); color: var(--paper); }
+.tok.c2 { background: var(--accent); color: var(--paper); }
+.tok.c3 { background: var(--fade); color: var(--ink); }
+
+.pointer-arrow {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.pointer-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.count-badge {
+  align-self: center;
+  margin-left: 12px;
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}

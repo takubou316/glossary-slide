@@ -1,0 +1,58 @@
+.halluc-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.question-bubble {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 16px 16px 16px 4px;
+}
+
+.down-arrow {
+  font-size: 22px;
+  color: var(--muted);
+}
+
+.answers-row {
+  display: flex;
+  gap: 48px;
+}
+
+.answer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.answer-bubble {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 26px;
+  font-weight: 700;
+  padding: 16px 28px;
+  border-radius: 18px 18px 18px 4px;
+}
+
+.verdict {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.verdict.correct {
+  color: #3F8F5F;
+  border: 2px solid #3F8F5F;
+}
+
+.verdict.wrong {
+  color: #C0392B;
+  border: 2px solid #C0392B;
+}

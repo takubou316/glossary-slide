@@ -1,0 +1,65 @@
+.mechanic-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.equation-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eq-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.eq-box {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+
+.eq-box.result {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.eq-box.grown {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.eq-op {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.eq-tag {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.eq-year-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.down-connector {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 4px 0;
+}

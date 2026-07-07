@@ -1,0 +1,9 @@
+{
+  "slug": "token",
+  "title": "トークン",
+  "variants": [
+    { "id": "intro", "label": "トークンとは" },
+    { "id": "compare", "label": "日本語 vs 英語" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

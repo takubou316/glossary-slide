@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>用語解説スライド一覧</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #EAE8E3;
+    font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+    padding: 60px 20px;
+  }
+  .card {
+    background: #FAF9F5;
+    border-radius: 24px;
+    padding: 48px 56px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    width: 560px;
+  }
+  h1 { font-size: 28px; color: #262322; margin: 0 0 24px; }
+  .search-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+    font-size: 17px;
+    font-family: inherit;
+    border: 2px solid #DDD9D2;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    color: #262322;
+  }
+  .search-box:focus {
+    outline: none;
+    border-color: #D97757;
+  }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .item a {
+    display: block;
+    text-decoration: none;
+    padding: 16px 20px;
+    border: 2px solid #D97757;
+    border-radius: 14px;
+  }
+  .item a:hover { background: #D97757; }
+  .item a:hover .item-title, .item a:hover .item-desc { color: #FAF9F5; }
+  .item-title { font-size: 20px; font-weight: 700; color: #D97757; }
+  .item-desc { font-size: 14px; font-weight: 600; color: #8A8681; margin-top: 6px; }
+  .empty-note { display: none; color: #8A8681; font-size: 15px; padding: 8px 4px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>今日のひとこと解説 一覧</h1>
+    <input type="text" class="search-box" id="search" placeholder="用語を検索...">
+    <ul id="list">
+      <li class="item" data-search="コンテキストウィンドウ aiが一度に覚えていられる会話量の上限のこと">
+        <a href="context-window.html">
+          <div class="item-title">コンテキストウィンドウ</div>
+          <div class="item-desc">AIが一度に覚えていられる会話量の上限のこと</div>
+        </a>
+      </li>
+      <li class="item" data-search="トークン aiが文章を読み書きするときに数える、言葉の最小単位">
+        <a href="token.html">
+          <div class="item-title">トークン</div>
+          <div class="item-desc">AIが文章を読み書きするときに数える、言葉の最小単位</div>
+        </a>
+      </li>
+      <li class="item" data-search="ハルシネーション aiが、間違った情報を正しい情報と同じくらい自信満々に話してしまうこと">
+        <a href="hallucination.html">
+          <div class="item-title">ハルシネーション</div>
+          <div class="item-desc">AIが、間違った情報を正しい情報と同じくらい自信満々に話してしまうこと</div>
+        </a>
+      </li>
+      <li class="item" data-search="複利 ついた利息にも、次の年からは利息がつく仕組みのこと">
+        <a href="compound-interest.html">
+          <div class="item-title">複利</div>
+          <div class="item-desc">ついた利息にも、次の年からは利息がつく仕組みのこと</div>
+        </a>
+      </li>
+    </ul>
+    <div class="empty-note" id="empty-note">見つかりませんでした</div>
+  </div>
+  <script>
+    var search = document.getElementById('search');
+    var items = [].slice.call(document.querySelectorAll('#list .item'));
+    var emptyNote = document.getElementById('empty-note');
+    search.addEventListener('input', function () {
+      var q = search.value.trim().toLowerCase();
+      var visibleCount = 0;
+      items.forEach(function (item) {
+        var match = item.dataset.search.indexOf(q) !== -1;
+        item.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+      emptyNote.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
