@@ -24,7 +24,7 @@ def scope_css(css_text: str, scope_selector: str) -> str:
     return "\n".join(scoped_rules)
 
 
-def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str]:
+def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     meta = json.loads((term_dir / "meta.json").read_text(encoding="utf-8"))
     diagram_css = (term_dir / "diagram.css").read_text(encoding="utf-8")
     diagram_html = (term_dir / "diagram.html").read_text(encoding="utf-8")
@@ -41,10 +41,10 @@ def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str]:
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{meta['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, meta["term"], meta["message"]
+    return out_path, meta["term"], meta["message"], meta.get("yomi", "")
 
 
-def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str]:
+def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     group = json.loads((term_dir / "group.json").read_text(encoding="utf-8"))
 
     tab_buttons = []
@@ -89,24 +89,24 @@ def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str]:
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{group['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, group["title"], intro_message
+    return out_path, group["title"], intro_message, group.get("yomi", "")
 
 
-def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str]:
+def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     if (term_dir / "group.json").exists():
         return build_group(term_dir)
     return build_single(term_dir)
 
 
-def build_index(entries: list[tuple[pathlib.Path, str, str]]) -> pathlib.Path:
+def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Path:
     items = "\n".join(
-        f'      <li class="item" data-search="{(title + " " + message).lower()}">\n'
+        f'      <li class="item" data-search="{(title + " " + message + " " + yomi).lower()}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
         f'          <div class="item-desc">{message}</div>\n'
         f'        </a>\n'
         f'      </li>'
-        for out_path, title, message in sorted(entries, key=lambda e: e[1])
+        for out_path, title, message, yomi in sorted(entries, key=lambda e: e[1])
     )
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -172,14 +172,25 @@ def build_index(entries: list[tuple[pathlib.Path, str, str]]) -> pathlib.Path:
     <div class="empty-note" id="empty-note">見つかりませんでした</div>
   </div>
   <script>
+    // カタカナをひらがなに変換して、ひらがな/カタカナのどちらで入力しても
+    // 同じ結果になるようにする（漢字の用語は各データの「よみ」で拾う）
+    function kataToHira(text) {{
+      return text.replace(/[ァ-ヶ]/g, function (ch) {{
+        return String.fromCharCode(ch.charCodeAt(0) - 0x60);
+      }});
+    }}
+
     var search = document.getElementById('search');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
+    items.forEach(function (item) {{
+      item.dataset.searchNorm = kataToHira(item.dataset.search);
+    }});
     search.addEventListener('input', function () {{
-      var q = search.value.trim().toLowerCase();
+      var q = kataToHira(search.value.trim().toLowerCase());
       var visibleCount = 0;
       items.forEach(function (item) {{
-        var match = item.dataset.search.indexOf(q) !== -1;
+        var match = q === '' || item.dataset.searchNorm.indexOf(q) !== -1;
         item.style.display = match ? '' : 'none';
         if (match) visibleCount++;
       }});
@@ -207,8 +218,8 @@ def main():
 
     entries = []
     for term_dir in term_dirs:
-        out_path, title, message = build(term_dir)
-        entries.append((out_path, title, message))
+        out_path, title, message, yomi = build(term_dir)
+        entries.append((out_path, title, message, yomi))
         print(f"built: {out_path}")
 
     if not targets:

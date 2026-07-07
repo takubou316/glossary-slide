@@ -57,25 +57,25 @@
     <h1>今日のひとこと解説 一覧</h1>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
     <ul id="list">
-      <li class="item" data-search="コンテキストウィンドウ aiが一度に覚えていられる会話量の上限のこと">
+      <li class="item" data-search="コンテキストウィンドウ aiが一度に覚えていられる会話量の上限のこと ">
         <a href="context-window.html">
           <div class="item-title">コンテキストウィンドウ</div>
           <div class="item-desc">AIが一度に覚えていられる会話量の上限のこと</div>
         </a>
       </li>
-      <li class="item" data-search="トークン aiが文章を読み書きするときに数える、言葉の最小単位">
+      <li class="item" data-search="トークン aiが文章を読み書きするときに数える、言葉の最小単位 ">
         <a href="token.html">
           <div class="item-title">トークン</div>
           <div class="item-desc">AIが文章を読み書きするときに数える、言葉の最小単位</div>
         </a>
       </li>
-      <li class="item" data-search="ハルシネーション aiが、間違った情報を正しい情報と同じくらい自信満々に話してしまうこと">
+      <li class="item" data-search="ハルシネーション aiが、間違った情報を正しい情報と同じくらい自信満々に話してしまうこと ">
         <a href="hallucination.html">
           <div class="item-title">ハルシネーション</div>
           <div class="item-desc">AIが、間違った情報を正しい情報と同じくらい自信満々に話してしまうこと</div>
         </a>
       </li>
-      <li class="item" data-search="複利 ついた利息にも、次の年からは利息がつく仕組みのこと">
+      <li class="item" data-search="複利 ついた利息にも、次の年からは利息がつく仕組みのこと ふくり">
         <a href="compound-interest.html">
           <div class="item-title">複利</div>
           <div class="item-desc">ついた利息にも、次の年からは利息がつく仕組みのこと</div>
@@ -85,14 +85,25 @@
     <div class="empty-note" id="empty-note">見つかりませんでした</div>
   </div>
   <script>
+    // カタカナをひらがなに変換して、ひらがな/カタカナのどちらで入力しても
+    // 同じ結果になるようにする（漢字の用語は各データの「よみ」で拾う）
+    function kataToHira(text) {
+      return text.replace(/[ァ-ヶ]/g, function (ch) {
+        return String.fromCharCode(ch.charCodeAt(0) - 0x60);
+      });
+    }
+
     var search = document.getElementById('search');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
+    items.forEach(function (item) {
+      item.dataset.searchNorm = kataToHira(item.dataset.search);
+    });
     search.addEventListener('input', function () {
-      var q = search.value.trim().toLowerCase();
+      var q = kataToHira(search.value.trim().toLowerCase());
       var visibleCount = 0;
       items.forEach(function (item) {
-        var match = item.dataset.search.indexOf(q) !== -1;
+        var match = q === '' || item.dataset.searchNorm.indexOf(q) !== -1;
         item.style.display = match ? '' : 'none';
         if (match) visibleCount++;
       });
