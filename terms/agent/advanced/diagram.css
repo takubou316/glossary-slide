@@ -1,0 +1,57 @@
+.loop-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.loop-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 19px;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 14px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.node.answer {
+  background: var(--accent);
+}
+
+.arrow {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.loop-back {
+  width: 620px;
+  height: 60px;
+}
+
+.loop-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: -4px;
+}
+
+.exit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.exit-arrow {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}

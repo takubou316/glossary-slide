@@ -1,0 +1,57 @@
+.agent-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.chat-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.row-label {
+  width: 90px;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.chain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bubble {
+  padding: 12px 20px;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--ink);
+  color: var(--paper);
+  white-space: nowrap;
+}
+
+.bubble.a.accent {
+  background: var(--accent);
+}
+
+.step {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--fade);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.arrow {
+  font-size: 18px;
+  color: var(--muted);
+}

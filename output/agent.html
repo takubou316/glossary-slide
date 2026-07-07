@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エージェント - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* ここから下は各バリアントの図解専用CSS */
+#panel-intro .agent-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;}
+#panel-intro .chat-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;}
+#panel-intro .row-label {
+  width: 90px;
+  white-space: nowrap;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.3;}
+#panel-intro .chain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;}
+#panel-intro .bubble {
+  padding: 12px 20px;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--ink);
+  color: var(--paper);
+  white-space: nowrap;}
+#panel-intro .bubble.a.accent {
+  background: var(--accent);}
+#panel-intro .step {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--fade);
+  color: var(--ink);
+  white-space: nowrap;}
+#panel-intro .arrow {
+  font-size: 18px;
+  color: var(--muted);}
+#panel-advanced .loop-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;}
+#panel-advanced .loop-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;}
+#panel-advanced .node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 19px;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 14px;
+  white-space: nowrap;
+  text-align: center;}
+#panel-advanced .node.answer {
+  background: var(--accent);}
+#panel-advanced .arrow {
+  font-size: 20px;
+  color: var(--muted);}
+#panel-advanced .loop-back {
+  width: 620px;
+  height: 60px;}
+#panel-advanced .loop-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: -4px;}
+#panel-advanced .exit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;}
+#panel-advanced .exit-arrow {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);}
+</style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← 一覧に戻る</a>
+  <div class="tabs">
+    <button class="tab-btn active" data-variant="intro">エージェントとは</button>
+    <button class="tab-btn" data-variant="advanced">発展編</button>
+  </div>
+  <div class="stage-frame">
+    <div class="stage-wrap">
+      <div class="slide active" id="panel-intro">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">エージェント</h1>
+  <p class="message">自分で考えて、道具(ツール)を使いながら何段階も作業を進めてくれるAIのこと</p>
+  <div class="visual" aria-hidden="true">
+    <div class="agent-stack">
+  <div class="chat-row">
+    <div class="row-label">普通の<br>チャット</div>
+    <div class="chain">
+      <div class="bubble q">質問</div>
+      <div class="arrow">→</div>
+      <div class="bubble a">回答</div>
+    </div>
+  </div>
+
+  <div class="chat-row">
+    <div class="row-label">エージェント</div>
+    <div class="chain">
+      <div class="bubble q">質問</div>
+      <div class="arrow">→</div>
+      <div class="step">調べる</div>
+      <div class="arrow">→</div>
+      <div class="step">試す</div>
+      <div class="arrow">→</div>
+      <div class="step">確認する</div>
+      <div class="arrow">→</div>
+      <div class="bubble a accent">回答</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-advanced">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">エージェント</h1>
+  <p class="message">AI自身の返事が「道具を使う指示」になっていて、その結果を読んでまた自分で考える、を繰り返している</p>
+  <div class="visual" aria-hidden="true">
+    <div class="loop-wrap">
+  <div class="loop-row">
+    <div class="node">① 考える</div>
+    <div class="arrow">→</div>
+    <div class="node">② 道具を使う</div>
+    <div class="arrow">→</div>
+    <div class="node">③ 結果を見る</div>
+  </div>
+
+  <svg class="loop-back" viewBox="0 0 620 70" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="loopArrowHead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+        <path d="M0,0 L8,4 L0,8 Z" fill="#8A8681" />
+      </marker>
+    </defs>
+    <path d="M 580 5 C 580 60, 40 60, 40 5" fill="none" stroke="#8A8681" stroke-width="3" stroke-dasharray="6 6" marker-end="url(#loopArrowHead)" />
+  </svg>
+  <div class="loop-label">情報が足りなければ、③ → ① に戻ってまた繰り返す</div>
+
+  <div class="exit-row">
+    <div class="exit-arrow">↓ 十分な情報が集まったら</div>
+    <div class="node answer">回答</div>
+  </div>
+</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.slide').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.variant).classList.add('active');
+      });
+    });
+
+    function fitStage() {
+      var margin = 40;
+      var tabsHeight = document.querySelector('.tabs').offsetHeight + 24;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin - tabsHeight) / 720,
+        1
+      );
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.stage-wrap').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitStage);
+    fitStage();
+  </script>
+</body>
+</html>
