@@ -100,7 +100,7 @@ def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
 
 def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Path:
     items = "\n".join(
-        f'      <li class="item" data-search="{(title + " " + message + " " + yomi).lower()}">\n'
+        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{message.lower()}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
         f'          <div class="item-desc">{message}</div>\n'
@@ -181,20 +181,39 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
     }}
 
     var search = document.getElementById('search');
+    var list = document.getElementById('list');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
-    items.forEach(function (item) {{
-      item.dataset.searchNorm = kataToHira(item.dataset.search);
+    items.forEach(function (item, i) {{
+      item.dataset.titleNorm = kataToHira(item.dataset.title);
+      item.dataset.descNorm = kataToHira(item.dataset.desc);
+      item.dataset.originalOrder = i;
     }});
+
+    // タイトルの先頭一致 > タイトル内一致 > 説明文一致、の順で並べる
+    function rank(item, q) {{
+      if (item.dataset.titleNorm.indexOf(q) === 0) return 0;
+      if (item.dataset.titleNorm.indexOf(q) !== -1) return 1;
+      if (item.dataset.descNorm.indexOf(q) !== -1) return 2;
+      return -1;
+    }}
+
     search.addEventListener('input', function () {{
       var q = kataToHira(search.value.trim().toLowerCase());
-      var visibleCount = 0;
-      items.forEach(function (item) {{
-        var match = q === '' || item.dataset.searchNorm.indexOf(q) !== -1;
-        item.style.display = match ? '' : 'none';
-        if (match) visibleCount++;
+      var ranked = items
+        .map(function (item) {{ return {{ item: item, rank: rank(item, q) }}; }})
+        .filter(function (r) {{ return r.rank !== -1; }})
+        .sort(function (a, b) {{
+          if (a.rank !== b.rank) return a.rank - b.rank;
+          return a.item.dataset.originalOrder - b.item.dataset.originalOrder;
+        }});
+
+      items.forEach(function (item) {{ item.style.display = 'none'; }});
+      ranked.forEach(function (r) {{
+        r.item.style.display = '';
+        list.appendChild(r.item);
       }});
-      emptyNote.style.display = visibleCount === 0 ? 'block' : 'none';
+      emptyNote.style.display = ranked.length === 0 ? 'block' : 'none';
     }});
   </script>
 </body>
