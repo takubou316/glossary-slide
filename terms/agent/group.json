@@ -3,6 +3,7 @@
   "title": "エージェント",
   "variants": [
     { "id": "intro", "label": "エージェントとは" },
+    { "id": "example", "label": "具体例で見る" },
     { "id": "advanced", "label": "発展編" }
   ]
 }

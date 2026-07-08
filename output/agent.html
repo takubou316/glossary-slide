@@ -185,6 +185,53 @@ body {
 #panel-intro .arrow {
   font-size: 18px;
   color: var(--muted);}
+#panel-example .example-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;}
+#panel-example .task-bubble {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 22px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 16px 16px 16px 4px;
+  white-space: nowrap;}
+#panel-example .flow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;}
+#panel-example .flow-step {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+  white-space: nowrap;}
+#panel-example .arrow {
+  font-size: 18px;
+  color: var(--muted);
+  font-weight: 700;}
+#panel-example .retry-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);}
+#panel-example .final-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;}
+#panel-example .final-bubble {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 19px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 14px 14px 14px 4px;
+  white-space: nowrap;}
 #panel-advanced .loop-wrap {
   display: flex;
   flex-direction: column;
@@ -231,6 +278,7 @@ body {
   <a class="back-link" href="index.html">← 一覧に戻る</a>
   <div class="tabs">
     <button class="tab-btn active" data-variant="intro">エージェントとは</button>
+    <button class="tab-btn" data-variant="example">具体例で見る</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
@@ -263,6 +311,32 @@ body {
       <div class="arrow">→</div>
       <div class="bubble a accent">回答</div>
     </div>
+  </div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-example">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">エージェント</h1>
+  <p class="message">実際にどう動くかというと、たとえばこんな感じで自分でループする</p>
+  <div class="visual" aria-hidden="true">
+    <div class="example-flow">
+  <div class="task-bubble">「レイアウトのズレを直して」</div>
+
+  <div class="flow-row">
+    <div class="flow-step">① ファイルを読む</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">② CSSを直す</div>
+    <div class="arrow">→</div>
+    <div class="flow-step">③ プレビューで確認</div>
+  </div>
+
+  <div class="retry-note">↑ まだズレていたら、また①に戻ってやり直す</div>
+
+  <div class="final-row">
+    <div class="arrow">↓ 直ったら</div>
+    <div class="final-bubble">完了です、と報告</div>
   </div>
 </div>
 
