@@ -120,13 +120,18 @@ body {
         (window.innerHeight - margin) / 720,
         1
       );
+      // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
+      // 負の値やゼロになることがあるための安全策
+      scale = Math.max(scale, 0.15);
       var frame = document.querySelector('.stage-frame');
       document.querySelector('.slide').style.transform = 'scale(' + scale + ')';
       frame.style.width = (1280 * scale) + 'px';
       frame.style.height = (720 * scale) + 'px';
     }
     window.addEventListener('resize', fitSlide);
+    window.addEventListener('load', fitSlide);
     fitSlide();
+    setTimeout(fitSlide, 50);
   </script>
 </body>
 </html>

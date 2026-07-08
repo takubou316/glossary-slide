@@ -1,0 +1,65 @@
+.graph-stack {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.graph-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.graph-svg {
+  width: 170px;
+  height: 150px;
+}
+
+.lines line {
+  stroke: var(--fade);
+  stroke-width: 2;
+}
+
+.lines.big line {
+  stroke: rgba(217, 119, 87, 0.35);
+  stroke-width: 1.5;
+}
+
+.nodes circle {
+  fill: var(--ink);
+}
+
+.graph-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.graph-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.graph-count.accent {
+  color: var(--accent);
+}
+
+.graph-arrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.graph-arrow span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+}
