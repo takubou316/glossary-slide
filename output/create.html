@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>新しい用語を作成</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #EAE8E3;
+    font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+    padding: 60px 20px;
+  }
+  .card {
+    background: #FAF9F5;
+    border-radius: 24px;
+    padding: 48px 56px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    width: 620px;
+    box-sizing: border-box;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #8A8681;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #FAF9F5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  h1 { font-size: 26px; color: #262322; margin: 0 0 8px; }
+  .sub { font-size: 14px; color: #8A8681; margin: 0 0 28px; line-height: 1.6; }
+  label { display: block; font-size: 14px; font-weight: 700; color: #262322; margin-bottom: 6px; }
+  input[type=text], textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 2px solid #DDD9D2;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: #262322;
+  }
+  input[type=text]:focus, textarea:focus { outline: none; border-color: #D97757; }
+  textarea { resize: vertical; min-height: 70px; }
+  button {
+    appearance: none;
+    border: none;
+    background: #D97757;
+    color: #FAF9F5;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  button:hover { opacity: 0.9; }
+  button.secondary {
+    background: transparent;
+    color: #D97757;
+    border: 2px solid #D97757;
+    padding: 10px 22px;
+  }
+  .result {
+    margin-top: 28px;
+    display: none;
+  }
+  .result.show { display: block; }
+  .result-label { font-size: 14px; font-weight: 700; color: #262322; margin-bottom: 8px; }
+  .result-box {
+    width: 100%;
+    box-sizing: border-box;
+    height: 320px;
+    padding: 16px;
+    font-size: 13px;
+    font-family: "Consolas", monospace;
+    line-height: 1.6;
+    border: 2px solid #DDD9D2;
+    border-radius: 12px;
+    color: #262322;
+    background: #fff;
+    resize: vertical;
+  }
+  .copy-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+  .copy-note { font-size: 13px; color: #8A8681; }
+</style>
+</head>
+<body>
+  <div>
+    <a class="back-link" href="index.html">← 一覧に戻る</a>
+    <div class="card">
+      <h1>新しい用語を作成</h1>
+      <p class="sub">ここではAIを直接呼び出しません。入力した内容から、Claude Codeにそのまま貼り付けられる依頼文を組み立てるだけです。できた依頼文をコピーして、Claude Codeのチャットに貼り付けてください。生成されたものはあくまで下書きなので、確認してから正式にサイトへ反映してください。</p>
+
+      <label for="term">用語名</label>
+      <input type="text" id="term" placeholder="例: RAG">
+
+      <label for="hint">ヒント・補足（任意）</label>
+      <textarea id="hint" placeholder="例: 検索と生成を組み合わせる仕組み、という切り口で。実例も入れてほしい など"></textarea>
+
+      <button id="build-btn">依頼文を作る</button>
+
+      <div class="result" id="result">
+        <div class="result-label">この内容をコピーしてClaude Codeに貼り付けてください</div>
+        <textarea class="result-box" id="result-box" readonly></textarea>
+        <div class="copy-row">
+          <button class="secondary" id="copy-btn">コピー</button>
+          <span class="copy-note" id="copy-note"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var PROMPT_TEMPLATE = [
+      '「{{TERM}}」という用語の解説スライドを、glossary-slideプロジェクトの作法に沿って作ってください。',
+      '',
+      '【ヒント・補足】',
+      '{{HINT}}',
+      '',
+      '【プロジェクトの場所】',
+      'glossary-slide/ フォルダ（takutolibraryプロジェクト内）',
+      '',
+      '【手順】',
+      '1. terms/<slug>/ に用語のスライドを作る（slugは英語の短い識別子）',
+      '   - 1枚で収まりそうならシンプルに meta.json / diagram.html / diagram.css の3ファイルだけ',
+      '   - 発展的な話・比較・実例がありそうなら group.json を作り、intro/（必須）に加えて compare, examples, advanced などのサブフォルダに分ける',
+      '2. まず一番シンプルな「◯◯とは」の基本スライド（intro）だけ作る。前提知識が要る話や比較は後回しにして、別タブ（発展編など）に回す',
+      '3. 図解は必ず以下のチェックリストを守る',
+      '   - 色付きの四角形など「見た目に意味がない形」を凡例で説明するのではなく、形そのものが意味を持つようにする（吹き出し=メッセージ、矢印は必ず何かを指す、など）',
+      '   - ラベルは説明対象に直接くっつける。浮いた矢印や離れたキャプションを作らない',
+      '   - 分断されたクラスターを矢印でつなぐのではなく、1つの連続したレイアウトにする',
+      '   - 図が言っていることをそのまま文章で繰り返すキャプションは付けない',
+      '   - 作った後「キャプションを隠しても図だけで意味が伝わるか」を自問する',
+      '4. 実データ・実在の出来事を使う場合は、必ず正確性を確認してから使う（計算する、または調べる）。引用元がある場合は出典リンクを付ける（target="_blank"は使わない。プレビューでブロックされるため。プレーンテキストのURLも併記する）',
+      '5. デザインのトンマナ',
+      '   - 配色は --accent:#D97757 / --ink:#262322 / --paper:#FAF9F5 / --muted:#8A8681 / --fade:#DDD9D2 のみ使う（正誤を示す場合の緑/赤は例外的にOK）',
+      '   - スライドの型は eyebrow「今日のひとこと解説」+ term（用語名の見出し）+ message（一言メッセージ）+ 図解、という構成',
+      '6. python build.py を実行して output/ に反映し、ローカルプレビューで実際の見た目を確認する',
+      '7. これは下書きなので、確認が取れたら一度私に見せて、OKが出てから git commit & push する'
+    ].join('\n');
+
+    document.getElementById('build-btn').addEventListener('click', function () {
+      var term = document.getElementById('term').value.trim();
+      var hint = document.getElementById('hint').value.trim() || '（特になし）';
+      if (!term) {
+        document.getElementById('term').focus();
+        return;
+      }
+      var text = PROMPT_TEMPLATE.replace('{{TERM}}', term).replace('{{HINT}}', hint);
+      document.getElementById('result-box').value = text;
+      document.getElementById('result').classList.add('show');
+    });
+
+    document.getElementById('copy-btn').addEventListener('click', function () {
+      var box = document.getElementById('result-box');
+      box.select();
+      var note = document.getElementById('copy-note');
+      navigator.clipboard.writeText(box.value).then(function () {
+        note.textContent = 'コピーしました';
+      }).catch(function () {
+        note.textContent = 'コピーに失敗しました。手動で選択してコピーしてください';
+      });
+    });
+  </script>
+</body>
+</html>

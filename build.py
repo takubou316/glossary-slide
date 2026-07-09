@@ -131,7 +131,19 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
     box-shadow: 0 8px 40px rgba(0,0,0,0.12);
     width: 560px;
   }}
-  h1 {{ font-size: 28px; color: #262322; margin: 0 0 24px; }}
+  .title-row {{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }}
+  h1 {{ font-size: 28px; color: #262322; margin: 0; }}
+  .create-link {{
+    font-size: 14px;
+    font-weight: 700;
+    color: #D97757;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 2px solid #D97757;
+    white-space: nowrap;
+  }}
+  .create-link:hover {{ background: #D97757; color: #FAF9F5; }}
   .search-box {{
     width: 100%;
     box-sizing: border-box;
@@ -164,7 +176,10 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
 </head>
 <body>
   <div class="card">
-    <h1>今日のひとこと解説 一覧</h1>
+    <div class="title-row">
+      <h1>今日のひとこと解説 一覧</h1>
+      <a class="create-link" href="create.html">+ 新しい用語を作成</a>
+    </div>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
     <ul id="list">
 {items}
