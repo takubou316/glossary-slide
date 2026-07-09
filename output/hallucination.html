@@ -397,7 +397,7 @@ body {
     window.addEventListener('resize', fitStage);
     window.addEventListener('load', fitStage);
     fitStage();
-    setTimeout(fitStage, 50);
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitStage, ms); });
   </script>
 </body>
 </html>

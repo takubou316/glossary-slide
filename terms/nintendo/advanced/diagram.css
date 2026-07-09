@@ -1,0 +1,55 @@
+.history-flow {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.era-card {
+  width: 260px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.era-card.new {
+  background: var(--accent);
+}
+
+.era-year {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.era-card.new .era-year {
+  color: var(--paper);
+}
+
+.era-desc {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.era-card.new .era-desc {
+  color: var(--paper);
+}
+
+.flow-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.flow-arrow::before {
+  content: "→ ";
+}
+
+.flow-arrow::after {
+  content: " →";
+}

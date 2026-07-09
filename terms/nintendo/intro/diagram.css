@@ -1,0 +1,86 @@
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-node {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.company-type {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--paper);
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.trunk {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);
+}
+
+.products-row {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.h-line {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 528px;
+  height: 2px;
+  background: var(--muted);
+}
+
+.product-branch {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stem {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);
+}
+
+.product-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  padding: 14px 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.product-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.product-type {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-top: 4px;
+}

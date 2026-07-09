@@ -131,7 +131,7 @@ body {
     window.addEventListener('resize', fitSlide);
     window.addEventListener('load', fitSlide);
     fitSlide();
-    setTimeout(fitSlide, 50);
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitSlide, ms); });
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ホモサピエンス - 用語解説スライド</title>
+<title>任天堂 - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -143,104 +143,156 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .species-row {
-  display: flex;
-  gap: 20px;}
-#panel-intro .species-card {
-  width: 190px;
-  background: var(--fade);
-  border-radius: 16px;
-  padding: 22px 18px;
+#panel-intro .org-chart {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;}
-#panel-intro .species-card.highlight {
-  background: var(--accent);}
-#panel-intro .common-name {
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--ink);}
-#panel-intro .species-card.highlight .common-name {
-  color: var(--paper);}
-#panel-intro .species-name {
-  font-size: 15px;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--muted);}
-#panel-intro .species-card.highlight .species-name {
+  align-items: center;}
+#panel-intro .company-node {
+  background: var(--ink);
   color: var(--paper);
-  opacity: 0.9;}
-#panel-advanced .timeline-stack {
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;}
+#panel-intro .company-type {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--paper);
+  opacity: 0.75;
+  margin-top: 2px;}
+#panel-intro .trunk {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);}
+#panel-intro .products-row {
+  display: flex;
+  gap: 16px;
+  position: relative;}
+#panel-intro .h-line {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 528px;
+  height: 2px;
+  background: var(--muted);}
+#panel-intro .product-branch {
+  width: 160px;
   display: flex;
   flex-direction: column;
-  gap: 26px;}
-#panel-advanced .timeline-row {
-  display: flex;
   align-items: center;
-  gap: 16px;}
-#panel-advanced .species-label {
-  width: 150px;
+  gap: 8px;}
+#panel-intro .stem {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);}
+#panel-intro .product-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  padding: 14px 10px;
+  border-radius: 12px;
+  text-align: center;}
+#panel-intro .product-card.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-intro .product-name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--ink);
-  line-height: 1.3;}
-#panel-advanced .species-label.highlight {
-  color: var(--accent);}
-#panel-advanced .bar-track {
-  width: 340px;
-  height: 20px;
+  white-space: nowrap;}
+#panel-intro .product-type {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-top: 4px;}
+#panel-advanced .history-flow {
+  display: flex;
+  align-items: center;
+  gap: 28px;}
+#panel-advanced .era-card {
+  width: 260px;
   background: var(--fade);
-  border-radius: 10px;
-  overflow: hidden;}
-#panel-advanced .bar {
-  height: 100%;}
-#panel-advanced .bar.extinct {
-  background: var(--muted);
-  border-radius: 10px 0 0 10px;}
-#panel-advanced .bar.surviving {
-  background: var(--accent);
-  border-radius: 10px;}
-#panel-advanced .end-label {
-  font-size: 13px;
+  border-radius: 18px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;}
+#panel-advanced .era-card.new {
+  background: var(--accent);}
+#panel-advanced .era-year {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);}
+#panel-advanced .era-card.new .era-year {
+  color: var(--paper);}
+#panel-advanced .era-desc {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;}
+#panel-advanced .era-card.new .era-desc {
+  color: var(--paper);}
+#panel-advanced .flow-arrow {
+  font-size: 16px;
   font-weight: 700;
   color: var(--muted);
-  line-height: 1.3;
   white-space: nowrap;}
-#panel-advanced .end-label.accent {
-  color: var(--accent);}
+#panel-advanced .flow-arrow::before {
+  content: "→ ";}
+#panel-advanced .flow-arrow::after {
+  content: " →";}
 </style>
 </head>
 <body>
   <a class="back-link" href="index.html">← 一覧に戻る</a>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">ホモサピエンスとは</button>
+    <button class="tab-btn active" data-variant="intro">任天堂とは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ホモサピエンス</h1>
-  <p class="message">生物学の分類で、今生きている人間（私たち）につけられた種としての正式な名前</p>
+  <h1 class="term">任天堂</h1>
+  <p class="message">マリオやゼルダ、Switchなどで知られる、日本のゲーム会社</p>
   <div class="visual" aria-hidden="true">
-    <div class="species-row">
-  <div class="species-card">
-    <div class="common-name">ライオン</div>
-    <div class="species-name">Panthera leo</div>
+    <div class="org-chart">
+  <div class="company-node">
+    任天堂
+    <div class="company-type">会社</div>
   </div>
-  <div class="species-card">
-    <div class="common-name">アフリカゾウ</div>
-    <div class="species-name">Loxodonta africana</div>
-  </div>
-  <div class="species-card">
-    <div class="common-name">ネコ</div>
-    <div class="species-name">Felis catus</div>
-  </div>
-  <div class="species-card highlight">
-    <div class="common-name">人間（私たち）</div>
-    <div class="species-name">Homo sapiens</div>
+  <div class="trunk"></div>
+  <div class="products-row">
+    <div class="h-line"></div>
+    <div class="product-branch">
+      <div class="stem"></div>
+      <div class="product-card">
+        <div class="product-name">スーパーマリオ</div>
+        <div class="product-type">ゲームタイトル</div>
+      </div>
+    </div>
+    <div class="product-branch">
+      <div class="stem"></div>
+      <div class="product-card">
+        <div class="product-name">ゼルダの伝説</div>
+        <div class="product-type">ゲームタイトル</div>
+      </div>
+    </div>
+    <div class="product-branch">
+      <div class="stem"></div>
+      <div class="product-card">
+        <div class="product-name">ポケモン</div>
+        <div class="product-type">ゲームタイトル</div>
+      </div>
+    </div>
+    <div class="product-branch">
+      <div class="stem"></div>
+      <div class="product-card highlight">
+        <div class="product-name">Nintendo Switch</div>
+        <div class="product-type">ハード</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -248,32 +300,18 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ホモサピエンス</h1>
-  <p class="message">実は人類は他にもいたが、絶滅していき、ホモサピエンスだけが今も生き残っている</p>
+  <h1 class="term">任天堂</h1>
+  <p class="message">実は任天堂、最初はゲーム会社じゃなかった</p>
   <div class="visual" aria-hidden="true">
-    <div class="timeline-stack">
-  <div class="timeline-row">
-    <div class="species-label">ホモ・エレクトス</div>
-    <div class="bar-track">
-      <div class="bar extinct" style="width:55%"></div>
-    </div>
-    <div class="end-label">絶滅<br>（約10万年前）</div>
+    <div class="history-flow">
+  <div class="era-card old">
+    <div class="era-year">1889年</div>
+    <div class="era-desc">花札（日本の伝統的なカードゲーム）を作る会社として京都で創業</div>
   </div>
-
-  <div class="timeline-row">
-    <div class="species-label">ネアンデルタール人</div>
-    <div class="bar-track">
-      <div class="bar extinct" style="width:75%"></div>
-    </div>
-    <div class="end-label">絶滅<br>（約4万年前）</div>
-  </div>
-
-  <div class="timeline-row">
-    <div class="species-label highlight">ホモサピエンス<br>（私たち）</div>
-    <div class="bar-track">
-      <div class="bar surviving" style="width:100%"></div>
-    </div>
-    <div class="end-label accent">今も<br>生きている</div>
+  <div class="flow-arrow">137年後</div>
+  <div class="era-card new">
+    <div class="era-year">今</div>
+    <div class="era-desc">世界的なゲーム会社に</div>
   </div>
 </div>
 
