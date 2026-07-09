@@ -1,0 +1,8 @@
+{
+  "slug": "homo-sapiens",
+  "title": "ホモサピエンス",
+  "variants": [
+    { "id": "intro", "label": "ホモサピエンスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

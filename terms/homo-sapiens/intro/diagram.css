@@ -1,0 +1,42 @@
+.species-row {
+  display: flex;
+  gap: 20px;
+}
+
+.species-card {
+  width: 190px;
+  background: var(--fade);
+  border-radius: 16px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.species-card.highlight {
+  background: var(--accent);
+}
+
+.common-name {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.species-card.highlight .common-name {
+  color: var(--paper);
+}
+
+.species-name {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.species-card.highlight .species-name {
+  color: var(--paper);
+  opacity: 0.9;
+}

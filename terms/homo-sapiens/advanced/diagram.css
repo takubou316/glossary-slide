@@ -1,0 +1,57 @@
+.timeline-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.species-label {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.species-label.highlight {
+  color: var(--accent);
+}
+
+.bar-track {
+  width: 340px;
+  height: 20px;
+  background: var(--fade);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+}
+
+.bar.extinct {
+  background: var(--muted);
+  border-radius: 10px 0 0 10px;
+}
+
+.bar.surviving {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+.end-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.end-label.accent {
+  color: var(--accent);
+}
