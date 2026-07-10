@@ -1,0 +1,65 @@
+.sw3-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 640px;
+}
+
+.tier3 {
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tier3-app {
+  background: var(--fade);
+  color: var(--ink);
+}
+
+.tier3-os.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.tier3-hw {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tier3-label {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tier3-hw .tier3-label {
+  margin-bottom: 0;
+}
+
+.tier3-label .sub {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.chip-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chip {
+  background: rgba(0, 0, 0, 0.12);
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tier3-os .chip {
+  background: rgba(255, 255, 255, 0.22);
+}

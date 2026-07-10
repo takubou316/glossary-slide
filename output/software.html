@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>クラウド - 用語解説スライド</title>
+<title>ソフトウェア - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -151,113 +151,126 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .cloud-flow {
+#panel-intro .sw-device {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 28px;}
-#panel-intro .device-box {
+  gap: 10px;
+  width: 640px;}
+#panel-intro .tier {
+  width: 100%;
+  border-radius: 18px;
+  padding: 22px 26px;
+  text-align: center;
+  box-sizing: border-box;}
+#panel-intro .tier-app {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-intro .tier-hw {
   background: var(--ink);
-  color: var(--paper);
+  color: var(--paper);}
+#panel-intro .tier-label {
   font-size: 19px;
   font-weight: 700;
-  padding: 18px 26px;
-  border-radius: 14px;
-  text-align: center;
-  line-height: 1.4;}
-#panel-intro .flow-arrow {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--accent);
-  text-align: center;
-  line-height: 1.3;}
-#panel-intro .flow-arrow span {
-  display: block;
+  margin-bottom: 14px;}
+#panel-intro .tier-label .sub {
   font-size: 13px;
   font-weight: 600;
-  color: var(--muted);
-  margin-top: 4px;}
-#panel-intro .server-box {
-  background: var(--fade);
-  border-radius: 16px;
-  padding: 18px 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: center;}
-#panel-intro .server-label {
+  opacity: 0.85;}
+#panel-intro .tier-arrow {
   font-size: 13px;
   font-weight: 700;
-  color: var(--accent);}
-#panel-intro .server-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  text-align: center;
-  line-height: 1.5;}
-#panel-advanced .backup-compare {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;}
-#panel-advanced .scenario {
-  display: flex;
-  align-items: center;
-  gap: 20px;}
-#panel-advanced .scenario-title {
-  width: 180px;
-  font-size: 17px;
-  font-weight: 700;
   color: var(--muted);}
-#panel-advanced .scenario-title.accent {
-  color: var(--accent);}
-#panel-advanced .scenario-flow {
+#panel-intro .chip-row {
   display: flex;
-  align-items: center;
-  gap: 14px;}
-#panel-advanced .device-icon {
-  background: var(--fade);
-  color: var(--ink);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 14px 20px;
-  border-radius: 12px;}
-#panel-advanced .arrow {
+  justify-content: center;
+  gap: 10px;}
+#panel-intro .chip {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
-  color: var(--muted);
   white-space: nowrap;}
-#panel-advanced .result {
-  font-size: 16px;
+#panel-intro .chip.highlight {
+  background: var(--paper);
+  color: var(--accent);}
+#panel-advanced .sw3-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 640px;}
+#panel-advanced .tier3 {
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px 24px;
+  text-align: center;
+  box-sizing: border-box;}
+#panel-advanced .tier3-app {
+  background: var(--fade);
+  color: var(--ink);}
+#panel-advanced .tier3-os.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-advanced .tier3-hw {
+  background: var(--ink);
+  color: var(--paper);}
+#panel-advanced .tier3-label {
+  font-size: 17px;
   font-weight: 700;
-  padding: 12px 18px;
-  border-radius: 12px;
+  margin-bottom: 10px;}
+#panel-advanced .tier3-hw .tier3-label {
+  margin-bottom: 0;}
+#panel-advanced .tier3-label .sub {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;}
+#panel-advanced .chip-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;}
+#panel-advanced .chip {
+  background: rgba(0, 0, 0, 0.12);
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
   white-space: nowrap;}
-#panel-advanced .result.bad {
-  color: #C0392B;
-  border: 2px solid #C0392B;}
-#panel-advanced .result.good {
-  color: #3F8F5F;
-  border: 2px solid #3F8F5F;}
+#panel-advanced .tier3-os .chip {
+  background: rgba(255, 255, 255, 0.22);}
 </style>
 </head>
 <body>
   <a class="back-link" href="index.html">← 一覧に戻る</a>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">クラウドとは</button>
+    <button class="tab-btn active" data-variant="intro">ソフトウェアとは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">クラウド</h1>
-  <p class="message">データやアプリを、自分の端末ではなく、遠くにあるたくさんのコンピューターに置いておく仕組み</p>
+  <h1 class="term">ソフトウェア</h1>
+  <p class="message">コンピューターに「何をするか」を指示する、目に見えないプログラムのまとまり</p>
   <div class="visual" aria-hidden="true">
-    <div class="cloud-flow">
-  <div class="device-box">あなたの<br>スマホやPC</div>
-  <div class="flow-arrow">→<br><span>インターネット<br>経由で</span></div>
-  <div class="server-box">
-    <div class="server-label">実はこの中身は…</div>
-    <div class="server-name">会社が持っている<br>たくさんのコンピューター<br>（サーバー）</div>
+    <div class="sw-device">
+  <div class="tier tier-app">
+    <div class="tier-label">ソフトウェア <span class="sub">（目に見えないプログラム）</span></div>
+    <div class="chip-row">
+      <div class="chip">LINE</div>
+      <div class="chip highlight">ゲーム</div>
+      <div class="chip">ブラウザ</div>
+    </div>
+  </div>
+  <div class="tier-arrow">↓ 動かす指示を出す ↓</div>
+  <div class="tier tier-hw">
+    <div class="tier-label">ハードウェア <span class="sub">（目に見える機械）</span></div>
+    <div class="chip-row">
+      <div class="chip dark">画面</div>
+      <div class="chip dark">基盤</div>
+      <div class="chip dark">ボタン</div>
+    </div>
   </div>
 </div>
 
@@ -265,25 +278,28 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">クラウド</h1>
-  <p class="message">端末が壊れても、クラウドに保存していればデータは無事</p>
+  <h1 class="term">ソフトウェア</h1>
+  <p class="message">実はソフトウェアにも種類があり、アプリの下でハードウェアを管理する「OS」という縁の下の力持ちがいる</p>
   <div class="visual" aria-hidden="true">
-    <div class="backup-compare">
-  <div class="scenario">
-    <div class="scenario-title">端末だけに保存</div>
-    <div class="scenario-flow">
-      <div class="device-icon">端末</div>
-      <div class="arrow">壊れる →</div>
-      <div class="result bad">✕ 全部消えた</div>
+    <div class="sw3-stack">
+  <div class="tier3 tier3-app">
+    <div class="tier3-label">アプリ <span class="sub">（あなたが直接使う）</span></div>
+    <div class="chip-row">
+      <div class="chip">LINE</div>
+      <div class="chip">ゲーム</div>
+      <div class="chip">ブラウザ</div>
     </div>
   </div>
-  <div class="scenario">
-    <div class="scenario-title accent">クラウドにも保存</div>
-    <div class="scenario-flow">
-      <div class="device-icon">端末</div>
-      <div class="arrow">壊れる →</div>
-      <div class="result good">○ 別の端末から復元できる</div>
+  <div class="tier3 tier3-os highlight">
+    <div class="tier3-label">OS <span class="sub">（基本ソフト・ハードウェアを管理）</span></div>
+    <div class="chip-row">
+      <div class="chip">Windows</div>
+      <div class="chip">iOS</div>
+      <div class="chip">Android</div>
     </div>
+  </div>
+  <div class="tier3 tier3-hw">
+    <div class="tier3-label">ハードウェア <span class="sub">（画面・基盤など）</span></div>
   </div>
 </div>
 

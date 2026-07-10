@@ -1,0 +1,63 @@
+.sw-device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 640px;
+}
+
+.tier {
+  width: 100%;
+  border-radius: 18px;
+  padding: 22px 26px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tier-app {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.tier-hw {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tier-label {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.tier-label .sub {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.tier-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.chip-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chip.highlight {
+  background: var(--paper);
+  color: var(--accent);
+}

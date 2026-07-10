@@ -1,6 +1,15 @@
 import json
 import pathlib
+import re
 import sys
+
+TAG_RE = re.compile(r"<[^>]+>")
+
+
+def strip_tags(text: str) -> str:
+    """Remove inline markup (e.g. term-link <a> tags) so the message can be
+    safely reused as plain text inside an HTML attribute or another <a>."""
+    return TAG_RE.sub("", text)
 
 ROOT = pathlib.Path(__file__).parent
 TEMPLATE = (ROOT / "template.html").read_text(encoding="utf-8")
@@ -100,10 +109,10 @@ def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
 
 def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Path:
     items = "\n".join(
-        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{message.lower()}">\n'
+        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
-        f'          <div class="item-desc">{message}</div>\n'
+        f'          <div class="item-desc">{strip_tags(message)}</div>\n'
         f'        </a>\n'
         f'      </li>'
         for out_path, title, message, yomi in sorted(entries, key=lambda e: e[1])
