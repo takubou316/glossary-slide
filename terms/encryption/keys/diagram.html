@@ -1,0 +1,27 @@
+<div class="keys-stack">
+  <div class="keys-row">
+    <div class="keys-label">共通鍵暗号<span class="keys-sub">暗号化も復号も同じ鍵</span></div>
+    <div class="keys-flow">
+      <div class="keys-box">こんにちは</div>
+      <div class="keys-arrow">🔑 同じ鍵で →</div>
+      <div class="keys-box scrambled">XJ$9!qz2</div>
+      <div class="keys-arrow">🔑 同じ鍵で →</div>
+      <div class="keys-box highlight">こんにちは</div>
+    </div>
+  </div>
+  <div class="keys-row">
+    <div class="keys-label">公開鍵暗号<span class="keys-sub">暗号化と復号で鍵が違う</span></div>
+    <div class="keys-flow">
+      <div class="keys-box">こんにちは</div>
+      <div class="keys-arrow">🔓 公開鍵で →
+        <div class="keys-arrow-note">誰でも使える</div>
+      </div>
+      <div class="keys-box scrambled">Qw8&amp;mN3!</div>
+      <div class="keys-arrow">🔐 秘密鍵で →
+        <div class="keys-arrow-note">本人だけ持つ</div>
+      </div>
+      <div class="keys-box highlight">こんにちは</div>
+    </div>
+  </div>
+  <div class="keys-payoff">実際のHTTPS通信（🔒マーク）では、最初に公開鍵暗号で共通鍵を安全に渡し、その後は速い共通鍵暗号でやり取りする「いいとこ取り」をしている</div>
+</div>

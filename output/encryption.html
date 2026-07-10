@@ -124,21 +124,37 @@ body {
   justify-content: center;
 }
 
-.back-link {
+.back-row {
   position: fixed;
   top: 20px;
   left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.back-link, .back-step {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
   font-size: 15px;
   font-weight: 700;
+  font-family: inherit;
   color: var(--muted);
   text-decoration: none;
+  border: none;
   padding: 8px 16px;
   border-radius: 999px;
   background: var(--paper);
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
-.back-link:hover {
+.back-link:hover, .back-step:hover {
   color: var(--accent);
 }
 
@@ -231,13 +247,87 @@ body {
 #panel-advanced .viewer-result.bad {
   color: #C0392B;
   border: 2px solid #C0392B;}
+#panel-keys .keys-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;}
+#panel-keys .keys-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;}
+#panel-keys .keys-label {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+  text-align: right;}
+#panel-keys .keys-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);}
+#panel-keys .keys-flow {
+  display: flex;
+  align-items: center;
+  gap: 10px;}
+#panel-keys .keys-box {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  white-space: nowrap;}
+#panel-keys .keys-box.scrambled {
+  background: var(--fade);
+  color: var(--muted);
+  font-family: "Consolas", monospace;}
+#panel-keys .keys-box.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-keys .keys-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;}
+#panel-keys .keys-arrow-note {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--fade);
+  padding: 2px 10px;
+  border-radius: 999px;
+  white-space: nowrap;}
+#panel-keys .keys-payoff {
+  max-width: 780px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 14px 22px;
+  background: var(--fade);
+  border-radius: 14px;}
 </style>
 </head>
 <body>
-  <a class="back-link" href="index.html">← 一覧に戻る</a>
+  <div class="back-row">
+    <button type="button" class="back-step" onclick="history.back()">← 戻る</button>
+    <a class="back-link" href="index.html">一覧に戻る</a>
+  </div>
   <div class="tabs">
     <button class="tab-btn active" data-variant="intro">暗号化とは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
+    <button class="tab-btn" data-variant="keys">鍵の種類</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
@@ -278,6 +368,41 @@ body {
       <div class="viewer-result bad">✕ 読めない</div>
     </div>
   </div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-keys">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">暗号化</h1>
+  <p class="message">実は鍵には2種類あり、片方は「暗号化も復号も同じ鍵」、もう片方は「暗号化用と復号用で別の鍵」という仕組みになっている</p>
+  <div class="visual" aria-hidden="true">
+    <div class="keys-stack">
+  <div class="keys-row">
+    <div class="keys-label">共通鍵暗号<span class="keys-sub">暗号化も復号も同じ鍵</span></div>
+    <div class="keys-flow">
+      <div class="keys-box">こんにちは</div>
+      <div class="keys-arrow">🔑 同じ鍵で →</div>
+      <div class="keys-box scrambled">XJ$9!qz2</div>
+      <div class="keys-arrow">🔑 同じ鍵で →</div>
+      <div class="keys-box highlight">こんにちは</div>
+    </div>
+  </div>
+  <div class="keys-row">
+    <div class="keys-label">公開鍵暗号<span class="keys-sub">暗号化と復号で鍵が違う</span></div>
+    <div class="keys-flow">
+      <div class="keys-box">こんにちは</div>
+      <div class="keys-arrow">🔓 公開鍵で →
+        <div class="keys-arrow-note">誰でも使える</div>
+      </div>
+      <div class="keys-box scrambled">Qw8&amp;mN3!</div>
+      <div class="keys-arrow">🔐 秘密鍵で →
+        <div class="keys-arrow-note">本人だけ持つ</div>
+      </div>
+      <div class="keys-box highlight">こんにちは</div>
+    </div>
+  </div>
+  <div class="keys-payoff">実際のHTTPS通信（🔒マーク）では、最初に公開鍵暗号で共通鍵を安全に渡し、その後は速い共通鍵暗号でやり取りする「いいとこ取り」をしている</div>
 </div>
 
   </div>
