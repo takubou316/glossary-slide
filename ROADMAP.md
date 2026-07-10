@@ -16,6 +16,8 @@
 - [x] GitHubにpush済み・GitHub Pagesで公開済み（`https://takubou316.github.io/glossary-slide/`）
 - [x] 初回描画直後に拡大率が負になり図が消えるバグを修正（`template.html`/`player_template.html`両方）
 - [x] 「用語を作成」ページ（`output/create.html`）を追加。コスト0円版：APIは呼ばず、これまでのチェックリストを埋め込んだClaude Code貼り付け用の依頼文を組み立てるだけ。一覧ページの「+ 新しい用語を作成」から遷移
+- [x] 「ホモサピエンス」「任天堂」をcreate.htmlフロー経由で作成（テスト・実運用）
+- [x] コンピューター/ネット関連の用語スライド5本を追加：クラウド・API・Cookie・暗号化・Wi-Fiとインターネットの違い（全て10用語がintro+advanced以上のタブ構成）
 
 ## これから
 
