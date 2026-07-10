@@ -1,0 +1,8 @@
+{
+  "slug": "encryption",
+  "title": "暗号化",
+  "variants": [
+    { "id": "intro", "label": "暗号化とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

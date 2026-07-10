@@ -1,0 +1,42 @@
+.wifi-chain {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wnode {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.wnode.highlight {
+  background: var(--accent);
+}
+
+.link-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.link-label.accent {
+  color: var(--accent);
+}
+
+.link-label span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 4px;
+}

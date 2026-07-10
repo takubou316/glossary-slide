@@ -1,0 +1,8 @@
+{
+  "slug": "cookie",
+  "title": "Cookie（クッキー）",
+  "variants": [
+    { "id": "intro", "label": "クッキーとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

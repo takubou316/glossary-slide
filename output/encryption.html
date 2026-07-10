@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暗号化 - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* ここから下は各バリアントの図解専用CSS */
+#panel-intro .encrypt-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;}
+#panel-intro .encrypt-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;}
+#panel-intro .msg-box {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px 22px;
+  border-radius: 14px;
+  white-space: nowrap;}
+#panel-intro .msg-box.scrambled {
+  background: var(--fade);
+  color: var(--muted);
+  font-family: "Consolas", monospace;}
+#panel-intro .msg-box.highlight {
+  background: var(--accent);}
+#panel-intro .arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;}
+#panel-intro .transit-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);}
+#panel-advanced .eavesdrop-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;}
+#panel-advanced .eavesdrop-note {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);}
+#panel-advanced .eavesdrop-compare {
+  display: flex;
+  gap: 24px;}
+#panel-advanced .viewer-card {
+  width: 220px;
+  background: var(--fade);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;}
+#panel-advanced .viewer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;}
+#panel-advanced .viewer-sees {
+  font-family: "Consolas", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--paper);
+  padding: 8px 14px;
+  border-radius: 8px;}
+#panel-advanced .viewer-sees.scrambled {
+  color: var(--muted);}
+#panel-advanced .viewer-result {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;}
+#panel-advanced .viewer-result.good {
+  color: #3F8F5F;
+  border: 2px solid #3F8F5F;}
+#panel-advanced .viewer-result.bad {
+  color: #C0392B;
+  border: 2px solid #C0392B;}
+</style>
+</head>
+<body>
+  <a class="back-link" href="index.html">← 一覧に戻る</a>
+  <div class="tabs">
+    <button class="tab-btn active" data-variant="intro">暗号化とは</button>
+    <button class="tab-btn" data-variant="advanced">発展編</button>
+  </div>
+  <div class="stage-frame">
+    <div class="stage-wrap">
+      <div class="slide active" id="panel-intro">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">暗号化</h1>
+  <p class="message">内容を勝手に読めない形に変えてから送り、届いた人だけが元に戻せる仕組み</p>
+  <div class="visual" aria-hidden="true">
+    <div class="encrypt-stack">
+  <div class="encrypt-flow">
+    <div class="msg-box">こんにちは</div>
+    <div class="arrow">鍵で変換 →</div>
+    <div class="msg-box scrambled">XJ$9!qz2</div>
+    <div class="arrow">鍵で戻す →</div>
+    <div class="msg-box highlight">こんにちは</div>
+  </div>
+  <div class="transit-note">↑ 送っている間はずっと、この読めない形のまま</div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-advanced">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">暗号化</h1>
+  <p class="message">実は、送信中に誰かに盗み見されても、鍵がなければ中身は読めない</p>
+  <div class="visual" aria-hidden="true">
+    <div class="eavesdrop-stack">
+  <div class="eavesdrop-note">同じ、送信中のこのメッセージを見ても…</div>
+  <div class="eavesdrop-compare">
+    <div class="viewer-card">
+      <div class="viewer-title">正規の受信者<br>（鍵を持っている）</div>
+      <div class="viewer-sees">こんにちは</div>
+      <div class="viewer-result good">○ 読める</div>
+    </div>
+    <div class="viewer-card">
+      <div class="viewer-title">盗み見する人<br>（鍵を持っていない）</div>
+      <div class="viewer-sees scrambled">XJ$9!qz2</div>
+      <div class="viewer-result bad">✕ 読めない</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.slide').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.variant).classList.add('active');
+      });
+    });
+
+    function fitStage() {
+      var margin = 40;
+      var tabsHeight = document.querySelector('.tabs').offsetHeight + 24;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin - tabsHeight) / 720,
+        1
+      );
+      // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
+      // 負の値やゼロになることがあるための安全策
+      scale = Math.max(scale, 0.15);
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.stage-wrap').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitStage);
+    window.addEventListener('load', fitStage);
+    fitStage();
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitStage, ms); });
+  </script>
+</body>
+</html>

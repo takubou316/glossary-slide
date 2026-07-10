@@ -1,0 +1,46 @@
+.wifi-scenarios {
+  display: flex;
+  gap: 24px;
+}
+
+.scenario-card {
+  width: 230px;
+  background: var(--fade);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scenario-card.highlight {
+  background: var(--accent);
+}
+
+.scenario-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.scenario-card.highlight .scenario-title {
+  color: var(--paper);
+}
+
+.capability {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.capability.good {
+  color: #3F8F5F;
+}
+
+.capability.bad {
+  color: #C0392B;
+}

@@ -1,0 +1,54 @@
+.cookie-type-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cookie-types {
+  display: flex;
+  gap: 20px;
+}
+
+.type-card {
+  width: 220px;
+  background: var(--fade);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.type-card.highlight {
+  background: var(--accent);
+}
+
+.type-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.type-card.highlight .type-name {
+  color: var(--paper);
+}
+
+.type-desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.type-card.highlight .type-desc {
+  color: var(--paper);
+  opacity: 0.9;
+}
+
+.consent-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}

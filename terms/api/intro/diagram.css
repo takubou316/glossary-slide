@@ -1,0 +1,41 @@
+.api-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.api-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.node.highlight {
+  background: var(--accent);
+}
+
+.arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.return-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}

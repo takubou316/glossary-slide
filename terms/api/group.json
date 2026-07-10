@@ -1,0 +1,8 @@
+{
+  "slug": "api",
+  "title": "API",
+  "variants": [
+    { "id": "intro", "label": "APIとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

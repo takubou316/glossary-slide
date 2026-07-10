@@ -1,0 +1,8 @@
+{
+  "slug": "cloud",
+  "title": "クラウド",
+  "variants": [
+    { "id": "intro", "label": "クラウドとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

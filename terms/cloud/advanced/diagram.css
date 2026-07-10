@@ -1,0 +1,62 @@
+.backup-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.scenario {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.scenario-title {
+  width: 180px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.scenario-title.accent {
+  color: var(--accent);
+}
+
+.scenario-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.device-icon {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+}
+
+.arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.result {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.result.bad {
+  color: #C0392B;
+  border: 2px solid #C0392B;
+}
+
+.result.good {
+  color: #3F8F5F;
+  border: 2px solid #3F8F5F;
+}
