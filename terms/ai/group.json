@@ -1,0 +1,8 @@
+{
+  "slug": "ai",
+  "title": "AI（人工知能）",
+  "variants": [
+    { "id": "intro", "label": "AIとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

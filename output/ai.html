@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>エージェント - 用語解説スライド</title>
+<title>AI（人工知能） - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -167,135 +167,115 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .agent-stack {
+#panel-intro .ai-stack {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: flex-start;}
-#panel-intro .chat-row {
+  align-items: center;
+  gap: 24px;
+  width: 100%;}
+#panel-intro .ai-row {
   display: flex;
   align-items: center;
   gap: 18px;}
-#panel-intro .row-label {
-  width: 90px;
-  white-space: nowrap;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--muted);
-  line-height: 1.3;}
-#panel-intro .chain {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;}
-#panel-intro .bubble {
-  padding: 12px 20px;
-  border-radius: 14px 14px 14px 4px;
-  font-size: 20px;
-  font-weight: 700;
-  background: var(--ink);
-  color: var(--paper);
-  white-space: nowrap;}
-#panel-intro .bubble.a.accent {
-  background: var(--accent);}
-#panel-intro .step {
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  background: var(--fade);
-  color: var(--ink);
-  white-space: nowrap;}
-#panel-intro .arrow {
+#panel-intro .ai-label {
+  width: 170px;
   font-size: 18px;
-  color: var(--muted);}
-#panel-example .example-flow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;}
-#panel-example .task-bubble {
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 22px;
   font-weight: 700;
-  padding: 14px 24px;
-  border-radius: 16px 16px 16px 4px;
-  white-space: nowrap;}
-#panel-example .flow-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 6px;}
-#panel-example .flow-step {
-  background: var(--fade);
   color: var(--ink);
-  font-size: 17px;
-  font-weight: 700;
-  padding: 12px 18px;
-  border-radius: 12px;
-  white-space: nowrap;}
-#panel-example .arrow {
-  font-size: 18px;
-  color: var(--muted);
-  font-weight: 700;}
-#panel-example .retry-note {
-  font-size: 14px;
+  line-height: 1.4;
+  text-align: right;}
+#panel-intro .ai-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--muted);}
-#panel-example .final-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;}
-#panel-example .final-bubble {
-  background: var(--accent);
-  color: var(--paper);
-  font-size: 19px;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 14px 14px 14px 4px;
-  white-space: nowrap;}
-#panel-advanced .loop-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;}
-#panel-advanced .loop-row {
+#panel-intro .ai-flow {
   display: flex;
   align-items: center;
   gap: 14px;}
-#panel-advanced .node {
+#panel-intro .ai-box {
   background: var(--ink);
   color: var(--paper);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
-  padding: 14px 22px;
+  padding: 16px 28px;
   border-radius: 14px;
+  white-space: nowrap;}
+#panel-intro .ai-box.highlight {
+  background: var(--accent);}
+#panel-intro .ai-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
   white-space: nowrap;
   text-align: center;}
-#panel-advanced .node.answer {
-  background: var(--accent);}
-#panel-advanced .arrow {
-  font-size: 20px;
-  color: var(--muted);}
-#panel-advanced .loop-back {
-  width: 620px;
-  height: 60px;}
-#panel-advanced .loop-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--muted);
-  margin-top: -4px;}
-#panel-advanced .exit-row {
+#panel-advanced .ai-org-chart {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 18px;}
-#panel-advanced .exit-arrow {
-  font-size: 15px;
+  flex-direction: column;
+  align-items: center;}
+#panel-advanced .ai-company-node {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;}
+#panel-advanced .ai-company-type {
+  font-size: 12px;
   font-weight: 700;
+  color: var(--paper);
+  opacity: 0.75;
+  margin-top: 2px;}
+#panel-advanced .ai-trunk {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);}
+#panel-advanced .ai-products-row {
+  display: flex;
+  gap: 16px;
+  position: relative;}
+#panel-advanced .ai-h-line {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 528px;
+  height: 2px;
+  background: var(--muted);}
+#panel-advanced .ai-product-branch {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;}
+#panel-advanced .ai-stem {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);}
+#panel-advanced .ai-product-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  padding: 14px 10px;
+  border-radius: 12px;
+  text-align: center;}
+#panel-advanced .ai-product-card.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-advanced .ai-product-name {
+  font-size: 15px;
+  font-weight: 700;}
+#panel-advanced .ai-product-name .term-link {
   color: var(--accent);}
+#panel-advanced .ai-product-card.highlight .ai-product-name .term-link {
+  color: var(--paper);}
+#panel-advanced .ai-product-type {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-top: 4px;}
 </style>
 </head>
 <body>
@@ -304,66 +284,32 @@ body {
     <a class="back-link" href="index.html">一覧に戻る</a>
   </div>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">エージェントとは</button>
-    <button class="tab-btn" data-variant="example">具体例で見る</button>
+    <button class="tab-btn active" data-variant="intro">AIとは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">エージェント</h1>
-  <p class="message">自分で考えて、道具(ツール)を使いながら何段階も作業を進めてくれる<a class="term-link" href="ai.html">AI</a>のこと</p>
+  <h1 class="term">AI（人工知能）</h1>
+  <p class="message">たくさんのデータから自分でパターンを学び、決まったルールがない場面でも判断できるコンピューターの技術</p>
   <div class="visual" aria-hidden="true">
-    <div class="agent-stack">
-  <div class="chat-row">
-    <div class="row-label">普通の<br>チャット</div>
-    <div class="chain">
-      <div class="bubble q">質問</div>
-      <div class="arrow">→</div>
-      <div class="bubble a">回答</div>
+    <div class="ai-stack">
+  <div class="ai-row">
+    <div class="ai-label">ふつうの<br>プログラム<span class="ai-sub">決まった手順しかできない</span></div>
+    <div class="ai-flow">
+      <div class="ai-box">入力</div>
+      <div class="ai-arrow">決まったルール<br>通りに →</div>
+      <div class="ai-box highlight">出力</div>
     </div>
   </div>
-
-  <div class="chat-row">
-    <div class="row-label">エージェント</div>
-    <div class="chain">
-      <div class="bubble q">質問</div>
-      <div class="arrow">→</div>
-      <div class="step">調べる</div>
-      <div class="arrow">→</div>
-      <div class="step">試す</div>
-      <div class="arrow">→</div>
-      <div class="step">確認する</div>
-      <div class="arrow">→</div>
-      <div class="bubble a accent">回答</div>
+  <div class="ai-row">
+    <div class="ai-label">AI<span class="ai-sub">学んだパターンで判断する</span></div>
+    <div class="ai-flow">
+      <div class="ai-box">入力</div>
+      <div class="ai-arrow">学習した<br>パターンで →</div>
+      <div class="ai-box highlight">出力</div>
     </div>
-  </div>
-</div>
-
-  </div>
-</div>
-    <div class="slide" id="panel-example">
-  <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">エージェント</h1>
-  <p class="message">実際にどう動くかというと、たとえばこんな感じで自分でループする</p>
-  <div class="visual" aria-hidden="true">
-    <div class="example-flow">
-  <div class="task-bubble">「レイアウトのズレを直して」</div>
-
-  <div class="flow-row">
-    <div class="flow-step">① ファイルを読む</div>
-    <div class="arrow">→</div>
-    <div class="flow-step">② CSSを直す</div>
-    <div class="arrow">→</div>
-    <div class="flow-step">③ プレビューで確認</div>
-  </div>
-
-  <div class="retry-note">↑ まだズレていたら、また①に戻ってやり直す</div>
-
-  <div class="final-row">
-    <div class="arrow">↓ 直ったら</div>
-    <div class="final-bubble">完了です、と報告</div>
   </div>
 </div>
 
@@ -371,31 +317,45 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">エージェント</h1>
-  <p class="message"><a class="term-link" href="ai.html">AI</a>自身の返事が「道具を使う指示」になっていて、その結果を読んでまた自分で考える、を繰り返している</p>
+  <h1 class="term">AI（人工知能）</h1>
+  <p class="message">実は「AI」は一つの言葉で、その中には「エージェント」「ハルシネーション」など、もっと細かい考え方がいくつも含まれている</p>
   <div class="visual" aria-hidden="true">
-    <div class="loop-wrap">
-  <div class="loop-row">
-    <div class="node">① 考える</div>
-    <div class="arrow">→</div>
-    <div class="node">② 道具を使う</div>
-    <div class="arrow">→</div>
-    <div class="node">③ 結果を見る</div>
+    <div class="ai-org-chart">
+  <div class="ai-company-node">
+    AI
+    <div class="ai-company-type">一つの大きな言葉</div>
   </div>
-
-  <svg class="loop-back" viewBox="0 0 620 70" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <marker id="loopArrowHead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-        <path d="M0,0 L8,4 L0,8 Z" fill="#8A8681" />
-      </marker>
-    </defs>
-    <path d="M 580 5 C 580 60, 40 60, 40 5" fill="none" stroke="#8A8681" stroke-width="3" stroke-dasharray="6 6" marker-end="url(#loopArrowHead)" />
-  </svg>
-  <div class="loop-label">情報が足りなければ、③ → ① に戻ってまた繰り返す</div>
-
-  <div class="exit-row">
-    <div class="exit-arrow">↓ 十分な情報が集まったら</div>
-    <div class="node answer">回答</div>
+  <div class="ai-trunk"></div>
+  <div class="ai-products-row">
+    <div class="ai-h-line"></div>
+    <div class="ai-product-branch">
+      <div class="ai-stem"></div>
+      <div class="ai-product-card">
+        <div class="ai-product-name"><a class="term-link" href="token.html">トークン</a></div>
+        <div class="ai-product-type">言葉の数え方</div>
+      </div>
+    </div>
+    <div class="ai-product-branch">
+      <div class="ai-stem"></div>
+      <div class="ai-product-card">
+        <div class="ai-product-name"><a class="term-link" href="context-window.html">コンテキストウィンドウ</a></div>
+        <div class="ai-product-type">覚えていられる量</div>
+      </div>
+    </div>
+    <div class="ai-product-branch">
+      <div class="ai-stem"></div>
+      <div class="ai-product-card">
+        <div class="ai-product-name"><a class="term-link" href="hallucination.html">ハルシネーション</a></div>
+        <div class="ai-product-type">間違った自信</div>
+      </div>
+    </div>
+    <div class="ai-product-branch">
+      <div class="ai-stem"></div>
+      <div class="ai-product-card highlight">
+        <div class="ai-product-name"><a class="term-link" href="agent.html">エージェント</a></div>
+        <div class="ai-product-type">自分で動く力</div>
+      </div>
+    </div>
   </div>
 </div>
 
