@@ -1,0 +1,8 @@
+{
+  "slug": "zelda",
+  "title": "ゼルダの伝説",
+  "variants": [
+    { "id": "intro", "label": "ゼルダの伝説とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

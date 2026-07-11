@@ -1,0 +1,41 @@
+.http-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.http-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.http-node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.http-node.highlight {
+  background: var(--accent);
+}
+
+.http-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.http-return-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}

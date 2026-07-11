@@ -1,4 +1,4 @@
 {
   "term": "API",
-  "message": "実は、1つのAPIを複数の違うアプリが同時に使っていることが多い"
+  "message": "実は、1つのAPIを複数の違う<a class=\"term-link\" href=\"app.html\">アプリ</a>が同時に使っていることが多い"
 }

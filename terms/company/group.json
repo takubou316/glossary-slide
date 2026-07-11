@@ -1,0 +1,8 @@
+{
+  "slug": "company",
+  "title": "会社",
+  "variants": [
+    { "id": "intro", "label": "会社とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

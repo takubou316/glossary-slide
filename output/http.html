@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTTP / HTTPS - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-row {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.back-link, .back-step {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--muted);
+  text-decoration: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.back-link:hover, .back-step:hover {
+  color: var(--accent);
+}
+
+.term-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+/* ここから下は各バリアントの図解専用CSS */
+#panel-intro .http-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;}
+#panel-intro .http-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;}
+#panel-intro .http-node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 14px;
+  text-align: center;
+  white-space: nowrap;}
+#panel-intro .http-node.highlight {
+  background: var(--accent);}
+#panel-intro .http-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;}
+#panel-intro .http-return-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);}
+#panel-advanced .https-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;}
+#panel-advanced .https-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;}
+#panel-advanced .https-label {
+  width: 130px;
+  flex-shrink: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-align: center;}
+#panel-advanced .https-label.highlight {
+  background: var(--accent);}
+#panel-advanced .https-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.85;}
+#panel-advanced .https-desc {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.6;}
+#panel-advanced .https-desc .term-link {
+  color: var(--accent);}
+</style>
+</head>
+<body>
+  <div class="back-row">
+    <button type="button" class="back-step" onclick="history.back()">← 戻る</button>
+    <a class="back-link" href="index.html">一覧に戻る</a>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" data-variant="intro">HTTPとは</button>
+    <button class="tab-btn" data-variant="advanced">HTTPSとの違い</button>
+  </div>
+  <div class="stage-frame">
+    <div class="stage-wrap">
+      <div class="slide active" id="panel-intro">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">HTTP</h1>
+  <p class="message"><a class="term-link" href="browser.html">ブラウザ</a>と<a class="term-link" href="site.html">サイト</a>が、ページをやり取りするときの共通のルール（手紙の書き方のようなもの）</p>
+  <div class="visual" aria-hidden="true">
+    <div class="http-stack">
+  <div class="http-flow">
+    <div class="http-node"><a class="term-link" href="browser.html">ブラウザ</a></div>
+    <div class="http-arrow">「このページ<br>ください」→</div>
+    <div class="http-node highlight">サーバー</div>
+  </div>
+  <div class="http-return-note">← このやり取りの共通ルールが「HTTP」</div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-advanced">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">HTTP / HTTPS</h1>
+  <p class="message">HTTPSは、HTTPに<a class="term-link" href="encryption.html">暗号化</a>を足したもの（Sはsecure＝安全という意味）</p>
+  <div class="visual" aria-hidden="true">
+    <div class="https-stack">
+  <div class="https-row">
+    <div class="https-label">HTTP<span class="https-sub">暗号化なし</span></div>
+    <div class="https-desc">送っている内容が、途中で盗み見られる可能性がある</div>
+  </div>
+  <div class="https-row">
+    <div class="https-label highlight">HTTPS<span class="https-sub">暗号化あり</span></div>
+    <div class="https-desc">🔒 内容が<a class="term-link" href="encryption.html">暗号化</a>されるので、途中で見られても読めない</div>
+  </div>
+</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.slide').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.variant).classList.add('active');
+      });
+    });
+
+    function fitStage() {
+      var margin = 40;
+      var tabsHeight = document.querySelector('.tabs').offsetHeight + 24;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin - tabsHeight) / 720,
+        1
+      );
+      // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
+      // 負の値やゼロになることがあるための安全策
+      scale = Math.max(scale, 0.15);
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.stage-wrap').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitStage);
+    window.addEventListener('load', fitStage);
+    fitStage();
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitStage, ms); });
+  </script>
+</body>
+</html>

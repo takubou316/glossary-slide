@@ -1,0 +1,8 @@
+{
+  "slug": "hardware",
+  "title": "ハードウェア",
+  "variants": [
+    { "id": "intro", "label": "ハードウェアとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

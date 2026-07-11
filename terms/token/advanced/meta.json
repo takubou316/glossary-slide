@@ -1,4 +1,4 @@
 {
   "term": "トークン",
-  "message": "実は<a class=\"term-link\" href=\"ai.html\">AI</a>は「1文字」ではなく、データの断片でトークンを区切っている"
+  "message": "実は<a class=\"term-link\" href=\"ai.html\">AI</a>は「1文字」ではなく、<a class=\"term-link\" href=\"data.html\">データ</a>の断片でトークンを区切っている"
 }

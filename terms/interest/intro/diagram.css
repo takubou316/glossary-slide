@@ -1,0 +1,41 @@
+.interest-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.interest-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.interest-box {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.interest-box.highlight {
+  background: var(--accent);
+}
+
+.interest-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.interest-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}

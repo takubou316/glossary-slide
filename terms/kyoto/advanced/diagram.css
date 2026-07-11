@@ -1,0 +1,49 @@
+.kyoto-timeline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.kyoto-time-card {
+  width: 180px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.kyoto-time-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.kyoto-time-year {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.kyoto-time-desc {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kyoto-time-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--muted);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kyoto-time-bar span {
+  background: var(--paper);
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}

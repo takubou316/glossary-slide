@@ -1,4 +1,4 @@
 {
   "term": "AI（人工知能）",
-  "message": "たくさんのデータから自分でパターンを学び、決まったルールがない場面でも判断できるコンピューターの技術"
+  "message": "たくさんの<a class=\"term-link\" href=\"data.html\">データ</a>から自分でパターンを学び、決まったルールがない場面でも判断できる<a class=\"term-link\" href=\"computer.html\">コンピューター</a>の技術"
 }

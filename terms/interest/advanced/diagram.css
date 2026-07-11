@@ -1,0 +1,72 @@
+.rate-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.rate-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.rate-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rate-label {
+  width: 100px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.rate-label.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.rate-eq {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.rate-result {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.rate-result.highlight {
+  background: var(--accent);
+}
+
+.rate-payoff {
+  margin-top: 8px;
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}
+
+.rate-payoff .term-link {
+  color: var(--accent);
+}

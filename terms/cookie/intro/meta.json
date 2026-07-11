@@ -1,4 +1,4 @@
 {
   "term": "Cookie（クッキー）",
-  "message": "サイトがあなたのブラウザに残す、小さなメモ（次に来たとき、あなたを覚えておくためのもの）"
+  "message": "<a class=\"term-link\" href=\"site.html\">サイト</a>があなたの<a class=\"term-link\" href=\"browser.html\">ブラウザ</a>に残す、小さなメモ（次に来たとき、あなたを覚えておくためのもの）"
 }

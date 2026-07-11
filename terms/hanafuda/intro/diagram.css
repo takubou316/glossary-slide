@@ -1,0 +1,30 @@
+.hana-row {
+  display: flex;
+  gap: 14px;
+}
+
+.hana-card {
+  width: 110px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.hana-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.hana-month {
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.hana-flower {
+  font-size: 22px;
+  font-weight: 800;
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "http",
+  "title": "HTTP / HTTPS",
+  "variants": [
+    { "id": "intro", "label": "HTTPとは" },
+    { "id": "advanced", "label": "HTTPSとの違い" }
+  ]
+}

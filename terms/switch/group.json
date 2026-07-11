@@ -1,0 +1,8 @@
+{
+  "slug": "switch",
+  "title": "Nintendo Switch",
+  "variants": [
+    { "id": "intro", "label": "Switchとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

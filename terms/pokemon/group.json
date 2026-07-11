@@ -1,0 +1,8 @@
+{
+  "slug": "pokemon",
+  "title": "ポケモン",
+  "variants": [
+    { "id": "intro", "label": "ポケモンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -24,6 +24,10 @@
   color: var(--paper);
 }
 
+.tier3-os.highlight .term-link {
+  color: var(--paper);
+}
+
 .tier3-hw {
   background: var(--ink);
   color: var(--paper);

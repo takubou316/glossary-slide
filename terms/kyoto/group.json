@@ -1,0 +1,8 @@
+{
+  "slug": "kyoto",
+  "title": "京都",
+  "variants": [
+    { "id": "intro", "label": "京都とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

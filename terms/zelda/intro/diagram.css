@@ -1,0 +1,40 @@
+.zelda-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.zelda-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.zelda-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.zelda-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 18px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.zelda-chip.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.zelda-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+}

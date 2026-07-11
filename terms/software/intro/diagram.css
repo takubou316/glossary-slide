@@ -36,6 +36,10 @@
   opacity: 0.85;
 }
 
+.tier-app .term-link {
+  color: var(--paper);
+}
+
 .tier-arrow {
   font-size: 13px;
   font-weight: 700;

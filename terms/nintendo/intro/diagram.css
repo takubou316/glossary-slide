@@ -72,6 +72,10 @@
   color: var(--paper);
 }
 
+.product-card.highlight .term-link {
+  color: var(--paper);
+}
+
 .product-name {
   font-size: 16px;
   font-weight: 700;

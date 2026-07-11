@@ -1,0 +1,8 @@
+{
+  "slug": "site",
+  "title": "サイト（ウェブサイト）",
+  "variants": [
+    { "id": "intro", "label": "サイトとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

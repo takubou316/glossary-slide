@@ -1,0 +1,40 @@
+.prog-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.prog-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.prog-step {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.prog-step.highlight {
+  background: var(--accent);
+}
+
+.prog-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.prog-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}

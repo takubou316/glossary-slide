@@ -1,0 +1,8 @@
+{
+  "slug": "interest",
+  "title": "利息 / 年利",
+  "variants": [
+    { "id": "intro", "label": "利息とは" },
+    { "id": "advanced", "label": "年利とは" }
+  ]
+}

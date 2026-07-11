@@ -1,0 +1,48 @@
+.app2-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.app2-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app2-label {
+  width: 170px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+  text-align: right;
+}
+
+.app2-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.app2-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.app2-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+
+.app2-chip.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}

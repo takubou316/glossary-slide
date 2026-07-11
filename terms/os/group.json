@@ -1,0 +1,8 @@
+{
+  "slug": "os",
+  "title": "OS（基本ソフト）",
+  "variants": [
+    { "id": "intro", "label": "OSとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

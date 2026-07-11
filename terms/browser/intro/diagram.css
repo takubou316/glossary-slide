@@ -1,0 +1,39 @@
+.browser-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.browser-chips {
+  display: flex;
+  gap: 14px;
+}
+
+.browser-chip {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 28px;
+  border-radius: 14px;
+}
+
+.browser-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.browser-role {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 14px;
+}
+
+.browser-role .term-link {
+  color: var(--paper);
+}

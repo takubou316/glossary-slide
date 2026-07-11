@@ -1,0 +1,41 @@
+.prog2-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.prog2-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.prog2-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.prog2-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.prog2-result {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 14px;
+}
+
+.prog2-result .term-link {
+  color: var(--paper);
+}

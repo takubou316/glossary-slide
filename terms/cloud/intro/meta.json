@@ -1,4 +1,4 @@
 {
   "term": "クラウド",
-  "message": "データやアプリを、自分の端末ではなく、遠くにあるたくさんのコンピューターに置いておく仕組み"
+  "message": "<a class=\"term-link\" href=\"data.html\">データ</a>や<a class=\"term-link\" href=\"app.html\">アプリ</a>を、自分の端末ではなく、遠くにあるたくさんの<a class=\"term-link\" href=\"computer.html\">コンピューター</a>に置いておく仕組み"
 }

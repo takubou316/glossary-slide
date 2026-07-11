@@ -193,6 +193,8 @@ body {
   font-size: 13px;
   font-weight: 600;
   opacity: 0.85;}
+#panel-intro .tier-app .term-link {
+  color: var(--paper);}
 #panel-intro .tier-arrow {
   font-size: 13px;
   font-weight: 700;
@@ -228,6 +230,8 @@ body {
   color: var(--ink);}
 #panel-advanced .tier3-os.highlight {
   background: var(--accent);
+  color: var(--paper);}
+#panel-advanced .tier3-os.highlight .term-link {
   color: var(--paper);}
 #panel-advanced .tier3-hw {
   background: var(--ink);
@@ -271,20 +275,20 @@ body {
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
   <h1 class="term">ソフトウェア</h1>
-  <p class="message">コンピューターに「何をするか」を指示する、目に見えないプログラムのまとまり</p>
+  <p class="message"><a class="term-link" href="computer.html">コンピューター</a>に「何をするか」を指示する、目に見えない<a class="term-link" href="program.html">プログラム</a>のまとまり</p>
   <div class="visual" aria-hidden="true">
     <div class="sw-device">
   <div class="tier tier-app">
-    <div class="tier-label">ソフトウェア <span class="sub">（目に見えないプログラム）</span></div>
+    <div class="tier-label">ソフトウェア <span class="sub">（目に見えない<a class="term-link" href="program.html">プログラム</a>）</span></div>
     <div class="chip-row">
       <div class="chip">LINE</div>
       <div class="chip highlight">ゲーム</div>
-      <div class="chip">ブラウザ</div>
+      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
     </div>
   </div>
   <div class="tier-arrow">↓ 動かす指示を出す ↓</div>
   <div class="tier tier-hw">
-    <div class="tier-label">ハードウェア <span class="sub">（目に見える機械）</span></div>
+    <div class="tier-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（目に見える機械）</span></div>
     <div class="chip-row">
       <div class="chip dark">画面</div>
       <div class="chip dark">基盤</div>
@@ -298,19 +302,19 @@ body {
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
   <h1 class="term">ソフトウェア</h1>
-  <p class="message">実はソフトウェアにも種類があり、アプリの下でハードウェアを管理する「OS」という縁の下の力持ちがいる</p>
+  <p class="message">実はソフトウェアにも種類があり、<a class="term-link" href="app.html">アプリ</a>の下で<a class="term-link" href="hardware.html">ハードウェア</a>を管理する「<a class="term-link" href="os.html">OS</a>」という縁の下の力持ちがいる</p>
   <div class="visual" aria-hidden="true">
     <div class="sw3-stack">
   <div class="tier3 tier3-app">
-    <div class="tier3-label">アプリ <span class="sub">（あなたが直接使う）</span></div>
+    <div class="tier3-label"><a class="term-link" href="app.html">アプリ</a> <span class="sub">（あなたが直接使う）</span></div>
     <div class="chip-row">
       <div class="chip">LINE</div>
       <div class="chip">ゲーム</div>
-      <div class="chip">ブラウザ</div>
+      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
     </div>
   </div>
   <div class="tier3 tier3-os highlight">
-    <div class="tier3-label">OS <span class="sub">（基本ソフト・ハードウェアを管理）</span></div>
+    <div class="tier3-label"><a class="term-link" href="os.html">OS</a> <span class="sub">（基本ソフト・<a class="term-link" href="hardware.html">ハードウェア</a>を管理）</span></div>
     <div class="chip-row">
       <div class="chip">Windows</div>
       <div class="chip">iOS</div>
@@ -318,7 +322,7 @@ body {
     </div>
   </div>
   <div class="tier3 tier3-hw">
-    <div class="tier3-label">ハードウェア <span class="sub">（画面・基盤など）</span></div>
+    <div class="tier3-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（画面・基盤など）</span></div>
   </div>
 </div>
 

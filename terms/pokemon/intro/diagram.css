@@ -1,0 +1,25 @@
+.poke-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.poke-step {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 22px;
+  border-radius: 14px;
+  white-space: nowrap;
+}
+
+.poke-step.highlight {
+  background: var(--accent);
+}
+
+.poke-arrow {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+}

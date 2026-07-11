@@ -1,0 +1,54 @@
+.site-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-box {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.site-box.highlight {
+  background: var(--accent);
+}
+
+.site-box .term-link {
+  color: var(--paper);
+}
+
+.site-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.site-examples {
+  display: flex;
+  gap: 12px;
+}
+
+.site-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+}

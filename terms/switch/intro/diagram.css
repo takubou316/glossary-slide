@@ -1,0 +1,36 @@
+.switch-compare {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.switch-card {
+  width: 220px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.switch-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.switch-card-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.switch-card-desc {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.switch-vs {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--muted);
+}

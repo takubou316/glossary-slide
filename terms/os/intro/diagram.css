@@ -1,0 +1,46 @@
+.os-bridge-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 480px;
+}
+
+.os-tier {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.os-tier-app {
+  background: var(--fade);
+  color: var(--ink);
+}
+
+.os-tier-os {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.os-tier-hw {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.os-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.os-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}

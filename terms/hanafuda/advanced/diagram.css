@@ -1,0 +1,67 @@
+.hana-history-flow {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.hana-era-card {
+  width: 260px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hana-era-card.new {
+  background: var(--accent);
+}
+
+.hana-era-year {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.hana-era-card.new .hana-era-year {
+  color: var(--paper);
+}
+
+.hana-era-card.new .hana-era-year .term-link {
+  color: var(--paper);
+}
+
+.hana-era-desc {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.hana-era-card.new .hana-era-desc {
+  color: var(--paper);
+}
+
+.hana-era-desc .term-link {
+  color: var(--accent);
+}
+
+.hana-era-card.new .hana-era-desc .term-link {
+  color: var(--paper);
+}
+
+.hana-flow-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.hana-flow-arrow::before {
+  content: "→ ";
+}
+
+.hana-flow-arrow::after {
+  content: " →";
+}

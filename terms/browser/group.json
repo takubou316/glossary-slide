@@ -1,0 +1,8 @@
+{
+  "slug": "browser",
+  "title": "ブラウザ",
+  "variants": [
+    { "id": "intro", "label": "ブラウザとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

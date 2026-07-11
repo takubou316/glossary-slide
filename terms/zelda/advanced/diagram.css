@@ -1,0 +1,36 @@
+.zelda-compare {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.zelda-compare-card {
+  width: 220px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.zelda-compare-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.zelda-compare-name {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.zelda-compare-role {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.zelda-compare-vs {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--muted);
+}

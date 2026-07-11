@@ -1,0 +1,8 @@
+{
+  "slug": "hanafuda",
+  "title": "花札",
+  "variants": [
+    { "id": "intro", "label": "花札とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

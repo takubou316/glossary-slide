@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nintendo Switch - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.15;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-row {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.back-link, .back-step {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--muted);
+  text-decoration: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.back-link:hover, .back-step:hover {
+  color: var(--accent);
+}
+
+.term-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+/* ここから下は各バリアントの図解専用CSS */
+#panel-intro .switch-compare {
+  display: flex;
+  align-items: center;
+  gap: 24px;}
+#panel-intro .switch-card {
+  width: 220px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 24px 20px;
+  text-align: center;}
+#panel-intro .switch-card.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-intro .switch-card-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 10px;}
+#panel-intro .switch-card-desc {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;}
+#panel-intro .switch-vs {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--muted);}
+#panel-advanced .switch-rank-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;}
+#panel-advanced .switch-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;}
+#panel-advanced .switch-rank-label {
+  width: 44px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--muted);
+  text-align: center;}
+#panel-advanced .switch-rank-label.highlight {
+  color: var(--accent);}
+#panel-advanced .switch-rank-bar {
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  white-space: nowrap;}
+#panel-advanced .switch-rank-bar.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-advanced .switch-rank-value {
+  font-size: 14px;
+  font-weight: 800;}
+</style>
+</head>
+<body>
+  <div class="back-row">
+    <button type="button" class="back-step" onclick="history.back()">← 戻る</button>
+    <a class="back-link" href="index.html">一覧に戻る</a>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" data-variant="intro">Switchとは</button>
+    <button class="tab-btn" data-variant="advanced">発展編</button>
+  </div>
+  <div class="stage-frame">
+    <div class="stage-wrap">
+      <div class="slide active" id="panel-intro">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">Nintendo Switch</h1>
+  <p class="message">テレビにつないでも、持ち歩いても遊べる<a class="term-link" href="nintendo.html">任天堂</a>のゲーム機（2017年発売）</p>
+  <div class="visual" aria-hidden="true">
+    <div class="switch-compare">
+  <div class="switch-card">
+    <div class="switch-card-title">テレビにつなぐ</div>
+    <div class="switch-card-desc">大画面で遊べる<br>「据え置きモード」</div>
+  </div>
+  <div class="switch-vs">or</div>
+  <div class="switch-card highlight">
+    <div class="switch-card-title">持ち歩く</div>
+    <div class="switch-card-desc">外でも遊べる<br>「携帯モード」</div>
+  </div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-advanced">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term">Nintendo Switch</h1>
+  <p class="message">実は約1.6億台売れて、任天堂の歴代ゲーム機の中で一番売れた機種になった</p>
+  <div class="visual" aria-hidden="true">
+    <div class="switch-rank-stack">
+  <div class="switch-rank-row">
+    <div class="switch-rank-label">2位</div>
+    <div class="switch-rank-bar" style="width:380px">ニンテンドーDS<span class="switch-rank-value">約1.54億台</span></div>
+  </div>
+  <div class="switch-rank-row">
+    <div class="switch-rank-label highlight">1位</div>
+    <div class="switch-rank-bar highlight" style="width:420px">Nintendo Switch<span class="switch-rank-value">約1.56億台</span></div>
+  </div>
+</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.slide').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.variant).classList.add('active');
+      });
+    });
+
+    function fitStage() {
+      var margin = 40;
+      var tabsHeight = document.querySelector('.tabs').offsetHeight + 24;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin - tabsHeight) / 720,
+        1
+      );
+      // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
+      // 負の値やゼロになることがあるための安全策
+      scale = Math.max(scale, 0.15);
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.stage-wrap').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitStage);
+    window.addEventListener('load', fitStage);
+    fitStage();
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitStage, ms); });
+  </script>
+</body>
+</html>

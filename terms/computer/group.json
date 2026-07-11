@@ -1,0 +1,8 @@
+{
+  "slug": "computer",
+  "title": "コンピューター",
+  "variants": [
+    { "id": "intro", "label": "コンピューターとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

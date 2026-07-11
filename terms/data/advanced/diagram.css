@@ -1,0 +1,37 @@
+.data-binary-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.data-binary-sources {
+  display: flex;
+  gap: 12px;
+}
+
+.data-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+}
+
+.data-binary-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.data-binary-box {
+  background: var(--ink);
+  color: var(--accent);
+  font-family: "Consolas", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 18px 28px;
+  border-radius: 14px;
+  letter-spacing: 2px;
+}

@@ -1,4 +1,4 @@
 {
   "term": "複利",
-  "message": "ついた利息にも、次の年からは利息がつく仕組みのこと"
+  "message": "ついた<a class=\"term-link\" href=\"interest.html\">利息</a>にも、次の年からは利息がつく仕組みのこと"
 }

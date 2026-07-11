@@ -1,0 +1,39 @@
+.os2-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.os2-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.os2-label {
+  width: 110px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: right;
+}
+
+.os2-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.os2-chip {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+}
+
+.os2-chip.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}

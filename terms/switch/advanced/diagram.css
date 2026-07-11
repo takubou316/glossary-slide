@@ -1,0 +1,48 @@
+.switch-rank-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.switch-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.switch-rank-label {
+  width: 44px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--muted);
+  text-align: center;
+}
+
+.switch-rank-label.highlight {
+  color: var(--accent);
+}
+
+.switch-rank-bar {
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.switch-rank-bar.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.switch-rank-value {
+  font-size: 14px;
+  font-weight: 800;
+}

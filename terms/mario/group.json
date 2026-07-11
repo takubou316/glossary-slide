@@ -1,0 +1,8 @@
+{
+  "slug": "mario",
+  "title": "スーパーマリオ",
+  "variants": [
+    { "id": "intro", "label": "スーパーマリオとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

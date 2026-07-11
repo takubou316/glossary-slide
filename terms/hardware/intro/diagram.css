@@ -1,0 +1,30 @@
+.hw-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hw-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hw-chips {
+  display: flex;
+  gap: 12px;
+}
+
+.hw-chip {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+.hw-chip.highlight {
+  background: var(--accent);
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "program",
+  "title": "プログラム",
+  "variants": [
+    { "id": "intro", "label": "プログラムとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

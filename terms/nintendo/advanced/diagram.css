@@ -39,6 +39,10 @@
   color: var(--paper);
 }
 
+.era-card.new .term-link {
+  color: var(--paper);
+}
+
 .flow-arrow {
   font-size: 16px;
   font-weight: 700;

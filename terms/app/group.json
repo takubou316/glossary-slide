@@ -1,0 +1,8 @@
+{
+  "slug": "app",
+  "title": "アプリ",
+  "variants": [
+    { "id": "intro", "label": "アプリとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
