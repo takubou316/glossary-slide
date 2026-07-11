@@ -1,0 +1,8 @@
+{
+  "slug": "best-of-both",
+  "title": "いいとこ取り",
+  "variants": [
+    { "id": "intro", "label": "いいとこ取りとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

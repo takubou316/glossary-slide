@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ソフトウェア - 用語解説スライド</title>
+<title>縁の下の力持ち - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -167,98 +167,78 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .sw-device {
+#panel-intro .idiom-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 640px;}
-#panel-intro .tier {
+  gap: 20px;
   width: 100%;
-  border-radius: 18px;
-  padding: 22px 26px;
-  text-align: center;
-  box-sizing: border-box;}
-#panel-intro .tier-app {
-  background: var(--accent);
-  color: var(--paper);}
-#panel-intro .tier-hw {
-  background: var(--ink);
-  color: var(--paper);}
-#panel-intro .tier-label {
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 14px;}
-#panel-intro .tier-label .sub {
-  font-size: 13px;
-  font-weight: 600;
-  opacity: 0.85;}
-#panel-intro .tier-app .term-link {
-  color: var(--paper);}
-#panel-intro .tier-arrow {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);}
-#panel-intro .chip-row {
+  max-width: 720px;}
+#panel-intro .idiom-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;}
-#panel-intro .chip {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;}
-#panel-intro .chip.highlight {
-  background: var(--paper);
-  color: var(--accent);}
-#panel-advanced .sw3-stack {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  width: 640px;}
-#panel-advanced .tier3 {
-  width: 100%;
-  border-radius: 16px;
-  padding: 16px 24px;
-  text-align: center;
-  box-sizing: border-box;}
-#panel-advanced .tier3-app {
+  gap: 20px;
+  width: 100%;}
+#panel-intro .idiom-label {
+  width: 140px;
+  flex-shrink: 0;
   background: var(--fade);
-  color: var(--ink);}
-#panel-advanced .tier3-os.highlight {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-align: center;}
+#panel-intro .idiom-label.highlight {
   background: var(--accent);
   color: var(--paper);}
-#panel-advanced .tier3-os.highlight .term-link {
-  color: var(--paper);}
-#panel-advanced .tier3-hw {
-  background: var(--ink);
-  color: var(--paper);}
-#panel-advanced .tier3-label {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 10px;}
-#panel-advanced .tier3-hw .tier3-label {
-  margin-bottom: 0;}
-#panel-advanced .tier3-label .sub {
-  font-size: 12px;
+#panel-intro .idiom-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
   font-weight: 600;
   opacity: 0.8;}
-#panel-advanced .chip-row {
+#panel-intro .idiom-desc {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.6;}
+#panel-advanced .idiom-history-flow {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 28px;}
+#panel-advanced .idiom-era-card {
+  width: 260px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
   gap: 10px;}
-#panel-advanced .chip {
-  background: rgba(0, 0, 0, 0.12);
-  padding: 7px 14px;
-  border-radius: 9px;
-  font-size: 13px;
+#panel-advanced .idiom-era-card.new {
+  background: var(--accent);}
+#panel-advanced .idiom-era-year {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);}
+#panel-advanced .idiom-era-card.new .idiom-era-year {
+  color: var(--paper);}
+#panel-advanced .idiom-era-desc {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;}
+#panel-advanced .idiom-era-card.new .idiom-era-desc {
+  color: var(--paper);}
+#panel-advanced .idiom-flow-arrow {
+  font-size: 16px;
   font-weight: 700;
+  color: var(--muted);
   white-space: nowrap;}
-#panel-advanced .tier3-os .chip {
-  background: rgba(255, 255, 255, 0.22);}
+#panel-advanced .idiom-flow-arrow::before {
+  content: "→ ";}
+#panel-advanced .idiom-flow-arrow::after {
+  content: " →";}
 </style>
 </head>
 <body>
@@ -267,33 +247,24 @@ body {
     <a class="back-link" href="index.html">一覧に戻る</a>
   </div>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">ソフトウェアとは</button>
+    <button class="tab-btn active" data-variant="intro">縁の下の力持ちとは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ソフトウェア</h1>
-  <p class="message"><a class="term-link" href="computer.html">コンピューター</a>に「何をするか」を指示する、目に見えない<a class="term-link" href="program.html">プログラム</a>のまとまり</p>
+  <h1 class="term">縁の下の力持ち</h1>
+  <p class="message">人目につかない所で努力して他人を支えているのに、表では評価されにくい人のたとえ</p>
   <div class="visual" aria-hidden="true">
-    <div class="sw-device">
-  <div class="tier tier-app">
-    <div class="tier-label">ソフトウェア <span class="sub">（目に見えない<a class="term-link" href="program.html">プログラム</a>）</span></div>
-    <div class="chip-row">
-      <div class="chip">LINE</div>
-      <div class="chip highlight">ゲーム</div>
-      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
-    </div>
+    <div class="idiom-stack">
+  <div class="idiom-row">
+    <div class="idiom-label">文字通りには<span class="idiom-sub">言葉のまま読むと</span></div>
+    <div class="idiom-desc">「縁の下」（床の下）にいる「力持ち」</div>
   </div>
-  <div class="tier-arrow">↓ 動かす指示を出す ↓</div>
-  <div class="tier tier-hw">
-    <div class="tier-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（目に見える機械）</span></div>
-    <div class="chip-row">
-      <div class="chip dark">画面</div>
-      <div class="chip dark">基盤</div>
-      <div class="chip dark">ボタン</div>
-    </div>
+  <div class="idiom-row">
+    <div class="idiom-label highlight">実際の意味<span class="idiom-sub">たとえとして使うと</span></div>
+    <div class="idiom-desc">人に見えない場所で、他人や物事を支えている人</div>
   </div>
 </div>
 
@@ -301,28 +272,18 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ソフトウェア</h1>
-  <p class="message">実はソフトウェアにも種類があり、<a class="term-link" href="app.html">アプリ</a>の下で<a class="term-link" href="hardware.html">ハードウェア</a>を管理する「<a class="term-link" href="os.html">OS</a>」という<a class="term-link" href="unsung-hero.html">縁の下の力持ち</a>がいる</p>
+  <h1 class="term">縁の下の力持ち</h1>
+  <p class="message">実はこの言葉、大阪のお寺で人知れず踊られていた「舞」が由来</p>
   <div class="visual" aria-hidden="true">
-    <div class="sw3-stack">
-  <div class="tier3 tier3-app">
-    <div class="tier3-label"><a class="term-link" href="app.html">アプリ</a> <span class="sub">（あなたが直接使う）</span></div>
-    <div class="chip-row">
-      <div class="chip">LINE</div>
-      <div class="chip">ゲーム</div>
-      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
-    </div>
+    <div class="idiom-history-flow">
+  <div class="idiom-era-card old">
+    <div class="idiom-era-year">昔</div>
+    <div class="idiom-era-desc">大阪・四天王寺で、人の見ていない軒下（椽の下）で舞を踊っていた</div>
   </div>
-  <div class="tier3 tier3-os highlight">
-    <div class="tier3-label"><a class="term-link" href="os.html">OS</a> <span class="sub">（基本ソフト・<a class="term-link" href="hardware.html">ハードウェア</a>を管理）</span></div>
-    <div class="chip-row">
-      <div class="chip">Windows</div>
-      <div class="chip">iOS</div>
-      <div class="chip">Android</div>
-    </div>
-  </div>
-  <div class="tier3 tier3-hw">
-    <div class="tier3-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（画面・基盤など）</span></div>
+  <div class="idiom-flow-arrow">意味が変わって</div>
+  <div class="idiom-era-card new">
+    <div class="idiom-era-year">今</div>
+    <div class="idiom-era-desc">見えない場所で支える人を「縁の下の力持ち」と呼ぶように</div>
   </div>
 </div>
 

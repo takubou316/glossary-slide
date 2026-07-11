@@ -1,0 +1,63 @@
+.botb-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.botb-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.botb-item {
+  width: 140px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.botb-name {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.botb-good {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.botb-plus {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.botb-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.botb-result {
+  width: 200px;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.botb-result .botb-name {
+  font-size: 20px;
+}
+
+.botb-result .botb-good {
+  color: var(--paper);
+  opacity: 0.9;
+}

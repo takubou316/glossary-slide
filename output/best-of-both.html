@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ソフトウェア - 用語解説スライド</title>
+<title>いいとこ取り - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -167,98 +167,101 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .sw-device {
+#panel-intro .botb-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 640px;}
-#panel-intro .tier {
-  width: 100%;
-  border-radius: 18px;
-  padding: 22px 26px;
-  text-align: center;
-  box-sizing: border-box;}
-#panel-intro .tier-app {
-  background: var(--accent);
-  color: var(--paper);}
-#panel-intro .tier-hw {
-  background: var(--ink);
-  color: var(--paper);}
-#panel-intro .tier-label {
-  font-size: 19px;
-  font-weight: 700;
-  margin-bottom: 14px;}
-#panel-intro .tier-label .sub {
-  font-size: 13px;
-  font-weight: 600;
-  opacity: 0.85;}
-#panel-intro .tier-app .term-link {
-  color: var(--paper);}
-#panel-intro .tier-arrow {
+  gap: 18px;}
+#panel-intro .botb-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;}
+#panel-intro .botb-item {
+  width: 140px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;}
+#panel-intro .botb-name {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;}
+#panel-intro .botb-good {
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);}
-#panel-intro .chip-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;}
-#panel-intro .chip {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 14px;
+#panel-intro .botb-plus {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--muted);}
+#panel-intro .botb-arrow {
+  font-size: 13px;
   font-weight: 700;
-  white-space: nowrap;}
-#panel-intro .chip.highlight {
-  background: var(--paper);
-  color: var(--accent);}
-#panel-advanced .sw3-stack {
+  color: var(--muted);}
+#panel-intro .botb-result {
+  width: 200px;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;}
+#panel-intro .botb-result .botb-name {
+  font-size: 20px;}
+#panel-intro .botb-result .botb-good {
+  color: var(--paper);
+  opacity: 0.9;}
+#panel-advanced .botb2-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  width: 640px;}
-#panel-advanced .tier3 {
-  width: 100%;
-  border-radius: 16px;
-  padding: 16px 24px;
-  text-align: center;
-  box-sizing: border-box;}
-#panel-advanced .tier3-app {
-  background: var(--fade);
-  color: var(--ink);}
-#panel-advanced .tier3-os.highlight {
-  background: var(--accent);
-  color: var(--paper);}
-#panel-advanced .tier3-os.highlight .term-link {
-  color: var(--paper);}
-#panel-advanced .tier3-hw {
-  background: var(--ink);
-  color: var(--paper);}
-#panel-advanced .tier3-label {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 10px;}
-#panel-advanced .tier3-hw .tier3-label {
-  margin-bottom: 0;}
-#panel-advanced .tier3-label .sub {
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0.8;}
-#panel-advanced .chip-row {
+  gap: 18px;}
+#panel-advanced .botb2-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;}
-#panel-advanced .chip {
-  background: rgba(0, 0, 0, 0.12);
-  padding: 7px 14px;
-  border-radius: 9px;
+  align-items: center;
+  gap: 16px;}
+#panel-advanced .botb2-item {
+  width: 190px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;}
+#panel-advanced .botb2-name {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;}
+#panel-advanced .botb2-good {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);}
+#panel-advanced .botb2-plus {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--muted);}
+#panel-advanced .botb2-arrow {
   font-size: 13px;
   font-weight: 700;
-  white-space: nowrap;}
-#panel-advanced .tier3-os .chip {
-  background: rgba(255, 255, 255, 0.22);}
+  color: var(--muted);}
+#panel-advanced .botb2-result {
+  width: 280px;
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;}
+#panel-advanced .botb2-result .botb2-name, #panel-advanced .botb2-result {
+  font-size: 20px;
+  font-weight: 800;}
+#panel-advanced .botb2-result .botb2-good {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--paper);
+  opacity: 0.9;}
+#panel-advanced .botb2-result .term-link {
+  color: var(--paper);}
 </style>
 </head>
 <body>
@@ -267,33 +270,32 @@ body {
     <a class="back-link" href="index.html">一覧に戻る</a>
   </div>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">ソフトウェアとは</button>
+    <button class="tab-btn active" data-variant="intro">いいとこ取りとは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ソフトウェア</h1>
-  <p class="message"><a class="term-link" href="computer.html">コンピューター</a>に「何をするか」を指示する、目に見えない<a class="term-link" href="program.html">プログラム</a>のまとまり</p>
+  <h1 class="term">いいとこ取り</h1>
+  <p class="message">2つ以上のものから、それぞれの良いところだけを選んで組み合わせること</p>
   <div class="visual" aria-hidden="true">
-    <div class="sw-device">
-  <div class="tier tier-app">
-    <div class="tier-label">ソフトウェア <span class="sub">（目に見えない<a class="term-link" href="program.html">プログラム</a>）</span></div>
-    <div class="chip-row">
-      <div class="chip">LINE</div>
-      <div class="chip highlight">ゲーム</div>
-      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
+    <div class="botb-stack">
+  <div class="botb-row">
+    <div class="botb-item">
+      <div class="botb-name">A</div>
+      <div class="botb-good">長所：速い</div>
+    </div>
+    <div class="botb-plus">＋</div>
+    <div class="botb-item">
+      <div class="botb-name">B</div>
+      <div class="botb-good">長所：安全</div>
     </div>
   </div>
-  <div class="tier-arrow">↓ 動かす指示を出す ↓</div>
-  <div class="tier tier-hw">
-    <div class="tier-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（目に見える機械）</span></div>
-    <div class="chip-row">
-      <div class="chip dark">画面</div>
-      <div class="chip dark">基盤</div>
-      <div class="chip dark">ボタン</div>
-    </div>
+  <div class="botb-arrow">↓ いいところだけを組み合わせる</div>
+  <div class="botb-result">
+    <div class="botb-name">いいとこ取り</div>
+    <div class="botb-good">速くて安全</div>
   </div>
 </div>
 
@@ -301,29 +303,23 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ソフトウェア</h1>
-  <p class="message">実はソフトウェアにも種類があり、<a class="term-link" href="app.html">アプリ</a>の下で<a class="term-link" href="hardware.html">ハードウェア</a>を管理する「<a class="term-link" href="os.html">OS</a>」という<a class="term-link" href="unsung-hero.html">縁の下の力持ち</a>がいる</p>
+  <h1 class="term">いいとこ取り</h1>
+  <p class="message">実際にHTTPSは、公開鍵暗号の「安全さ」と共通鍵暗号の「速さ」を組み合わせている</p>
   <div class="visual" aria-hidden="true">
-    <div class="sw3-stack">
-  <div class="tier3 tier3-app">
-    <div class="tier3-label"><a class="term-link" href="app.html">アプリ</a> <span class="sub">（あなたが直接使う）</span></div>
-    <div class="chip-row">
-      <div class="chip">LINE</div>
-      <div class="chip">ゲーム</div>
-      <div class="chip"><a class="term-link" href="browser.html">ブラウザ</a></div>
+    <div class="botb2-stack">
+  <div class="botb2-row">
+    <div class="botb2-item">
+      <div class="botb2-name">公開鍵暗号</div>
+      <div class="botb2-good">安全（ただし遅い）</div>
+    </div>
+    <div class="botb2-plus">＋</div>
+    <div class="botb2-item">
+      <div class="botb2-name">共通鍵暗号</div>
+      <div class="botb2-good">速い（ただし鍵配送が課題）</div>
     </div>
   </div>
-  <div class="tier3 tier3-os highlight">
-    <div class="tier3-label"><a class="term-link" href="os.html">OS</a> <span class="sub">（基本ソフト・<a class="term-link" href="hardware.html">ハードウェア</a>を管理）</span></div>
-    <div class="chip-row">
-      <div class="chip">Windows</div>
-      <div class="chip">iOS</div>
-      <div class="chip">Android</div>
-    </div>
-  </div>
-  <div class="tier3 tier3-hw">
-    <div class="tier3-label"><a class="term-link" href="hardware.html">ハードウェア</a> <span class="sub">（画面・基盤など）</span></div>
-  </div>
+  <div class="botb2-arrow">↓ いいとこ取り</div>
+  <div class="botb2-result"><a class="term-link" href="http.html">HTTPS</a><span class="botb2-good">安全で速い、実際の<a class="term-link" href="encryption.html">暗号化</a>通信</span></div>
 </div>
 
   </div>

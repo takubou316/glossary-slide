@@ -1,0 +1,55 @@
+.idiom-history-flow {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.idiom-era-card {
+  width: 260px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.idiom-era-card.new {
+  background: var(--accent);
+}
+
+.idiom-era-year {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.idiom-era-card.new .idiom-era-year {
+  color: var(--paper);
+}
+
+.idiom-era-desc {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.idiom-era-card.new .idiom-era-desc {
+  color: var(--paper);
+}
+
+.idiom-flow-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.idiom-flow-arrow::before {
+  content: "→ ";
+}
+
+.idiom-flow-arrow::after {
+  content: " →";
+}

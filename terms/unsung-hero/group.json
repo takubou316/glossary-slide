@@ -1,0 +1,8 @@
+{
+  "slug": "unsung-hero",
+  "title": "縁の下の力持ち",
+  "variants": [
+    { "id": "intro", "label": "縁の下の力持ちとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
