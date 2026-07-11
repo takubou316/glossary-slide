@@ -1,0 +1,8 @@
+{
+  "slug": "saji-wo-nageru",
+  "title": "匙を投げる",
+  "variants": [
+    { "id": "intro", "label": "匙を投げるとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

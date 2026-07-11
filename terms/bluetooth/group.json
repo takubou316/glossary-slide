@@ -1,0 +1,8 @@
+{
+  "slug": "bluetooth",
+  "title": "Bluetooth（ブルートゥース）",
+  "variants": [
+    { "id": "intro", "label": "Bluetoothとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

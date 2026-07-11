@@ -1,0 +1,52 @@
+.donden-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.donden-stack {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.donden-step {
+  width: 190px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.donden-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.donden-label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.donden-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.donden-note {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

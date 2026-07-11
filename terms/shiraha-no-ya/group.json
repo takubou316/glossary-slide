@@ -1,0 +1,8 @@
+{
+  "slug": "shiraha-no-ya",
+  "title": "白羽の矢が立つ",
+  "variants": [
+    { "id": "intro", "label": "白羽の矢が立つとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

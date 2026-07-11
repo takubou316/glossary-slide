@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wi-Fiとインターネットの違い - 用語解説スライド</title>
+<title>台無し - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -167,82 +167,20 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .wifi-chain {
-  display: flex;
-  align-items: center;
-  gap: 16px;}
-#panel-intro .wnode {
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 14px 18px;
-  border-radius: 14px;
-  text-align: center;
-  line-height: 1.4;
-  white-space: nowrap;}
-#panel-intro .wnode.highlight {
-  background: var(--accent);}
-#panel-intro .link-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--muted);
-  text-align: center;
-  line-height: 1.3;
-  white-space: nowrap;}
-#panel-intro .link-label.accent {
-  color: var(--accent);}
-#panel-intro .link-label span {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--muted);
-  margin-top: 4px;}
-#panel-advanced .wifi-scenarios {
-  display: flex;
-  gap: 24px;}
-#panel-advanced .scenario-card {
-  width: 230px;
-  background: var(--fade);
-  border-radius: 16px;
-  padding: 22px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;}
-#panel-advanced .scenario-card.highlight {
-  background: var(--accent);}
-#panel-advanced .scenario-title {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--ink);
-  line-height: 1.4;
-  margin-bottom: 4px;}
-#panel-advanced .scenario-card.highlight .scenario-title {
-  color: var(--paper);}
-#panel-advanced .capability {
-  font-size: 14px;
-  font-weight: 700;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: var(--paper);}
-#panel-advanced .capability.good {
-  color: #3F8F5F;}
-#panel-advanced .capability.bad {
-  color: #C0392B;}
-#panel-origin .idiom-stack {
+#panel-intro .idiom-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   width: 100%;
-  max-width: 760px;}
-#panel-origin .idiom-row {
+  max-width: 720px;}
+#panel-intro .idiom-row {
   display: flex;
   align-items: center;
   gap: 20px;
   width: 100%;}
-#panel-origin .idiom-label {
-  width: 150px;
+#panel-intro .idiom-label {
+  width: 130px;
   flex-shrink: 0;
   background: var(--fade);
   color: var(--ink);
@@ -251,14 +189,53 @@ body {
   padding: 14px 16px;
   border-radius: 14px;
   text-align: center;}
-#panel-origin .idiom-label.highlight {
+#panel-intro .idiom-label.highlight {
   background: var(--accent);
   color: var(--paper);}
-#panel-origin .idiom-desc {
-  font-size: 15px;
+#panel-intro .idiom-desc {
+  font-size: 16px;
   font-weight: 600;
   color: var(--ink);
   line-height: 1.6;}
+#panel-advanced .donden-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;}
+#panel-advanced .donden-stack {
+  display: flex;
+  align-items: center;
+  gap: 18px;}
+#panel-advanced .donden-step {
+  width: 190px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;}
+#panel-advanced .donden-step.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-advanced .donden-label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;}
+#panel-advanced .donden-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;}
+#panel-advanced .donden-note {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;}
 </style>
 </head>
 <body>
@@ -267,61 +244,45 @@ body {
     <a class="back-link" href="index.html">一覧に戻る</a>
   </div>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">何が違うの？</button>
+    <button class="tab-btn active" data-variant="intro">台無しとは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
-    <button class="tab-btn" data-variant="origin">名前の由来</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">Wi-Fiとインターネット</h1>
-  <p class="message">Wi-Fiは近くの機器とつながる無線、インターネットはその先の世界中とつながる回線</p>
+  <h1 class="term">台無し</h1>
+  <p class="message">物事がすっかりダメになってしまうこと</p>
   <div class="visual" aria-hidden="true">
-    <div class="wifi-chain">
-  <div class="wnode">あなたの<br>スマホ</div>
-  <div class="link-label">Wi-Fi<br><span>（家の中だけの無線）</span></div>
-  <div class="wnode">ルーター<br>（家にある機械）</div>
-  <div class="link-label accent">インターネット回線<br><span>（家の外、世界中へ）</span></div>
-  <div class="wnode highlight">世界中の<br>サーバー</div>
+    <div class="idiom-stack">
+  <div class="idiom-row">
+    <div class="idiom-label">文字通りには</div>
+    <div class="idiom-desc">物を置く「台」が「無し」の状態</div>
+  </div>
+  <div class="idiom-row">
+    <div class="idiom-label highlight">実際の意味</div>
+    <div class="idiom-desc">それまでの努力や価値が、すっかりダメになること</div>
+  </div>
 </div>
 
   </div>
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">Wi-Fiとインターネット</h1>
-  <p class="message">実は、インターネット回線が無くても、Wi-Fiだけで近くの機器とはつながる</p>
+  <h1 class="term">台無し</h1>
+  <p class="message">実はこの「台」、仏像を安置する台座（だいざ）のこと</p>
   <div class="visual" aria-hidden="true">
-    <div class="wifi-scenarios">
-  <div class="scenario-card">
-    <div class="scenario-title">Wi-Fiだけ<br>（インターネット回線なし）</div>
-    <div class="capability good">○ 近くのプリンターに印刷</div>
-    <div class="capability bad">✕ 検索や動画視聴</div>
+    <div class="donden-wrap">
+  <div class="donden-stack">
+    <div class="donden-step">
+      <div class="donden-label">台座（蓮座）に<br>乗った仏像</div>
+    </div>
+    <div class="donden-arrow">台座が壊れると →</div>
+    <div class="donden-step highlight">
+      <div class="donden-label">仏像としての<br>威厳が失われる</div>
+    </div>
   </div>
-  <div class="scenario-card highlight">
-    <div class="scenario-title">Wi-Fi + <br>インターネットも</div>
-    <div class="capability good">○ 近くの機器とも</div>
-    <div class="capability good">○ 検索や動画視聴も</div>
-  </div>
-</div>
-
-  </div>
-</div>
-    <div class="slide" id="panel-origin">
-  <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">Wi-Fi</h1>
-  <p class="message">実は「Wi-Fi」、多くの人が思っている「Wireless Fidelity」の略ではない</p>
-  <div class="visual" aria-hidden="true">
-    <div class="idiom-stack">
-  <div class="idiom-row">
-    <div class="idiom-label">よくある誤解</div>
-    <div class="idiom-desc">「Wireless Fidelity（無線の忠実性）」の略だと思われている</div>
-  </div>
-  <div class="idiom-row">
-    <div class="idiom-label highlight">実際は</div>
-    <div class="idiom-desc">特に意味はなく、音響業界の「Hi-Fi」の語感をまねて作られた、覚えやすさ重視のブランド名</div>
-  </div>
+  <div class="donden-note">仏像にとって台座は重要な一部。それが無くなる＝「台無し」から、物事が丸ごとダメになる意味に広がった</div>
 </div>
 
   </div>

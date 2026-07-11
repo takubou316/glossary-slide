@@ -3,6 +3,7 @@
   "title": "Wi-Fiとインターネットの違い",
   "variants": [
     { "id": "intro", "label": "何が違うの？" },
-    { "id": "advanced", "label": "発展編" }
+    { "id": "advanced", "label": "発展編" },
+    { "id": "origin", "label": "名前の由来" }
   ]
 }

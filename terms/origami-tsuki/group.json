@@ -1,0 +1,8 @@
+{
+  "slug": "origami-tsuki",
+  "title": "折り紙付き",
+  "variants": [
+    { "id": "intro", "label": "折り紙付きとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "dainashi",
+  "title": "台無し",
+  "variants": [
+    { "id": "intro", "label": "台無しとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

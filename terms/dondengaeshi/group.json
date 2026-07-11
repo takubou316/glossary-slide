@@ -1,0 +1,8 @@
+{
+  "slug": "dondengaeshi",
+  "title": "どんでん返し",
+  "variants": [
+    { "id": "intro", "label": "どんでん返しとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
