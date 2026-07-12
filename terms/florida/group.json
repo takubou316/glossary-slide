@@ -1,0 +1,8 @@
+{
+  "slug": "florida",
+  "title": "フロリダ",
+  "variants": [
+    { "id": "intro", "label": "フロリダとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

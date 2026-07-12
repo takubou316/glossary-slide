@@ -1,6 +1,8 @@
+import datetime
 import json
 import pathlib
 import re
+import subprocess
 import sys
 
 TAG_RE = re.compile(r"<[^>]+>")
@@ -14,6 +16,27 @@ def strip_tags(text: str) -> str:
 ROOT = pathlib.Path(__file__).parent
 TEMPLATE = (ROOT / "template.html").read_text(encoding="utf-8")
 PLAYER_TEMPLATE = (ROOT / "player_template.html").read_text(encoding="utf-8")
+
+
+def get_created_at(term_dir: pathlib.Path) -> str:
+    """Return an ISO date approximating when this term was created, based on
+    the oldest git commit that touched its group.json (or meta.json for
+    single-slide terms). Falls back to "now" for not-yet-committed terms, so
+    brand new drafts sort as the newest until they're committed."""
+    marker = term_dir / "group.json"
+    if not marker.exists():
+        marker = term_dir / "meta.json"
+    try:
+        result = subprocess.run(
+            ["git", "log", "--format=%aI", "--", str(marker.relative_to(ROOT))],
+            cwd=ROOT, capture_output=True, text=True, check=True,
+        )
+        lines = [line for line in result.stdout.strip().splitlines() if line]
+        if lines:
+            return lines[-1]
+    except Exception:
+        pass
+    return datetime.datetime.now().astimezone().isoformat()
 
 
 def scope_css(css_text: str, scope_selector: str) -> str:
@@ -107,15 +130,15 @@ def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     return build_single(term_dir)
 
 
-def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Path:
+def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathlib.Path:
     items = "\n".join(
-        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}">\n'
+        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}" data-created="{created_at}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
         f'          <div class="item-desc">{strip_tags(message)}</div>\n'
         f'        </a>\n'
         f'      </li>'
-        for out_path, title, message, yomi in sorted(entries, key=lambda e: e[1])
+        for out_path, title, message, yomi, created_at in sorted(entries, key=lambda e: e[1])
     )
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -161,12 +184,37 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
     font-family: inherit;
     border: 2px solid #DDD9D2;
     border-radius: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #262322;
   }}
   .search-box:focus {{
     outline: none;
     border-color: #D97757;
+  }}
+  .sort-row {{ display: flex; gap: 8px; margin-bottom: 20px; }}
+  .sort-btn {{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #DDD9D2;
+    background: transparent;
+    color: #8A8681;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    touch-action: manipulation;
+  }}
+  .sort-btn.active {{
+    border-color: #D97757;
+    background: #D97757;
+    color: #FAF9F5;
   }}
   ul {{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }}
   .item a {{
@@ -190,6 +238,10 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
       <a class="create-link" href="create.html">+ 新しい用語を作成</a>
     </div>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
+    <div class="sort-row">
+      <button type="button" class="sort-btn active" data-sort="alpha">アルファベット順</button>
+      <button type="button" class="sort-btn" data-sort="new">新しい順</button>
+    </div>
     <ul id="list">
 {items}
     </ul>
@@ -208,10 +260,20 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
     var list = document.getElementById('list');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
+    var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn'));
+    var currentSort = 'alpha';
+
     items.forEach(function (item, i) {{
       item.dataset.titleNorm = kataToHira(item.dataset.title);
       item.dataset.descNorm = kataToHira(item.dataset.desc);
-      item.dataset.originalOrder = i;
+      item.dataset.orderAlpha = i;
+    }});
+
+    // 新しい順（作成日時が新しいものが先頭）のインデックスを事前に振っておく
+    items.slice().sort(function (a, b) {{
+      return (b.dataset.created || '').localeCompare(a.dataset.created || '');
+    }}).forEach(function (item, i) {{
+      item.dataset.orderNew = i;
     }});
 
     // タイトルの先頭一致 > タイトル内一致 > 説明文一致、の順で並べる
@@ -222,14 +284,18 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
       return -1;
     }}
 
-    search.addEventListener('input', function () {{
+    function orderValue(item) {{
+      return Number(currentSort === 'new' ? item.dataset.orderNew : item.dataset.orderAlpha);
+    }}
+
+    function render() {{
       var q = kataToHira(search.value.trim().toLowerCase());
       var ranked = items
         .map(function (item) {{ return {{ item: item, rank: rank(item, q) }}; }})
         .filter(function (r) {{ return r.rank !== -1; }})
         .sort(function (a, b) {{
           if (a.rank !== b.rank) return a.rank - b.rank;
-          return a.item.dataset.originalOrder - b.item.dataset.originalOrder;
+          return orderValue(a.item) - orderValue(b.item);
         }});
 
       items.forEach(function (item) {{ item.style.display = 'none'; }});
@@ -238,6 +304,16 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str]]) -> pathlib.Pa
         list.appendChild(r.item);
       }});
       emptyNote.style.display = ranked.length === 0 ? 'block' : 'none';
+    }}
+
+    search.addEventListener('input', render);
+    sortButtons.forEach(function (btn) {{
+      btn.addEventListener('click', function () {{
+        currentSort = btn.dataset.sort;
+        sortButtons.forEach(function (b) {{ b.classList.remove('active'); }});
+        btn.classList.add('active');
+        render();
+      }});
     }});
   </script>
 </body>
@@ -262,7 +338,8 @@ def main():
     entries = []
     for term_dir in term_dirs:
         out_path, title, message, yomi = build(term_dir)
-        entries.append((out_path, title, message, yomi))
+        created_at = get_created_at(term_dir)
+        entries.append((out_path, title, message, yomi, created_at))
         print(f"built: {out_path}")
 
     if not targets:

@@ -1,0 +1,47 @@
+.fl-flow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fl-flow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fl-flow-step {
+  width: 180px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 18px 14px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.fl-flow-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.fl-flow-arrow {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.fl-flow-note {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

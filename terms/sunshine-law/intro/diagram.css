@@ -1,0 +1,48 @@
+.sl-flow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sl-flow-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sl-flow-step {
+  width: 180px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px 16px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.sl-flow-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.sl-flow-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.sl-flow-note {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

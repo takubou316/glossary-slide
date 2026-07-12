@@ -1,0 +1,68 @@
+.dw-size-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.dw-size-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dw-size-box {
+  box-sizing: border-box;
+  border-radius: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dw-size-box.small {
+  width: 90px;
+  height: 60px;
+  background: var(--fade);
+  color: var(--ink);
+}
+
+.dw-size-box.big {
+  width: 640px;
+  height: 140px;
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.dw-size-name {
+  font-weight: 700;
+}
+
+.dw-size-box.small .dw-size-name {
+  font-size: 11px;
+}
+
+.dw-size-box.big .dw-size-name {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.dw-size-value {
+  font-weight: 800;
+}
+
+.dw-size-box.small .dw-size-value {
+  font-size: 11px;
+}
+
+.dw-size-box.big .dw-size-value {
+  font-size: 18px;
+}
+
+.dw-size-note {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+}

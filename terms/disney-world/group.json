@@ -1,0 +1,8 @@
+{
+  "slug": "disney-world",
+  "title": "ウォルト・ディズニー・ワールド",
+  "variants": [
+    { "id": "intro", "label": "ディズニーワールドとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

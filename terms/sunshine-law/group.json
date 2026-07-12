@@ -1,0 +1,8 @@
+{
+  "slug": "sunshine-law",
+  "title": "Sunshine Law（サンシャイン法）",
+  "variants": [
+    { "id": "intro", "label": "Sunshine Lawとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
