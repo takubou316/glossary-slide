@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -291,7 +305,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">AI（人工知能）</h1>
+  <h1 class="term">AI（<ruby>人工知能<rt>じんこうちのう</rt></ruby>）</h1>
   <p class="message">たくさんの<a class="term-link" href="data.html">データ</a>から自分でパターンを学び、決まったルールがない場面でも判断できる<a class="term-link" href="computer.html">コンピューター</a>の技術</p>
   <div class="visual" aria-hidden="true">
     <div class="ai-stack">
@@ -317,7 +331,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">AI（人工知能）</h1>
+  <h1 class="term">AI（<ruby>人工知能<rt>じんこうちのう</rt></ruby>）</h1>
   <p class="message">実は「AI」は一つの言葉で、その中には「エージェント」「ハルシネーション」など、もっと細かい考え方がいくつも含まれている</p>
   <div class="visual" aria-hidden="true">
     <div class="ai-org-chart">

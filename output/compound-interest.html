@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -347,7 +361,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">複利</h1>
+  <h1 class="term"><ruby>複利<rt>ふくり</rt></ruby></h1>
   <p class="message">ついた<a class="term-link" href="interest.html">利息</a>にも、次の年からは利息がつく仕組みのこと</p>
   <div class="visual" aria-hidden="true">
     <div class="mechanic-stack">
@@ -382,7 +396,7 @@ body {
 </div>
     <div class="slide" id="panel-compare">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">複利</h1>
+  <h1 class="term"><ruby>複利<rt>ふくり</rt></ruby></h1>
   <p class="message">同じ元手・同じ利率でも、複利は単利よりどんどん差がついていく</p>
   <div class="visual" aria-hidden="true">
     <div class="compound-stack">
@@ -417,7 +431,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">複利</h1>
+  <h1 class="term"><ruby>複利<rt>ふくり</rt></ruby></h1>
   <p class="message">72を金利の数字で割ると、お金がだいたい何年で2倍になるかがわかる</p>
   <div class="visual" aria-hidden="true">
     <div class="rule72-stack">

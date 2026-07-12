@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -277,7 +291,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">いいとこ取り</h1>
+  <h1 class="term">いいとこ<ruby>取<rt>と</rt></ruby>り</h1>
   <p class="message">2つ以上のものから、それぞれの良いところだけを選んで組み合わせること</p>
   <div class="visual" aria-hidden="true">
     <div class="botb-stack">
@@ -303,7 +317,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">いいとこ取り</h1>
+  <h1 class="term">いいとこ<ruby>取<rt>と</rt></ruby>り</h1>
   <p class="message">実際にHTTPSは、公開鍵暗号の「安全さ」と共通鍵暗号の「速さ」を組み合わせている</p>
   <div class="visual" aria-hidden="true">
     <div class="botb2-stack">

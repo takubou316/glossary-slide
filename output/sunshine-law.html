@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -251,7 +265,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">Sunshine Law（サンシャイン法）</h1>
+  <h1 class="term">Sunshine Law（サンシャイン<ruby>法<rt>ほう</rt></ruby>）</h1>
   <p class="message"><a class="term-link" href="florida.html">フロリダ</a>州の法律で、行政の会議や記録を誰でも見られるようにする決まり</p>
   <div class="visual" aria-hidden="true">
     <div class="sl-flow-wrap">
@@ -267,7 +281,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">Sunshine Law（サンシャイン法）</h1>
+  <h1 class="term">Sunshine Law（サンシャイン<ruby>法<rt>ほう</rt></ruby>）</h1>
   <p class="message">実は1967年にできた、全米で初めての「会議公開」を義務づける法律</p>
   <div class="visual" aria-hidden="true">
     <div class="sl-history-flow">

@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -265,7 +279,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">利息</h1>
+  <h1 class="term"><ruby>利息<rt>りそく</rt></ruby></h1>
   <p class="message">お金を預けたり借りたりしたときに、追加で発生するお金のこと</p>
   <div class="visual" aria-hidden="true">
     <div class="interest-stack">
@@ -281,7 +295,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">年利</h1>
+  <h1 class="term"><ruby>年利<rt>ねんり</rt></ruby></h1>
   <p class="message">「1年間でどれくらい利息がつくか」を割合（%）で表したもの</p>
   <div class="visual" aria-hidden="true">
     <div class="rate-stack">

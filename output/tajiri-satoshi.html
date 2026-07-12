@@ -15,6 +15,13 @@
 
 * { box-sizing: border-box; }
 
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -106,7 +113,14 @@ body {
   font-weight: 800;
   color: var(--ink);
   margin: 0 0 24px;
-  line-height: 1.15;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
 }
 
 .message {
@@ -241,7 +255,7 @@ body {
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">田尻智</h1>
+  <h1 class="term"><ruby>田尻智<rt>たじりさとし</rt></ruby></h1>
   <p class="message"><a class="term-link" href="pokemon.html">ポケモン</a>の生みの親で、ゲーム制作会社「ゲームフリーク」の代表取締役</p>
   <div class="visual" aria-hidden="true">
     <div class="ta-flow">
@@ -254,7 +268,7 @@ body {
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">田尻智</h1>
+  <h1 class="term"><ruby>田尻智<rt>たじりさとし</rt></ruby></h1>
   <p class="message">実はポケモンの原点は、田尻智が子供の頃に夢中になった「昆虫採集」の思い出</p>
   <div class="visual" aria-hidden="true">
     <div class="ta-history-flow">
