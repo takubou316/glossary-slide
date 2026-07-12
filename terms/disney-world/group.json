@@ -3,6 +3,7 @@
   "title": "ウォルト・ディズニー・ワールド",
   "variants": [
     { "id": "intro", "label": "ディズニーワールドとは" },
-    { "id": "advanced", "label": "発展編" }
+    { "id": "advanced", "label": "発展編" },
+    { "id": "creator", "label": "誰が作った？" }
   ]
 }

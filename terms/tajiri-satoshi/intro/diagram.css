@@ -1,0 +1,38 @@
+.ta-flow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ta-node {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 20px;
+  font-weight: 800;
+  padding: 20px 28px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.ta-node.highlight {
+  background: var(--accent);
+}
+
+.ta-node.highlight .term-link {
+  color: var(--paper);
+}
+
+.ta-node-sub {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.ta-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}

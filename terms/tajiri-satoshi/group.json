@@ -1,0 +1,8 @@
+{
+  "slug": "tajiri-satoshi",
+  "title": "田尻智",
+  "variants": [
+    { "id": "intro", "label": "田尻智とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

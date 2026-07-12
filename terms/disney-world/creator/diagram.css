@@ -1,0 +1,37 @@
+.dwc-flow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dwc-step {
+  width: 200px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.dwc-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.dwc-year {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.dwc-desc {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.dwc-arrow {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "miyamoto-shigeru",
+  "title": "宮本茂",
+  "variants": [
+    { "id": "intro", "label": "宮本茂とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

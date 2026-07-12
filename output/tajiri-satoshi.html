@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ポケモン - 用語解説スライド</title>
+<title>田尻智 - 用語解説スライド</title>
 <style>
 :root {
   --accent: #D97757;
@@ -167,88 +167,65 @@ body {
 }
 
 /* ここから下は各バリアントの図解専用CSS */
-#panel-intro .poke-row {
+#panel-intro .ta-flow {
   display: flex;
   align-items: center;
-  gap: 14px;}
-#panel-intro .poke-step {
+  gap: 18px;}
+#panel-intro .ta-node {
   background: var(--ink);
   color: var(--paper);
-  font-size: 18px;
-  font-weight: 700;
-  padding: 18px 22px;
-  border-radius: 14px;
-  white-space: nowrap;}
-#panel-intro .poke-step.highlight {
-  background: var(--accent);}
-#panel-intro .poke-arrow {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--muted);}
-#panel-advanced .poke-org-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;}
-#panel-advanced .poke-root {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 14px 30px;
-  border-radius: 14px;
   font-size: 20px;
   font-weight: 800;
+  padding: 20px 28px;
+  border-radius: 16px;
   text-align: center;}
-#panel-advanced .poke-root-type {
+#panel-intro .ta-node.highlight {
+  background: var(--accent);}
+#panel-intro .ta-node.highlight .term-link {
+  color: var(--paper);}
+#panel-intro .ta-node-sub {
+  display: block;
+  margin-top: 8px;
   font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;}
+#panel-intro .ta-arrow {
+  font-size: 14px;
   font-weight: 700;
-  color: var(--paper);
-  opacity: 0.75;
-  margin-top: 2px;}
-#panel-advanced .poke-trunk {
-  width: 2px;
-  height: 22px;
-  background: var(--muted);}
-#panel-advanced .poke-branches {
+  color: var(--muted);
+  white-space: nowrap;}
+#panel-advanced .ta-history-flow {
   display: flex;
-  gap: 16px;
-  position: relative;}
-#panel-advanced .poke-h-line {
-  position: absolute;
-  top: 0;
-  left: 80px;
-  width: 352px;
-  height: 2px;
-  background: var(--muted);}
-#panel-advanced .poke-branch {
-  width: 160px;
+  align-items: center;
+  gap: 24px;}
+#panel-advanced .ta-era-card {
+  width: 260px;
+  background: var(--fade);
+  border-radius: 18px;
+  padding: 26px 22px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;}
-#panel-advanced .poke-stem {
-  width: 2px;
-  height: 22px;
-  background: var(--muted);}
-#panel-advanced .poke-card {
-  width: 100%;
-  box-sizing: border-box;
-  background: var(--fade);
-  color: var(--ink);
-  padding: 14px 10px;
-  border-radius: 12px;
-  text-align: center;}
-#panel-advanced .poke-card.highlight {
-  background: var(--accent);
+  gap: 10px;}
+#panel-advanced .ta-era-card.new {
+  background: var(--accent);}
+#panel-advanced .ta-era-year {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);}
+#panel-advanced .ta-era-card.new .ta-era-year {
   color: var(--paper);}
-#panel-advanced .poke-card-name {
-  font-size: 16px;
-  font-weight: 700;
-  white-space: nowrap;}
-#panel-advanced .poke-payoff {
-  margin-top: 24px;
+#panel-advanced .ta-era-desc {
   font-size: 14px;
   font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;}
+#panel-advanced .ta-era-card.new .ta-era-desc {
+  color: var(--paper);}
+#panel-advanced .ta-flow-arrow2 {
+  font-size: 14px;
+  font-weight: 700;
   color: var(--muted);
-  text-align: center;}
+  white-space: nowrap;}
 </style>
 </head>
 <body>
@@ -257,59 +234,39 @@ body {
     <a class="back-link" href="index.html">一覧に戻る</a>
   </div>
   <div class="tabs">
-    <button class="tab-btn active" data-variant="intro">ポケモンとは</button>
+    <button class="tab-btn active" data-variant="intro">田尻智とは</button>
     <button class="tab-btn" data-variant="advanced">発展編</button>
   </div>
   <div class="stage-frame">
     <div class="stage-wrap">
       <div class="slide active" id="panel-intro">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ポケモン</h1>
-  <p class="message">不思議な生き物「ポケットモンスター」を集めて育てる<a class="term-link" href="nintendo.html">任天堂</a>のゲームシリーズ（生みの親: <a class="term-link" href="tajiri-satoshi.html">田尻智</a>）</p>
+  <h1 class="term">田尻智</h1>
+  <p class="message"><a class="term-link" href="pokemon.html">ポケモン</a>の生みの親で、ゲーム制作会社「ゲームフリーク」の代表取締役</p>
   <div class="visual" aria-hidden="true">
-    <div class="poke-row">
-  <div class="poke-step">① 捕まえる</div>
-  <div class="poke-arrow">→</div>
-  <div class="poke-step highlight">② 育てる</div>
-  <div class="poke-arrow">→</div>
-  <div class="poke-step">③ 対戦する</div>
+    <div class="ta-flow">
+  <div class="ta-node">田尻智<span class="ta-node-sub">ゲームフリーク代表</span></div>
+  <div class="ta-arrow">生み出した →</div>
+  <div class="ta-node highlight"><a class="term-link" href="pokemon.html">ポケモン</a><span class="ta-node-sub">1996年〜</span></div>
 </div>
 
   </div>
 </div>
     <div class="slide" id="panel-advanced">
   <div class="eyebrow">今日のひとこと解説</div>
-  <h1 class="term">ポケモン</h1>
-  <p class="message">実はゲームだけでなく、カードやアニメも含めると世界で一番稼いだメディア作品になっている</p>
+  <h1 class="term">田尻智</h1>
+  <p class="message">実はポケモンの原点は、田尻智が子供の頃に夢中になった「昆虫採集」の思い出</p>
   <div class="visual" aria-hidden="true">
-    <div class="poke-org-chart">
-  <div class="poke-root">
-    ポケモン
-    <div class="poke-root-type">1996年〜</div>
+    <div class="ta-history-flow">
+  <div class="ta-era-card old">
+    <div class="ta-era-year">少年時代</div>
+    <div class="ta-era-desc">昆虫採集に夢中になり、友達と虫を見せ合い・交換して遊んだ</div>
   </div>
-  <div class="poke-trunk"></div>
-  <div class="poke-branches">
-    <div class="poke-h-line"></div>
-    <div class="poke-branch">
-      <div class="poke-stem"></div>
-      <div class="poke-card">
-        <div class="poke-card-name">ゲーム</div>
-      </div>
-    </div>
-    <div class="poke-branch">
-      <div class="poke-stem"></div>
-      <div class="poke-card">
-        <div class="poke-card-name">カードゲーム</div>
-      </div>
-    </div>
-    <div class="poke-branch">
-      <div class="poke-stem"></div>
-      <div class="poke-card highlight">
-        <div class="poke-card-name">アニメ</div>
-      </div>
-    </div>
+  <div class="ta-flow-arrow2">その体験が →</div>
+  <div class="ta-era-card new">
+    <div class="ta-era-year">1996年</div>
+    <div class="ta-era-desc">モンスターを捕まえて交換する「ポケモン」として結実</div>
   </div>
-  <div class="poke-payoff">これら全部を合わせると、世界一稼いだメディア作品</div>
 </div>
 
   </div>
