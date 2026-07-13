@@ -1,0 +1,57 @@
+.msl-tier-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.msl-tier-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.msl-tier-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.msl-tier-label {
+  width: 130px;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.4;
+}
+
+.msl-tier-label.highlight {
+  color: var(--accent);
+}
+
+.msl-tier-bar {
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.msl-tier-bar.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.msl-tier-note {
+  max-width: 640px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+}

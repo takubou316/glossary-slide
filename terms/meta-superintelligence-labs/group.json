@@ -1,0 +1,8 @@
+{
+  "slug": "meta-superintelligence-labs",
+  "title": "Meta Superintelligence Labs",
+  "variants": [
+    { "id": "intro", "label": "MSLとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
