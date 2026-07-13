@@ -1,0 +1,8 @@
+{
+  "slug": "db-kickback",
+  "title": "ダンベルキックバック",
+  "variants": [
+    { "id": "intro", "label": "ダンベルキックバックとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

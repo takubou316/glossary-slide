@@ -1,0 +1,72 @@
+.ex-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ex-flow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ex-equip {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 22px;
+  border-radius: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ex-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ex-muscles {
+  display: flex;
+  gap: 10px;
+}
+
+.ex-muscle {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ex-muscle.primary {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.ex-muscle-type {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.ex-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

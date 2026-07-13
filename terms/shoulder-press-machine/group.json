@@ -1,0 +1,8 @@
+{
+  "slug": "shoulder-press-machine",
+  "title": "ショルダープレスマシン",
+  "variants": [
+    { "id": "intro", "label": "ショルダープレスマシンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

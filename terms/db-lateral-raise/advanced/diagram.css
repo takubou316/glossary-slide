@@ -1,0 +1,72 @@
+.ex-dir-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ex-dir-center {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 999px;
+}
+
+.ex-dir-row {
+  display: flex;
+  gap: 14px;
+}
+
+.ex-dir-card {
+  width: 150px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ex-dir-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.ex-dir-card .term-link {
+  color: var(--ink);
+}
+
+.ex-dir-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.ex-dir-card.highlight .ex-dir-arrow {
+  color: var(--paper);
+  opacity: 0.85;
+}
+
+.ex-dir-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.ex-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

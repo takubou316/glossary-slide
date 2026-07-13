@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-back-squat",
+  "title": "バーベルスクワット",
+  "variants": [
+    { "id": "intro", "label": "バーベルスクワットとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

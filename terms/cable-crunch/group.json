@@ -1,0 +1,8 @@
+{
+  "slug": "cable-crunch",
+  "title": "ケーブルクランチ",
+  "variants": [
+    { "id": "intro", "label": "ケーブルクランチとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

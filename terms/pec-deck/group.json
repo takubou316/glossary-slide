@@ -1,0 +1,8 @@
+{
+  "slug": "pec-deck",
+  "title": "ペックデックフライ",
+  "variants": [
+    { "id": "intro", "label": "ペックデックフライとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

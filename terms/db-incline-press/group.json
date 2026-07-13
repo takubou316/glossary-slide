@@ -1,0 +1,8 @@
+{
+  "slug": "db-incline-press",
+  "title": "ダンベルインクラインプレス",
+  "variants": [
+    { "id": "intro", "label": "ダンベルインクラインプレスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

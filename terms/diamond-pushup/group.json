@@ -1,0 +1,8 @@
+{
+  "slug": "diamond-pushup",
+  "title": "ダイヤモンドプッシュアップ",
+  "variants": [
+    { "id": "intro", "label": "ダイヤモンドプッシュアップとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

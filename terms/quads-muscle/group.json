@@ -1,0 +1,8 @@
+{
+  "slug": "quads-muscle",
+  "title": "大腿四頭筋",
+  "variants": [
+    { "id": "intro", "label": "大腿四頭筋とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

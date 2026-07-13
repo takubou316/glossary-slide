@@ -1,0 +1,8 @@
+{
+  "slug": "db-rear-delt-fly",
+  "title": "ダンベルリアレイズ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルリアレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

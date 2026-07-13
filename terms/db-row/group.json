@@ -1,0 +1,8 @@
+{
+  "slug": "db-row",
+  "title": "ダンベルワンハンドロウ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルワンハンドロウとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

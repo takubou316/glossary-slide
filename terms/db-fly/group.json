@@ -1,0 +1,8 @@
+{
+  "slug": "db-fly",
+  "title": "ダンベルフライ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルフライとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

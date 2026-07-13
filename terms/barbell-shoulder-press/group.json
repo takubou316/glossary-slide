@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-shoulder-press",
+  "title": "バーベルショルダープレス",
+  "variants": [
+    { "id": "intro", "label": "バーベルショルダープレスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

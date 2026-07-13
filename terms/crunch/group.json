@@ -1,0 +1,8 @@
+{
+  "slug": "crunch",
+  "title": "クランチ",
+  "variants": [
+    { "id": "intro", "label": "クランチとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "bulgarian-split-squat",
+  "title": "ブルガリアンスプリットスクワット",
+  "variants": [
+    { "id": "intro", "label": "ブルガリアンスプリットスクワットとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

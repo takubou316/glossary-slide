@@ -1,0 +1,8 @@
+{
+  "slug": "lat-pulldown",
+  "title": "ラットプルダウン",
+  "variants": [
+    { "id": "intro", "label": "ラットプルダウンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "leg-curl-machine",
+  "title": "レッグカールマシン",
+  "variants": [
+    { "id": "intro", "label": "レッグカールマシンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

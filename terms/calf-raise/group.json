@@ -1,0 +1,8 @@
+{
+  "slug": "calf-raise",
+  "title": "カーフレイズ（自重）",
+  "variants": [
+    { "id": "intro", "label": "カーフレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

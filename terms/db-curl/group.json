@@ -1,0 +1,8 @@
+{
+  "slug": "db-curl",
+  "title": "ダンベルカール",
+  "variants": [
+    { "id": "intro", "label": "ダンベルカールとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

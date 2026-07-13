@@ -1,0 +1,8 @@
+{
+  "slug": "bodyweight-squat",
+  "title": "スクワット（自重）",
+  "variants": [
+    { "id": "intro", "label": "スクワットとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

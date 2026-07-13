@@ -1,0 +1,8 @@
+{
+  "slug": "hip-thrust",
+  "title": "ヒップスラスト",
+  "variants": [
+    { "id": "intro", "label": "ヒップスラストとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,46 @@
+.ex-compare-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ex-compare-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ex-compare-card {
+  width: 220px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ex-compare-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.ex-compare-card .term-link {
+  color: var(--accent);
+}
+
+.ex-compare-sub {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ex-compare-vs {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--muted);
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "db-triceps-extension",
+  "title": "ダンベルトライセプスエクステンション",
+  "variants": [
+    { "id": "intro", "label": "ダンベルトライセプスエクステンションとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

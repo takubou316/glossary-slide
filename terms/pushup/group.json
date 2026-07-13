@@ -1,0 +1,8 @@
+{
+  "slug": "pushup",
+  "title": "プッシュアップ（腕立て伏せ）",
+  "variants": [
+    { "id": "intro", "label": "プッシュアップとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

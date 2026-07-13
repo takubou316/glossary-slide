@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-bench-press",
+  "title": "バーベルベンチプレス",
+  "variants": [
+    { "id": "intro", "label": "バーベルベンチプレスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "cable-fly",
+  "title": "ケーブルフライ",
+  "variants": [
+    { "id": "intro", "label": "ケーブルフライとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

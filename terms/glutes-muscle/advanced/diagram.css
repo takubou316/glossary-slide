@@ -1,0 +1,44 @@
+.ms-rank-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ms-rank-badge {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: 999px;
+}
+
+.ms-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ms-rank-label {
+  width: 190px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+}
+
+.ms-rank-label.highlight {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.ms-rank-bar {
+  height: 32px;
+  background: var(--fade);
+  border-radius: 8px;
+}
+
+.ms-rank-bar.highlight {
+  background: var(--accent);
+}

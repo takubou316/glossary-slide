@@ -1,0 +1,8 @@
+{
+  "slug": "plank",
+  "title": "プランク",
+  "variants": [
+    { "id": "intro", "label": "プランクとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

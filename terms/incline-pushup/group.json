@@ -1,0 +1,8 @@
+{
+  "slug": "incline-pushup",
+  "title": "インクラインプッシュアップ",
+  "variants": [
+    { "id": "intro", "label": "インクラインプッシュアップとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

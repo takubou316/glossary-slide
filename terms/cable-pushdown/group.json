@@ -1,0 +1,8 @@
+{
+  "slug": "cable-pushdown",
+  "title": "ケーブルプッシュダウン",
+  "variants": [
+    { "id": "intro", "label": "ケーブルプッシュダウンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

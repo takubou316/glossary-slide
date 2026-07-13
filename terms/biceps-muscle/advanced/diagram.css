@@ -1,0 +1,45 @@
+.ms-heads-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ms-heads-row {
+  display: flex;
+  gap: 16px;
+}
+
+.ms-head {
+  width: 170px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 14px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.ms-head-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.ms-heads-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.ms-heads-result {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 800;
+  padding: 14px 26px;
+  border-radius: 14px;
+}

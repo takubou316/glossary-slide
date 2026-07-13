@@ -1,0 +1,54 @@
+.ex-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ex-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ex-progress-step {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ex-progress-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.ex-progress-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.ex-progress-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.ex-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

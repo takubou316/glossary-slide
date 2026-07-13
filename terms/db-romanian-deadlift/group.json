@@ -1,0 +1,8 @@
+{
+  "slug": "db-romanian-deadlift",
+  "title": "ダンベルルーマニアンデッドリフト",
+  "variants": [
+    { "id": "intro", "label": "ダンベルルーマニアンデッドリフトとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

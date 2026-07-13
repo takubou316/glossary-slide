@@ -1,0 +1,8 @@
+{
+  "slug": "db-row-both",
+  "title": "ダンベルベントオーバーロウ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルベントオーバーロウとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

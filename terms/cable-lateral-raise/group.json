@@ -1,0 +1,8 @@
+{
+  "slug": "cable-lateral-raise",
+  "title": "ケーブルサイドレイズ",
+  "variants": [
+    { "id": "intro", "label": "ケーブルサイドレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

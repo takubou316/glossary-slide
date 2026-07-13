@@ -1,0 +1,8 @@
+{
+  "slug": "straight-arm-pulldown",
+  "title": "ストレートアームプルダウン",
+  "variants": [
+    { "id": "intro", "label": "ストレートアームプルダウンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

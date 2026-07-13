@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上腕三頭筋 - 用語解説スライド</title>
+<style>
+:root {
+  --accent: #D97757;
+  --ink: #262322;
+  --paper: #FAF9F5;
+  --muted: #8A8681;
+  --fade: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+rt {
+  font-size: 0.55em;
+  font-weight: 600;
+  color: var(--muted);
+  user-select: none;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #EAE8E3;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-wrap {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  transform-origin: top left;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  padding: 70px 100px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.term {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.term rt {
+  font-size: 0.28em;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+
+.message {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-row {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.back-link, .back-step {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--muted);
+  text-decoration: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.back-link:hover, .back-step:hover {
+  color: var(--accent);
+}
+
+.term-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+/* ここから下は各バリアントの図解専用CSS */
+#panel-intro .ms-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;}
+#panel-intro .ms-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;}
+#panel-intro .ms-label {
+  width: 100px;
+  flex-shrink: 0;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 14px 16px;
+  border-radius: 14px;
+  text-align: center;}
+#panel-intro .ms-label.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+#panel-intro .ms-desc {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.6;}
+#panel-advanced .ms-tri-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;}
+#panel-advanced .ms-heads-row {
+  display: flex;
+  gap: 12px;}
+#panel-advanced .ms-head {
+  width: 130px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 10px;
+  border-radius: 14px;
+  text-align: center;}
+#panel-advanced .ms-heads-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);}
+#panel-advanced .ms-heads-result {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 14px;
+  margin-bottom: 8px;}
+#panel-advanced .ms-size-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;}
+#panel-advanced .ms-size-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;}
+#panel-advanced .ms-size-label {
+  width: 110px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;}
+#panel-advanced .ms-size-label.highlight {
+  color: var(--accent);}
+#panel-advanced .ms-size-bar {
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-sizing: border-box;}
+#panel-advanced .ms-size-bar.highlight {
+  background: var(--accent);
+  color: var(--paper);}
+</style>
+</head>
+<body>
+  <div class="back-row">
+    <button type="button" class="back-step" onclick="history.back()">← 戻る</button>
+    <a class="back-link" href="index.html">一覧に戻る</a>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" data-variant="intro">上腕三頭筋とは</button>
+    <button class="tab-btn" data-variant="advanced">発展編</button>
+  </div>
+  <div class="stage-frame">
+    <div class="stage-wrap">
+      <div class="slide active" id="panel-intro">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term"><ruby>上腕三頭筋<rt>じょうわんさんとうきん</rt></ruby></h1>
+  <p class="message">二の腕の後ろ側にある、腕を伸ばすときに使う筋肉</p>
+  <div class="visual" aria-hidden="true">
+    <div class="ms-stack">
+  <div class="ms-row">
+    <div class="ms-label">位置</div>
+    <div class="ms-desc">二の腕の後ろ側</div>
+  </div>
+  <div class="ms-row">
+    <div class="ms-label highlight">働き</div>
+    <div class="ms-desc">肘を伸ばす動き（プッシュアップ・ベンチプレスなど）で使われる</div>
+  </div>
+</div>
+
+  </div>
+</div>
+    <div class="slide" id="panel-advanced">
+  <div class="eyebrow">今日のひとこと解説</div>
+  <h1 class="term"><ruby>上腕三頭筋<rt>じょうわんさんとうきん</rt></ruby></h1>
+  <p class="message">実は二の腕の体積の6割以上を占め、<a class="term-link" href="biceps-muscle.html">上腕二頭筋</a>より大きい筋肉</p>
+  <div class="visual" aria-hidden="true">
+    <div class="ms-tri-wrap">
+  <div class="ms-heads-row">
+    <div class="ms-head">長頭</div>
+    <div class="ms-head">外側頭</div>
+    <div class="ms-head">内側頭</div>
+  </div>
+  <div class="ms-heads-arrow">↓ 3つが合流して</div>
+  <div class="ms-heads-result">1つの上腕三頭筋に</div>
+  <div class="ms-size-compare">
+    <div class="ms-size-row">
+      <div class="ms-size-label">上腕二頭筋</div>
+      <div class="ms-size-bar" style="width:140px">約35%</div>
+    </div>
+    <div class="ms-size-row">
+      <div class="ms-size-label highlight">上腕三頭筋</div>
+      <div class="ms-size-bar highlight" style="width:260px">約65%</div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.slide').forEach(function (s) { s.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.variant).classList.add('active');
+      });
+    });
+
+    function fitStage() {
+      var margin = 40;
+      var tabsHeight = document.querySelector('.tabs').offsetHeight + 24;
+      var scale = Math.min(
+        (window.innerWidth - margin) / 1280,
+        (window.innerHeight - margin - tabsHeight) / 720,
+        1
+      );
+      // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
+      // 負の値やゼロになることがあるための安全策
+      scale = Math.max(scale, 0.15);
+      var frame = document.querySelector('.stage-frame');
+      document.querySelector('.stage-wrap').style.transform = 'scale(' + scale + ')';
+      frame.style.width = (1280 * scale) + 'px';
+      frame.style.height = (720 * scale) + 'px';
+    }
+    window.addEventListener('resize', fitStage);
+    window.addEventListener('load', fitStage);
+    fitStage();
+    [50, 150, 300, 600, 1000].forEach(function (ms) { setTimeout(fitStage, ms); });
+  </script>
+</body>
+</html>

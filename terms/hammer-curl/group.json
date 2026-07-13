@@ -1,0 +1,8 @@
+{
+  "slug": "hammer-curl",
+  "title": "ハンマーカール",
+  "variants": [
+    { "id": "intro", "label": "ハンマーカールとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

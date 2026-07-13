@@ -1,0 +1,8 @@
+{
+  "slug": "cable-curl",
+  "title": "ケーブルカール",
+  "variants": [
+    { "id": "intro", "label": "ケーブルカールとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

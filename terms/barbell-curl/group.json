@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-curl",
+  "title": "バーベルカール",
+  "variants": [
+    { "id": "intro", "label": "バーベルカールとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

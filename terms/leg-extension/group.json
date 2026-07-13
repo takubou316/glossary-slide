@@ -1,0 +1,8 @@
+{
+  "slug": "leg-extension",
+  "title": "レッグエクステンション",
+  "variants": [
+    { "id": "intro", "label": "レッグエクステンションとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "hip-abduction-machine",
+  "title": "ヒップアブダクションマシン",
+  "variants": [
+    { "id": "intro", "label": "ヒップアブダクションマシンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

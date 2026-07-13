@@ -1,0 +1,8 @@
+{
+  "slug": "bench-dip",
+  "title": "ベンチディップス",
+  "variants": [
+    { "id": "intro", "label": "ベンチディップスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

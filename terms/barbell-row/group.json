@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-row",
+  "title": "バーベルベントオーバーロウ",
+  "variants": [
+    { "id": "intro", "label": "バーベルベントオーバーロウとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "ab-wheel",
+  "title": "アブローラー",
+  "variants": [
+    { "id": "intro", "label": "アブローラーとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

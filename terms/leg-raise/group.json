@@ -1,0 +1,8 @@
+{
+  "slug": "leg-raise",
+  "title": "レッグレイズ",
+  "variants": [
+    { "id": "intro", "label": "レッグレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

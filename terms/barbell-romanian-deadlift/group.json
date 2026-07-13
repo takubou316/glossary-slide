@@ -1,0 +1,8 @@
+{
+  "slug": "barbell-romanian-deadlift",
+  "title": "バーベルルーマニアンデッドリフト",
+  "variants": [
+    { "id": "intro", "label": "バーベルルーマニアンデッドリフトとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

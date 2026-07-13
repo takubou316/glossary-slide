@@ -1,0 +1,8 @@
+{
+  "slug": "pike-pushup",
+  "title": "パイクプッシュアップ",
+  "variants": [
+    { "id": "intro", "label": "パイクプッシュアップとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

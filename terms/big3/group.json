@@ -1,0 +1,8 @@
+{
+  "slug": "big3",
+  "title": "BIG3（ビッグ3）",
+  "variants": [
+    { "id": "intro", "label": "BIG3とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

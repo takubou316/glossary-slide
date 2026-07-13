@@ -1,0 +1,8 @@
+{
+  "slug": "superman",
+  "title": "スーパーマン（背筋反らし）",
+  "variants": [
+    { "id": "intro", "label": "スーパーマンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

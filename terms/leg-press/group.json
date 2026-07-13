@@ -1,0 +1,8 @@
+{
+  "slug": "leg-press",
+  "title": "レッグプレス",
+  "variants": [
+    { "id": "intro", "label": "レッグプレスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

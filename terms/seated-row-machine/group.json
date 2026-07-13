@@ -1,0 +1,8 @@
+{
+  "slug": "seated-row-machine",
+  "title": "シーテッドロウマシン",
+  "variants": [
+    { "id": "intro", "label": "シーテッドロウマシンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

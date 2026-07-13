@@ -1,0 +1,8 @@
+{
+  "slug": "db-front-raise",
+  "title": "ダンベルフロントレイズ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルフロントレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "inverted-row",
+  "title": "インバーテッドロウ",
+  "variants": [
+    { "id": "intro", "label": "インバーテッドロウとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

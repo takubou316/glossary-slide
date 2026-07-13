@@ -1,0 +1,8 @@
+{
+  "slug": "db-calf-raise",
+  "title": "ダンベルカーフレイズ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルカーフレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "mountain-climber",
+  "title": "マウンテンクライマー",
+  "variants": [
+    { "id": "intro", "label": "マウンテンクライマーとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

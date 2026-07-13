@@ -1,0 +1,8 @@
+{
+  "slug": "chest-press-machine",
+  "title": "チェストプレスマシン",
+  "variants": [
+    { "id": "intro", "label": "チェストプレスマシンとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

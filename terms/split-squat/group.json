@@ -1,0 +1,8 @@
+{
+  "slug": "split-squat",
+  "title": "スプリットスクワット",
+  "variants": [
+    { "id": "intro", "label": "スプリットスクワットとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

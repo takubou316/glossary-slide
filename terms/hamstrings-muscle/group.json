@@ -1,0 +1,8 @@
+{
+  "slug": "hamstrings-muscle",
+  "title": "ハムストリングス",
+  "variants": [
+    { "id": "intro", "label": "ハムストリングスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

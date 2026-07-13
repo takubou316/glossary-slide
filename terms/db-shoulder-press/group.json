@@ -1,0 +1,8 @@
+{
+  "slug": "db-shoulder-press",
+  "title": "ダンベルショルダープレス",
+  "variants": [
+    { "id": "intro", "label": "ダンベルショルダープレスとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

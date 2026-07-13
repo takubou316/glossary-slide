@@ -1,0 +1,49 @@
+.ex-tier-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ex-tier-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ex-tier-label {
+  width: 140px;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.4;
+}
+
+.ex-tier-label.highlight {
+  color: var(--accent);
+}
+
+.ex-tier-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.ex-tier-bar {
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.ex-tier-bar.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+

@@ -1,0 +1,8 @@
+{
+  "slug": "db-lateral-raise",
+  "title": "ダンベルサイドレイズ",
+  "variants": [
+    { "id": "intro", "label": "ダンベルサイドレイズとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

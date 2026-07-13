@@ -1,0 +1,8 @@
+{
+  "slug": "decline-pushup",
+  "title": "デクラインプッシュアップ",
+  "variants": [
+    { "id": "intro", "label": "デクラインプッシュアップとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

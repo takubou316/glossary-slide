@@ -1,0 +1,8 @@
+{
+  "slug": "side-plank",
+  "title": "サイドプランク",
+  "variants": [
+    { "id": "intro", "label": "サイドプランクとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

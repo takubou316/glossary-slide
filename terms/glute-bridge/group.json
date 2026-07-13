@@ -1,0 +1,8 @@
+{
+  "slug": "glute-bridge",
+  "title": "グルートブリッジ",
+  "variants": [
+    { "id": "intro", "label": "グルートブリッジとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}
