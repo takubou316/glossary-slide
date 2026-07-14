@@ -1,8 +1,15 @@
 {
   "slug": "hip-abduction-machine",
   "title": "ヒップアブダクションマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ヒップアブダクションマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ヒップアブダクションマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

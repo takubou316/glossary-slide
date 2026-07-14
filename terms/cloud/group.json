@@ -1,8 +1,15 @@
 {
   "slug": "cloud",
   "title": "クラウド",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "クラウドとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "クラウドとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

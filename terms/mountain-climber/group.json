@@ -1,8 +1,15 @@
 {
   "slug": "mountain-climber",
   "title": "マウンテンクライマー",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "マウンテンクライマーとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "マウンテンクライマーとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

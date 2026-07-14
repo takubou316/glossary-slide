@@ -1,8 +1,15 @@
 {
   "slug": "db-incline-press",
   "title": "ダンベルインクラインプレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルインクラインプレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルインクラインプレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "plank",
   "title": "プランク",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "プランクとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "プランクとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

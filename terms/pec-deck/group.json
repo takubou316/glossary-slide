@@ -1,8 +1,15 @@
 {
   "slug": "pec-deck",
   "title": "ペックデックフライ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ペックデックフライとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ペックデックフライとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

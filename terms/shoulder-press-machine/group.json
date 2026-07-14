@@ -1,8 +1,15 @@
 {
   "slug": "shoulder-press-machine",
   "title": "ショルダープレスマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ショルダープレスマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ショルダープレスマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

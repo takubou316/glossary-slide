@@ -1,8 +1,15 @@
 {
   "slug": "meta-superintelligence-labs",
   "title": "Meta Superintelligence Labs",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "MSLとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "MSLとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "bench-dip",
   "title": "ベンチディップス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ベンチディップスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ベンチディップスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

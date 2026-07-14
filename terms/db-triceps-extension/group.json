@@ -1,8 +1,15 @@
 {
   "slug": "db-triceps-extension",
   "title": "ダンベルトライセプスエクステンション",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルトライセプスエクステンションとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルトライセプスエクステンションとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

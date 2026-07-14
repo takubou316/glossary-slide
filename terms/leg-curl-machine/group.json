@@ -1,8 +1,15 @@
 {
   "slug": "leg-curl-machine",
   "title": "レッグカールマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "レッグカールマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "レッグカールマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

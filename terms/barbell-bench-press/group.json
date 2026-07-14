@@ -1,8 +1,15 @@
 {
   "slug": "barbell-bench-press",
   "title": "バーベルベンチプレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルベンチプレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルベンチプレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

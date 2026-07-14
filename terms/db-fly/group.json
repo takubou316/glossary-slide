@@ -1,8 +1,15 @@
 {
   "slug": "db-fly",
   "title": "ダンベルフライ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルフライとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルフライとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

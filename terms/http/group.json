@@ -1,8 +1,15 @@
 {
   "slug": "http",
   "title": "HTTP / HTTPS",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "HTTPとは" },
-    { "id": "advanced", "label": "HTTPSとの違い" }
+    {
+      "id": "intro",
+      "label": "HTTPとは"
+    },
+    {
+      "id": "advanced",
+      "label": "HTTPSとの違い"
+    }
   ]
 }

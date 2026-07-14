@@ -1,8 +1,15 @@
 {
   "slug": "glute-bridge",
   "title": "グルートブリッジ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "グルートブリッジとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "グルートブリッジとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

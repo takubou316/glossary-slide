@@ -1,8 +1,15 @@
 {
   "slug": "db-lateral-raise",
   "title": "ダンベルサイドレイズ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルサイドレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルサイドレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

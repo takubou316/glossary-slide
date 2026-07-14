@@ -1,8 +1,15 @@
 {
   "slug": "mario",
   "title": "スーパーマリオ",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "スーパーマリオとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "スーパーマリオとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

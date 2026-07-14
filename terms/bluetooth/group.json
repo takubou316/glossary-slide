@@ -1,8 +1,15 @@
 {
   "slug": "bluetooth",
   "title": "Bluetooth（ブルートゥース）",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "Bluetoothとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "Bluetoothとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

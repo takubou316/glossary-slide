@@ -1,8 +1,15 @@
 {
   "slug": "cable-fly",
   "title": "ケーブルフライ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ケーブルフライとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ケーブルフライとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "chest-press-machine",
   "title": "チェストプレスマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "チェストプレスマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "チェストプレスマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "ab-wheel",
   "title": "アブローラー",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "アブローラーとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "アブローラーとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

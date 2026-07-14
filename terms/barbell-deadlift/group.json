@@ -1,8 +1,15 @@
 {
   "slug": "barbell-deadlift",
   "title": "バーベルデッドリフト",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルデッドリフトとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルデッドリフトとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

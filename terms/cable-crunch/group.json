@@ -1,8 +1,15 @@
 {
   "slug": "cable-crunch",
   "title": "ケーブルクランチ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ケーブルクランチとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ケーブルクランチとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

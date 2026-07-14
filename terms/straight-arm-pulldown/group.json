@@ -1,8 +1,15 @@
 {
   "slug": "straight-arm-pulldown",
   "title": "ストレートアームプルダウン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ストレートアームプルダウンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ストレートアームプルダウンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

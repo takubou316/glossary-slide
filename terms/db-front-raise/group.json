@@ -1,8 +1,15 @@
 {
   "slug": "db-front-raise",
   "title": "ダンベルフロントレイズ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルフロントレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルフロントレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

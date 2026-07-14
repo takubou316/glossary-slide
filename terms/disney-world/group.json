@@ -1,9 +1,19 @@
 {
   "slug": "disney-world",
   "title": "ウォルト・ディズニー・ワールド",
+  "category": "場所・社会",
   "variants": [
-    { "id": "intro", "label": "ディズニーワールドとは" },
-    { "id": "advanced", "label": "発展編" },
-    { "id": "creator", "label": "誰が作った？" }
+    {
+      "id": "intro",
+      "label": "ディズニーワールドとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    },
+    {
+      "id": "creator",
+      "label": "誰が作った？"
+    }
   ]
 }

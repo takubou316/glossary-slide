@@ -1,8 +1,15 @@
 {
   "slug": "hamstrings-muscle",
   "title": "ハムストリングス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ハムストリングスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ハムストリングスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

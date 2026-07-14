@@ -1,8 +1,15 @@
 {
   "slug": "incline-pushup",
   "title": "インクラインプッシュアップ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "インクラインプッシュアップとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "インクラインプッシュアップとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

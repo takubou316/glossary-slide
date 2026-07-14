@@ -1,8 +1,15 @@
 {
   "slug": "browser",
   "title": "ブラウザ",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "ブラウザとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ブラウザとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

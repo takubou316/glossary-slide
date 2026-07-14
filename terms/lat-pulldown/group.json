@@ -1,8 +1,15 @@
 {
   "slug": "lat-pulldown",
   "title": "ラットプルダウン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ラットプルダウンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ラットプルダウンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

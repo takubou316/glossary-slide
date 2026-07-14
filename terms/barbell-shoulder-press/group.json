@@ -1,8 +1,15 @@
 {
   "slug": "barbell-shoulder-press",
   "title": "バーベルショルダープレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルショルダープレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルショルダープレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

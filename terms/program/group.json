@@ -1,8 +1,15 @@
 {
   "slug": "program",
   "title": "プログラム",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "プログラムとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "プログラムとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,9 +1,19 @@
 {
   "slug": "hallucination",
   "title": "ハルシネーション",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "ハルシネーションとは" },
-    { "id": "examples", "label": "実際の事例" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ハルシネーションとは"
+    },
+    {
+      "id": "examples",
+      "label": "実際の事例"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

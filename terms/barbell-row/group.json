@@ -1,8 +1,15 @@
 {
   "slug": "barbell-row",
   "title": "バーベルベントオーバーロウ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルベントオーバーロウとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルベントオーバーロウとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

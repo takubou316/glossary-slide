@@ -1,8 +1,15 @@
 {
   "slug": "db-shoulder-press",
   "title": "ダンベルショルダープレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルショルダープレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルショルダープレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

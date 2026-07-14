@@ -1,8 +1,15 @@
 {
   "slug": "db-row",
   "title": "ダンベルワンハンドロウ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルワンハンドロウとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルワンハンドロウとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

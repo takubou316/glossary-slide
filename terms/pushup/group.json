@@ -1,8 +1,15 @@
 {
   "slug": "pushup",
   "title": "プッシュアップ（腕立て伏せ）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "プッシュアップとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "プッシュアップとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

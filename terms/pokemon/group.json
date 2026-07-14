@@ -1,8 +1,15 @@
 {
   "slug": "pokemon",
   "title": "ポケモン",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "ポケモンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ポケモンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

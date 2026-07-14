@@ -1,8 +1,15 @@
 {
   "slug": "shiraha-no-ya",
   "title": "白羽の矢が立つ",
+  "category": "ことわざ・言葉",
   "variants": [
-    { "id": "intro", "label": "白羽の矢が立つとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "白羽の矢が立つとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "site",
   "title": "サイト（ウェブサイト）",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "サイトとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "サイトとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

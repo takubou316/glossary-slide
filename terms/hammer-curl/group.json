@@ -1,8 +1,15 @@
 {
   "slug": "hammer-curl",
   "title": "ハンマーカール",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ハンマーカールとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ハンマーカールとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

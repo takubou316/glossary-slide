@@ -1,8 +1,15 @@
 {
   "slug": "seated-row-machine",
   "title": "シーテッドロウマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "シーテッドロウマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "シーテッドロウマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

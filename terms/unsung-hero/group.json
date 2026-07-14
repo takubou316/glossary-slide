@@ -1,8 +1,15 @@
 {
   "slug": "unsung-hero",
   "title": "縁の下の力持ち",
+  "category": "ことわざ・言葉",
   "variants": [
-    { "id": "intro", "label": "縁の下の力持ちとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "縁の下の力持ちとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

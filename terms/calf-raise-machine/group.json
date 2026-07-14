@@ -1,8 +1,15 @@
 {
   "slug": "calf-raise-machine",
   "title": "カーフレイズマシン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "カーフレイズマシンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "カーフレイズマシンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

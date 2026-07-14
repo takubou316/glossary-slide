@@ -1,10 +1,20 @@
 {
   "slug": "compound-interest",
   "title": "複利",
+  "category": "お金",
   "yomi": "ふくり",
   "variants": [
-    { "id": "intro", "label": "複利とは" },
-    { "id": "compare", "label": "単利との比較" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "複利とは"
+    },
+    {
+      "id": "compare",
+      "label": "単利との比較"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

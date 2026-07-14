@@ -1,8 +1,15 @@
 {
   "slug": "triceps-muscle",
   "title": "上腕三頭筋",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "上腕三頭筋とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "上腕三頭筋とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

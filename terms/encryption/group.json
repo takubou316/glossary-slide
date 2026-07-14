@@ -1,9 +1,19 @@
 {
   "slug": "encryption",
   "title": "暗号化",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "暗号化とは" },
-    { "id": "advanced", "label": "発展編" },
-    { "id": "keys", "label": "鍵の種類" }
+    {
+      "id": "intro",
+      "label": "暗号化とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    },
+    {
+      "id": "keys",
+      "label": "鍵の種類"
+    }
   ]
 }

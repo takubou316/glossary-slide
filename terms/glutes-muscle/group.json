@@ -1,8 +1,15 @@
 {
   "slug": "glutes-muscle",
   "title": "臀筋",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "臀筋とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "臀筋とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

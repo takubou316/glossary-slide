@@ -1,8 +1,15 @@
 {
   "slug": "inverted-row",
   "title": "インバーテッドロウ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "インバーテッドロウとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "インバーテッドロウとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

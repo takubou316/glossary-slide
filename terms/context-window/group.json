@@ -1,10 +1,23 @@
 {
   "slug": "context-window",
   "title": "コンテキストウィンドウ",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "コンテキストウィンドウとは" },
-    { "id": "compare", "label": "使い切るとどうなる" },
-    { "id": "why", "label": "なぜ増える?" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "コンテキストウィンドウとは"
+    },
+    {
+      "id": "compare",
+      "label": "使い切るとどうなる"
+    },
+    {
+      "id": "why",
+      "label": "なぜ増える?"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "bodyweight-squat",
   "title": "スクワット（自重）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "スクワットとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "スクワットとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

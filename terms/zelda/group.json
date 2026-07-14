@@ -1,8 +1,15 @@
 {
   "slug": "zelda",
   "title": "ゼルダの伝説",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "ゼルダの伝説とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ゼルダの伝説とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

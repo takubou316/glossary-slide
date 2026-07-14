@@ -1,8 +1,15 @@
 {
   "slug": "florida",
   "title": "フロリダ",
+  "category": "場所・社会",
   "variants": [
-    { "id": "intro", "label": "フロリダとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "フロリダとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

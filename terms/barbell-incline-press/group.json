@@ -1,8 +1,15 @@
 {
   "slug": "barbell-incline-press",
   "title": "バーベルインクラインベンチプレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルインクラインベンチプレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルインクラインベンチプレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

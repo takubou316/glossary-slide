@@ -1,8 +1,15 @@
 {
   "slug": "cable-pushdown",
   "title": "ケーブルプッシュダウン",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ケーブルプッシュダウンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ケーブルプッシュダウンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

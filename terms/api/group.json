@@ -1,8 +1,15 @@
 {
   "slug": "api",
   "title": "API",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "APIとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "APIとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

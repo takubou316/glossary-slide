@@ -1,8 +1,15 @@
 {
   "slug": "pullup",
   "title": "懸垂（プルアップ）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "懸垂とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "懸垂とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

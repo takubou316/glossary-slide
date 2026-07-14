@@ -1,8 +1,15 @@
 {
   "slug": "calf-raise",
   "title": "カーフレイズ（自重）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "カーフレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "カーフレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

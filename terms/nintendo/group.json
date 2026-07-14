@@ -1,8 +1,15 @@
 {
   "slug": "nintendo",
   "title": "任天堂",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "任天堂とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "任天堂とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "db-row-both",
   "title": "ダンベルベントオーバーロウ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルベントオーバーロウとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルベントオーバーロウとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

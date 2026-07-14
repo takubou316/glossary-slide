@@ -1,8 +1,15 @@
 {
   "slug": "dondengaeshi",
   "title": "どんでん返し",
+  "category": "ことわざ・言葉",
   "variants": [
-    { "id": "intro", "label": "どんでん返しとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "どんでん返しとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

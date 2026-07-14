@@ -1,8 +1,15 @@
 {
   "slug": "db-goblet-squat",
   "title": "ダンベルゴブレットスクワット",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルゴブレットスクワットとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルゴブレットスクワットとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

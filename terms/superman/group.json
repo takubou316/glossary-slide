@@ -1,8 +1,15 @@
 {
   "slug": "superman",
   "title": "スーパーマン（背筋反らし）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "スーパーマンとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "スーパーマンとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

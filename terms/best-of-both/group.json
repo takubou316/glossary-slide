@@ -1,8 +1,15 @@
 {
   "slug": "best-of-both",
   "title": "いいとこ取り",
+  "category": "ことわざ・言葉",
   "variants": [
-    { "id": "intro", "label": "いいとこ取りとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "いいとこ取りとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

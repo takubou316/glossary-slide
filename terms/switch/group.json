@@ -1,8 +1,15 @@
 {
   "slug": "switch",
   "title": "Nintendo Switch",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "Switchとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "Switchとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

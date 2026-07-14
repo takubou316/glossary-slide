@@ -1,8 +1,15 @@
 {
   "slug": "data",
   "title": "データ",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "データとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "データとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

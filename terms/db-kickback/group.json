@@ -1,8 +1,15 @@
 {
   "slug": "db-kickback",
   "title": "ダンベルキックバック",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルキックバックとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルキックバックとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

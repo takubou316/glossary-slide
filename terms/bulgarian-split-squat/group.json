@@ -1,8 +1,15 @@
 {
   "slug": "bulgarian-split-squat",
   "title": "ブルガリアンスプリットスクワット",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ブルガリアンスプリットスクワットとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ブルガリアンスプリットスクワットとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

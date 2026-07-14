@@ -1,8 +1,15 @@
 {
   "slug": "computer",
   "title": "コンピューター",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "コンピューターとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "コンピューターとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

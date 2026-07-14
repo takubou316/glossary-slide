@@ -1,8 +1,15 @@
 {
   "slug": "decline-pushup",
   "title": "デクラインプッシュアップ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "デクラインプッシュアップとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "デクラインプッシュアップとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

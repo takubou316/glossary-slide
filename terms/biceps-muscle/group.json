@@ -1,8 +1,15 @@
 {
   "slug": "biceps-muscle",
   "title": "上腕二頭筋",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "上腕二頭筋とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "上腕二頭筋とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

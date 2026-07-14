@@ -1,8 +1,15 @@
 {
   "slug": "db-curl",
   "title": "ダンベルカール",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルカールとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルカールとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

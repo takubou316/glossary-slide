@@ -1,8 +1,15 @@
 {
   "slug": "crunch",
   "title": "クランチ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "クランチとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "クランチとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "cable-lateral-raise",
   "title": "ケーブルサイドレイズ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ケーブルサイドレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ケーブルサイドレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

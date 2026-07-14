@@ -1,8 +1,15 @@
 {
   "slug": "cable-curl",
   "title": "ケーブルカール",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ケーブルカールとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ケーブルカールとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

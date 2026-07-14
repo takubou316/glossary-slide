@@ -1,8 +1,15 @@
 {
   "slug": "leg-press",
   "title": "レッグプレス",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "レッグプレスとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "レッグプレスとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "diamond-pushup",
   "title": "ダイヤモンドプッシュアップ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダイヤモンドプッシュアップとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダイヤモンドプッシュアップとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

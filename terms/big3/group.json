@@ -1,8 +1,15 @@
 {
   "slug": "big3",
   "title": "BIG3（ビッグ3）",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "BIG3とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "BIG3とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

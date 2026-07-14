@@ -1,8 +1,15 @@
 {
   "slug": "barbell-romanian-deadlift",
   "title": "バーベルルーマニアンデッドリフト",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "バーベルルーマニアンデッドリフトとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "バーベルルーマニアンデッドリフトとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

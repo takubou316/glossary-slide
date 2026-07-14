@@ -1,8 +1,15 @@
 {
   "slug": "ai",
   "title": "AI（人工知能）",
+  "category": "IT・AI",
   "variants": [
-    { "id": "intro", "label": "AIとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "AIとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "db-calf-raise",
   "title": "ダンベルカーフレイズ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルカーフレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルカーフレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

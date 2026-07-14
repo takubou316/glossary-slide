@@ -1,8 +1,15 @@
 {
   "slug": "tajiri-satoshi",
   "title": "田尻智",
+  "category": "ゲーム",
   "variants": [
-    { "id": "intro", "label": "田尻智とは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "田尻智とは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -56,7 +56,7 @@ def scope_css(css_text: str, scope_selector: str) -> str:
     return "\n".join(scoped_rules)
 
 
-def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
+def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, str]:
     meta = json.loads((term_dir / "meta.json").read_text(encoding="utf-8"))
     diagram_css = (term_dir / "diagram.css").read_text(encoding="utf-8")
     diagram_html = (term_dir / "diagram.html").read_text(encoding="utf-8")
@@ -73,10 +73,10 @@ def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{meta['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, meta["term"], meta["message"], meta.get("yomi", "")
+    return out_path, meta["term"], meta["message"], meta.get("yomi", ""), meta.get("category", "その他")
 
 
-def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
+def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, str]:
     group = json.loads((term_dir / "group.json").read_text(encoding="utf-8"))
 
     tab_buttons = []
@@ -121,24 +121,30 @@ def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{group['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, group["title"], intro_message, group.get("yomi", "")
+    return out_path, group["title"], intro_message, group.get("yomi", ""), group.get("category", "その他")
 
 
-def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str]:
+def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, str]:
     if (term_dir / "group.json").exists():
         return build_group(term_dir)
     return build_single(term_dir)
 
 
-def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathlib.Path:
+def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> pathlib.Path:
+    categories = sorted({category for _, _, _, _, _, category in entries})
+    category_buttons = "\n      ".join(
+        f'<button type="button" class="cat-btn" data-category="{cat}">{cat}</button>'
+        for cat in categories
+    )
     items = "\n".join(
-        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}" data-created="{created_at}">\n'
+        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}" data-created="{created_at}" data-category="{category}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
         f'          <div class="item-desc">{strip_tags(message)}</div>\n'
+        f'          <div class="item-category">{category}</div>\n'
         f'        </a>\n'
         f'      </li>'
-        for out_path, title, message, yomi, created_at in sorted(entries, key=lambda e: e[1])
+        for out_path, title, message, yomi, created_at, category in sorted(entries, key=lambda e: e[1])
     )
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -216,6 +222,31 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
     background: #D97757;
     color: #FAF9F5;
   }}
+  .cat-row {{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }}
+  .cat-btn {{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #DDD9D2;
+    background: transparent;
+    color: #8A8681;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    touch-action: manipulation;
+  }}
+  .cat-btn.active {{
+    border-color: #D97757;
+    background: #D97757;
+    color: #FAF9F5;
+  }}
   ul {{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }}
   .item a {{
     display: block;
@@ -225,9 +256,11 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
     border-radius: 14px;
   }}
   .item a:hover {{ background: #D97757; }}
-  .item a:hover .item-title, .item a:hover .item-desc {{ color: #FAF9F5; }}
+  .item a:hover .item-title, .item a:hover .item-desc, .item a:hover .item-category {{ color: #FAF9F5; }}
   .item-title {{ font-size: 20px; font-weight: 700; color: #D97757; }}
   .item-desc {{ font-size: 14px; font-weight: 600; color: #8A8681; margin-top: 6px; }}
+  .item-category {{ display: inline-block; font-size: 11px; font-weight: 700; color: #8A8681; margin-top: 10px; padding: 3px 10px; border: 1px solid #DDD9D2; border-radius: 999px; }}
+  .item a:hover .item-category {{ border-color: #FAF9F5; }}
   .empty-note {{ display: none; color: #8A8681; font-size: 15px; padding: 8px 4px; }}
 </style>
 </head>
@@ -238,6 +271,10 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
       <a class="create-link" href="create.html">+ 新しい用語を作成</a>
     </div>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
+    <div class="cat-row" id="cat-row">
+      <button type="button" class="cat-btn active" data-category="all">すべて</button>
+      {category_buttons}
+    </div>
     <div class="sort-row">
       <button type="button" class="sort-btn active" data-sort="alpha">アルファベット順</button>
       <button type="button" class="sort-btn" data-sort="new">新しい順</button>
@@ -261,7 +298,9 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
     var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn'));
+    var catButtons = [].slice.call(document.querySelectorAll('.cat-btn'));
     var currentSort = 'alpha';
+    var currentCategory = 'all';
 
     items.forEach(function (item, i) {{
       item.dataset.titleNorm = kataToHira(item.dataset.title);
@@ -293,6 +332,7 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
       var ranked = items
         .map(function (item) {{ return {{ item: item, rank: rank(item, q) }}; }})
         .filter(function (r) {{ return r.rank !== -1; }})
+        .filter(function (r) {{ return currentCategory === 'all' || r.item.dataset.category === currentCategory; }})
         .sort(function (a, b) {{
           if (a.rank !== b.rank) return a.rank - b.rank;
           return orderValue(a.item) - orderValue(b.item);
@@ -311,6 +351,14 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str]]) -> pathl
       btn.addEventListener('click', function () {{
         currentSort = btn.dataset.sort;
         sortButtons.forEach(function (b) {{ b.classList.remove('active'); }});
+        btn.classList.add('active');
+        render();
+      }});
+    }});
+    catButtons.forEach(function (btn) {{
+      btn.addEventListener('click', function () {{
+        currentCategory = btn.dataset.category;
+        catButtons.forEach(function (b) {{ b.classList.remove('active'); }});
         btn.classList.add('active');
         render();
       }});
@@ -337,9 +385,9 @@ def main():
 
     entries = []
     for term_dir in term_dirs:
-        out_path, title, message, yomi = build(term_dir)
+        out_path, title, message, yomi, category = build(term_dir)
         created_at = get_created_at(term_dir)
-        entries.append((out_path, title, message, yomi, created_at))
+        entries.append((out_path, title, message, yomi, created_at, category))
         print(f"built: {out_path}")
 
     if not targets:

@@ -1,8 +1,15 @@
 {
   "slug": "side-plank",
   "title": "サイドプランク",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "サイドプランクとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "サイドプランクとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }

@@ -1,8 +1,15 @@
 {
   "slug": "db-rear-delt-fly",
   "title": "ダンベルリアレイズ",
+  "category": "筋トレ",
   "variants": [
-    { "id": "intro", "label": "ダンベルリアレイズとは" },
-    { "id": "advanced", "label": "発展編" }
+    {
+      "id": "intro",
+      "label": "ダンベルリアレイズとは"
+    },
+    {
+      "id": "advanced",
+      "label": "発展編"
+    }
   ]
 }
