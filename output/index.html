@@ -99,6 +99,8 @@
     background: #D97757;
     color: #FAF9F5;
   }
+  .cat-row { display: none; }
+  .cat-row.open { display: flex; }
   ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   .item a {
     display: block;
@@ -123,6 +125,11 @@
       <a class="create-link" href="create.html">+ 新しい用語を作成</a>
     </div>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
+    <div class="sort-row">
+      <button type="button" class="sort-btn active" data-sort="alpha">アルファベット順</button>
+      <button type="button" class="sort-btn" data-sort="new">新しい順</button>
+      <button type="button" class="sort-btn" id="cat-toggle">タブで絞る+</button>
+    </div>
     <div class="cat-row" id="cat-row">
       <button type="button" class="cat-btn active" data-category="all">すべて</button>
       <button type="button" class="cat-btn" data-category="IT・AI">IT・AI</button>
@@ -132,10 +139,6 @@
       <button type="button" class="cat-btn" data-category="場所・社会">場所・社会</button>
       <button type="button" class="cat-btn" data-category="科学">科学</button>
       <button type="button" class="cat-btn" data-category="筋トレ">筋トレ</button>
-    </div>
-    <div class="sort-row">
-      <button type="button" class="sort-btn active" data-sort="alpha">アルファベット順</button>
-      <button type="button" class="sort-btn" data-sort="new">新しい順</button>
     </div>
     <ul id="list">
       <li class="item" data-title="ai（人工知能）" data-desc="たくさんのデータから自分でパターンを学び、決まったルールがない場面でも判断できるコンピューターの技術" data-created="2026-07-11T13:19:41+09:00" data-category="IT・AI">
@@ -938,8 +941,10 @@
     var list = document.getElementById('list');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
-    var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn'));
+    var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn[data-sort]'));
     var catButtons = [].slice.call(document.querySelectorAll('.cat-btn'));
+    var catRow = document.getElementById('cat-row');
+    var catToggle = document.getElementById('cat-toggle');
     var currentSort = 'alpha';
     var currentCategory = 'all';
 
@@ -1003,6 +1008,11 @@
         btn.classList.add('active');
         render();
       });
+    });
+    catToggle.addEventListener('click', function () {
+      var open = catRow.classList.toggle('open');
+      catToggle.classList.toggle('active', open);
+      catToggle.textContent = open ? 'タブで絞る−' : 'タブで絞る+';
     });
   </script>
 </body>

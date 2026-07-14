@@ -247,6 +247,8 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
     background: #D97757;
     color: #FAF9F5;
   }}
+  .cat-row {{ display: none; }}
+  .cat-row.open {{ display: flex; }}
   ul {{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }}
   .item a {{
     display: block;
@@ -271,13 +273,14 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
       <a class="create-link" href="create.html">+ 新しい用語を作成</a>
     </div>
     <input type="text" class="search-box" id="search" placeholder="用語を検索...">
-    <div class="cat-row" id="cat-row">
-      <button type="button" class="cat-btn active" data-category="all">すべて</button>
-      {category_buttons}
-    </div>
     <div class="sort-row">
       <button type="button" class="sort-btn active" data-sort="alpha">アルファベット順</button>
       <button type="button" class="sort-btn" data-sort="new">新しい順</button>
+      <button type="button" class="sort-btn" id="cat-toggle">タブで絞る+</button>
+    </div>
+    <div class="cat-row" id="cat-row">
+      <button type="button" class="cat-btn active" data-category="all">すべて</button>
+      {category_buttons}
     </div>
     <ul id="list">
 {items}
@@ -297,8 +300,10 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
     var list = document.getElementById('list');
     var items = [].slice.call(document.querySelectorAll('#list .item'));
     var emptyNote = document.getElementById('empty-note');
-    var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn'));
+    var sortButtons = [].slice.call(document.querySelectorAll('.sort-btn[data-sort]'));
     var catButtons = [].slice.call(document.querySelectorAll('.cat-btn'));
+    var catRow = document.getElementById('cat-row');
+    var catToggle = document.getElementById('cat-toggle');
     var currentSort = 'alpha';
     var currentCategory = 'all';
 
@@ -362,6 +367,11 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
         btn.classList.add('active');
         render();
       }});
+    }});
+    catToggle.addEventListener('click', function () {{
+      var open = catRow.classList.toggle('open');
+      catToggle.classList.toggle('active', open);
+      catToggle.textContent = open ? 'タブで絞る−' : 'タブで絞る+';
     }});
   </script>
 </body>
