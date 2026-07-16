@@ -1,0 +1,9 @@
+{
+  "slug": "imperial-house-law",
+  "title": "皇室典範",
+  "category": "場所・社会",
+  "variants": [
+    { "id": "intro", "label": "皇室典範とは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

@@ -1,0 +1,85 @@
+.kt-org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kt-root {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.kt-root-type {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--paper);
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.kt-trunk {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);
+}
+
+.kt-branches {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.kt-h-line {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 352px;
+  height: 2px;
+  background: var(--muted);
+}
+
+.kt-branch {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.kt-stem {
+  width: 2px;
+  height: 22px;
+  background: var(--muted);
+}
+
+.kt-card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--fade);
+  color: var(--ink);
+  padding: 14px 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.kt-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.kt-card-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kt-card-type {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-top: 4px;
+}
