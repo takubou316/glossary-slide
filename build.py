@@ -5,13 +5,49 @@ import re
 import subprocess
 import sys
 
+try:
+    import pykakasi
+    _KAKASI = pykakasi.kakasi()
+except ImportError:
+    _KAKASI = None
+    print("warning: pykakasi not installed, skipping romaji search index (pip install pykakasi)")
+
 TAG_RE = re.compile(r"<[^>]+>")
+RUBY_RE = re.compile(r"<ruby>[^<]*<rt>([^<]*)</rt></ruby>")
+NON_ROMAJI_RE = re.compile(r"[^a-z0-9]")
 
 
 def strip_tags(text: str) -> str:
     """Remove inline markup (e.g. term-link <a> tags) so the message can be
     safely reused as plain text inside an HTML attribute or another <a>."""
     return TAG_RE.sub("", text)
+
+
+def to_hiragana(text: str) -> str:
+    """Convert full-width katakana to hiragana, leaving everything else as-is."""
+    return "".join(
+        chr(ord(ch) - 0x60) if 0x30A1 <= ord(ch) <= 0x30F6 else ch
+        for ch in text
+    )
+
+
+def extract_yomi(term_field: str) -> str:
+    """Derive a hiragana reading for a term's heading by resolving its
+    <ruby>kanji<rt>reading</rt></ruby> spans (the same furigana already
+    hand-verified for display) instead of guessing kanji readings anew."""
+    resolved = RUBY_RE.sub(lambda m: m.group(1), term_field)
+    resolved = strip_tags(resolved)
+    return to_hiragana(resolved)
+
+
+def to_romaji(yomi: str) -> str:
+    """Romanize a hiragana reading so the search box also matches romaji
+    input. Best-effort: falls back to empty string if pykakasi is missing."""
+    if not _KAKASI or not yomi:
+        return ""
+    romaji = "".join(r["hepburn"] for r in _KAKASI.convert(yomi))
+    return NON_ROMAJI_RE.sub("", romaji.lower())
+
 
 ROOT = pathlib.Path(__file__).parent
 TEMPLATE = (ROOT / "template.html").read_text(encoding="utf-8")
@@ -73,7 +109,8 @@ def build_single(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, s
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{meta['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, meta["term"], meta["message"], meta.get("yomi", ""), meta.get("category", "その他")
+    yomi = meta.get("yomi") or extract_yomi(meta["term"])
+    return out_path, meta["term"], meta["message"], yomi, meta.get("category", "その他")
 
 
 def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, str]:
@@ -83,12 +120,14 @@ def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, st
     panels = []
     all_css = []
     intro_message = None
+    intro_term = None
 
     for i, variant in enumerate(group["variants"]):
         vdir = term_dir / variant["id"]
         meta = json.loads((vdir / "meta.json").read_text(encoding="utf-8"))
         if i == 0:
             intro_message = meta["message"]
+            intro_term = meta["term"]
         diagram_css = (vdir / "diagram.css").read_text(encoding="utf-8")
         diagram_html = (vdir / "diagram.html").read_text(encoding="utf-8")
         eyebrow = meta.get("eyebrow", "今日のひとこと解説")
@@ -121,7 +160,8 @@ def build_group(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, st
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{group['slug']}.html"
     out_path.write_text(html, encoding="utf-8")
-    return out_path, group["title"], intro_message, group.get("yomi", ""), group.get("category", "その他")
+    yomi = group.get("yomi") or extract_yomi(intro_term)
+    return out_path, group["title"], intro_message, yomi, group.get("category", "その他")
 
 
 def build(term_dir: pathlib.Path) -> tuple[pathlib.Path, str, str, str, str]:
@@ -137,7 +177,7 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
         for cat in categories
     )
     items = "\n".join(
-        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}" data-created="{created_at}" data-category="{category}">\n'
+        f'      <li class="item" data-title="{(title + " " + yomi).strip().lower()}" data-desc="{strip_tags(message).lower()}" data-romaji="{to_romaji(yomi)}" data-created="{created_at}" data-category="{category}">\n'
         f'        <a href="{out_path.name}">\n'
         f'          <div class="item-title">{title}</div>\n'
         f'          <div class="item-desc">{strip_tags(message)}</div>\n'
@@ -320,10 +360,12 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
       item.dataset.orderNew = i;
     }});
 
-    // タイトルの先頭一致 > タイトル内一致 > 説明文一致、の順で並べる
-    function rank(item, q) {{
+    // タイトルの先頭一致 > タイトル内一致（ローマ字入力も同列） > 説明文一致、の順で並べる
+    function rank(item, q, qRomaji) {{
       if (item.dataset.titleNorm.indexOf(q) === 0) return 0;
+      if (qRomaji && item.dataset.romaji.indexOf(qRomaji) === 0) return 0;
       if (item.dataset.titleNorm.indexOf(q) !== -1) return 1;
+      if (qRomaji && item.dataset.romaji.indexOf(qRomaji) !== -1) return 1;
       if (item.dataset.descNorm.indexOf(q) !== -1) return 2;
       return -1;
     }}
@@ -334,8 +376,9 @@ def build_index(entries: list[tuple[pathlib.Path, str, str, str, str, str]]) -> 
 
     function render() {{
       var q = kataToHira(search.value.trim().toLowerCase());
+      var qRomaji = q.replace(/[^a-z0-9]/g, '');
       var ranked = items
-        .map(function (item) {{ return {{ item: item, rank: rank(item, q) }}; }})
+        .map(function (item) {{ return {{ item: item, rank: rank(item, q, qRomaji) }}; }})
         .filter(function (r) {{ return r.rank !== -1; }})
         .filter(function (r) {{ return currentCategory === 'all' || r.item.dataset.category === currentCategory; }})
         .sort(function (a, b) {{
