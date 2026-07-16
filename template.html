@@ -30,8 +30,10 @@ html, body {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
   background: #EAE8E3;
   font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
 }
@@ -91,9 +93,8 @@ body {
 }
 
 .back-row {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+  align-self: flex-start;
+  margin-left: 20px;
   display: flex;
   gap: 10px;
 }
@@ -156,9 +157,10 @@ body {
   <script>
     function fitSlide() {
       var margin = 40;
+      var backRowHeight = document.querySelector('.back-row').offsetHeight + 24;
       var scale = Math.min(
         (window.innerWidth - margin) / 1280,
-        (window.innerHeight - margin) / 720,
+        (window.innerHeight - margin - backRowHeight) / 720,
         1
       );
       // 初回描画直後などwindowサイズがまだ確定していない瞬間に計算されると
