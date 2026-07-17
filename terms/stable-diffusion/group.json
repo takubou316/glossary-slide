@@ -1,0 +1,9 @@
+{
+  "slug": "stable-diffusion",
+  "title": "Stable Diffusion",
+  "category": "IT・AI",
+  "variants": [
+    { "id": "intro", "label": "Stable Diffusionとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

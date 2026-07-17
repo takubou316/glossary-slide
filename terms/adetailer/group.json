@@ -1,0 +1,9 @@
+{
+  "slug": "adetailer",
+  "title": "ADetailer",
+  "category": "IT・AI",
+  "variants": [
+    { "id": "intro", "label": "ADetailerとは" },
+    { "id": "advanced", "label": "発展編" }
+  ]
+}

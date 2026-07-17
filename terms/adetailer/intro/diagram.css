@@ -1,0 +1,67 @@
+.ad-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ad-flow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-before, .ad-after {
+  width: 160px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 12px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.ad-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.ad-sub .term-link {
+  color: var(--accent);
+}
+
+.ad-engine {
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 800;
+  padding: 16px 18px;
+  border-radius: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ad-arrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ad-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

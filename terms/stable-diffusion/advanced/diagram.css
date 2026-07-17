@@ -1,0 +1,54 @@
+.sd-compare-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sd-compare-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sd-compare-card {
+  width: 240px;
+  background: var(--fade);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sd-compare-card.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.sd-compare-sub {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sd-compare-vs {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.sd-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}

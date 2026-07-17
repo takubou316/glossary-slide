@@ -1,0 +1,55 @@
+.ad-process-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ad-process-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ad-process-step {
+  width: 200px;
+  background: var(--fade);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ad-process-step.highlight {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.ad-process-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.ad-process-arrow {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.ad-tip {
+  max-width: 640px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 12px 20px;
+  background: var(--fade);
+  border-radius: 14px;
+}
